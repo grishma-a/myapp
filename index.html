@@ -1,13 +1,215 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Grishma Shrestha</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <style>
+    body,
+    html {
+      background-color: #d5bbaa;
+
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Courier New';
+    }
+
+    /* Home Section */
+    .home-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px;
+      height: 100vh;
+      /* Full screen height */
+    }
+
+    .headshot {
+      width: 250px;
+      /* Adjust size */
+      height: auto;
+
+
+    }
+
+    .intro-text {
+      max-width: 600px;
+    }
+
+    .intro-text h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .intro-text h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: rgb(141, 83, 7);
+    }
+
+    .intro-text p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      position: sticky;
+      align-items: center;
+      justify-content: space-between;
+      top: 0px;
+      background: rgb(141, 83, 7);
+      background-blend-mode: darken;
+      background-size: cover;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 20px;
+
+    }
+
+    .nav-list li a:hover {
+      color: #aaaaaa;
+      /* Change the color on hover */
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-list li {
+      margin-right: 20px;
+    }
+
+    .nav-list li:last-child {
+      margin-right: 0;
+    }
+
+    .nav-list li a {
+      text-decoration: none;
+      color: rgb(252, 247, 247);
+      font-size: 18px;
+      transition: color 0.3s ease-in-out;
+    }
+
+
+    footer {
+      position: fixed;
+      /* Makes the footer stay fixed in the bottom */
+      bottom: 0;
+      /* Positions the footer at the bottom of the viewport */
+      left: 0;
+      /* Positions the footer at the left of the viewport */
+      width: 100%;
+      /* Makes the footer span the entire width */
+      background-color: rgb(141, 83, 7);
+      /* Optional: Add a background color */
+      color: white;
+      /* Optional: Add text color */
+      padding: 15px;
+      /* Optional: Add some padding */
+      text-align: center;
+
+      /* Optional: Center the text */
+      vertical-align: middle;
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    .container {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 5px;
+    }
+
+
+
+    .text {
+      font-size: 70px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <img src="src/assets/Screenshot 2025-03-31 190040-Picsart-BackgroundRemover.png" alt="gs" width="70" height="70">
+    <ul class="nav-list">
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('about')">About Me</a></li>
+      <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+    </ul>
+
+  </nav>
+
+
+
+
+  <section id="home" class="home-section">
+    <img src="src/assets/brown-shirt-headshot-transparent (1).png" alt="Grishma's Headshot" class="headshot">
+    <div class="intro-text">
+      <h1>Hi! My name is Grishma Shrestha, and I'm from Baton Rouge, Louisiana</h1>
+      <h2>Software Engineer & Mathematician</h2>
+      <p>
+        I am passionate about technology, problem-solving, and continuous learning.
+        This website showcases my journey, projects, and experiences in the world of computer science and mathematics.
+      </p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Information about myself...</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p>Details about my projects...</p>
+  </section>
+
+  <footer>
+
+    Connect with me:
+    <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank" rel="noopener noreferrer"><img
+        src="src/assets/linkedin.png" alt="linkedin Logo" width="30" height="30"></a>
+
+    <a href="mailto:shresthagris@gmail.com" target="_blank" rel="noopener noreferrer"><img
+        src="src/assets/Gmail_Logo_White_512px.png" alt="Gmail Logo" width="25" height="20"></a>
+
+    <a href="https://github.com/grishma-a " target="_blank" rel="noopener noreferrer">
+      <img src="src/assets/github.png" alt="github Logo" width="30" height="30">
+    </a>
+
+
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll("section").forEach(section => {
+        section.style.display = "none";
+      });
+
+      // Show only the selected section
+      document.getElementById(sectionId).style.display = "block";
+    }
+
+    // Show home section by default
+    document.addEventListener("DOMContentLoaded", function () {
+      showSection("home");
+    });
+  </script>
+</body>
+
+
+
 </html>
