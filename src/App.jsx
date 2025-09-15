@@ -1,17 +1,22 @@
-import './App.css'
-import React, { useState } from 'react';
+// App.js
+import React from 'react';
 
+function App() {
 
-//export default MyButton;
-//The export default keywords specify the main component in the file.
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
-
-export default function MyApp() {
   return (
     <div>
-
-
+      <nav>
+        <button onClick={() => scrollToSection(home)}>Home</button>
+        <button onClick={() => scrollToSection(about)}>About Me</button>
+        <button onClick={() => scrollToSection(project)}>Projects</button>
+      </nav>
+      {/* ... section components with refs */}
     </div>
   );
 }
-//export default AboutPage;
+
+export default App;

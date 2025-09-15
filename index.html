@@ -3,40 +3,85 @@
 
 <head>
   <title>Grishma Shrestha</title>
+  <link rel="icon" type="image/png" href="gsinitials.png">
   <link href="index.css" rel="stylesheet" type="text/css" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body,
     html {
-      background-color: #d5bbaa;
-
-    }
-
-    * {
+      background-color: rgb(141, 83, 7);
+      /*< !-- #d5bbaa -->*/
       margin: 0;
       padding: 0;
-    }
-
-    body {
       font-family: 'Courier New';
     }
 
-    /* Home Section */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgb(141, 83, 7);
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 20px;
+      z-index: 1000;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-list li {
+      margin-right: 20px;
+    }
+
+    .nav-list li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .nav-list li a:hover {
+      color: #d5bbaa;
+    }
+
+    .logo img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .social-links a {
+      margin-left: 15px;
+    }
+
+    .social-links img {
+      vertical-align: middle;
+    }
+
+    .home-section,
+    .about-section,
+    .projects-section {
+      padding: 50px;
+    }
+
     .home-section {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 30px;
-      padding: 50px;
-      height: 100vh;
-      /* Full screen height */
     }
 
     .headshot {
       width: 250px;
-      /* Adjust size */
       height: auto;
-
-
     }
 
     .intro-text {
@@ -59,157 +104,225 @@
       line-height: 1.6;
     }
 
-    .navbar {
-      display: flex;
-      position: sticky;
-      align-items: center;
-      justify-content: space-between;
-      top: 0px;
-      background: rgb(141, 83, 7);
-      background-blend-mode: darken;
-      background-size: cover;
-      color: white;
-      padding: 10px 20px;
-      font-weight: bold;
-      font-size: 20px;
-
-    }
-
-    .nav-list li a:hover {
-      color: #aaaaaa;
-      /* Change the color on hover */
-    }
-
-    .nav-list {
-      display: flex;
-      list-style: none;
-    }
-
-    .nav-list li {
-      margin-right: 20px;
-    }
-
-    .nav-list li:last-child {
-      margin-right: 0;
-    }
-
-    .nav-list li a {
-      text-decoration: none;
-      color: rgb(252, 247, 247);
-      font-size: 18px;
-      transition: color 0.3s ease-in-out;
-    }
-
-
     footer {
       position: fixed;
-      /* Makes the footer stay fixed in the bottom */
       bottom: 0;
-      /* Positions the footer at the bottom of the viewport */
       left: 0;
-      /* Positions the footer at the left of the viewport */
       width: 100%;
-      /* Makes the footer span the entire width */
       background-color: rgb(141, 83, 7);
-      /* Optional: Add a background color */
       color: white;
-      /* Optional: Add text color */
       padding: 15px;
-      /* Optional: Add some padding */
       text-align: center;
-
-      /* Optional: Center the text */
-      vertical-align: middle;
       font-weight: bold;
       font-size: 25px;
     }
-
-    .container {
-      display: grid;
-      align-items: center;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 5px;
-    }
-
-
-
-    .text {
-      font-size: 70px;
-    }
   </style>
-
 </head>
 
 <body>
   <nav class="navbar">
-    <img src="src/assets/Screenshot 2025-03-31 190040-Picsart-BackgroundRemover.png" alt="gs" width="70" height="70">
-    <ul class="nav-list">
-      <li><a href="#" onclick="showSection('home')">Home</a></li>
-      <li><a href="#" onclick="showSection('about')">About Me</a></li>
-      <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+    <ul class="nav-list left">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
     </ul>
 
+    <div class="logo">
+      <img src="src/assets/gsinitials.png" alt="gs" width="70" height="70">
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank" rel="noopener noreferrer">
+        <img src="src/assets/linkedin.png" alt="LinkedIn Logo" width="30" height="30">
+      </a>
+      <a href="mailto:shresthagris@gmail.com">
+        <img src="src/assets/Gmail_Logo_White_512px.png" alt="Gmail Logo" width="35" height="30">
+      </a>
+      <a href="https://github.com/grishma-a" target="_blank" rel="noopener noreferrer">
+        <img src="src/assets/github.png" alt="GitHub Logo" width="35" height="35">
+      </a>
+    </div>
   </nav>
-
-
-
 
   <section id="home" class="home-section">
     <img src="src/assets/brown-shirt-headshot-transparent (1).png" alt="Grishma's Headshot" class="headshot">
     <div class="intro-text">
       <h1>Hi! My name is Grishma Shrestha, and I'm from Baton Rouge, Louisiana</h1>
       <h2>Software Engineer & Mathematician</h2>
-      <p>
-        I am passionate about technology, problem-solving, and continuous learning.
-        This website showcases my journey, projects, and experiences in the world of computer science and mathematics.
-      </p>
     </div>
   </section>
 
-  <section id="about">
+  <section id="about" class="about-section">
     <h2>About Me</h2>
     <p>Information about myself...</p>
+    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
+    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
+    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
+    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
+    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
+    change on a global scale.
+
+    Skills
+
+    Experience
+
+    Education
+
+    SQL, R (Programming Language), RStudio
+    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
+    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
+    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
+
+    Java
+    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
+    Experienced in creating simple applications.
+
+    JavaScript, HTML, CSS, ReactJS
+    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
+    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
+    compatibility.
+
+    Microsoft Office: Excel, Word, PowerPoint, OutLook
+    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
+    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
   </section>
 
-  <section id="projects">
+  <section id="projects" class="projects-section">
     <h2>My Projects</h2>
-    <p>Details about my projects...</p>
+    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
+    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
+    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
+    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
+    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
+    change on a global scale.
+
+    Skills
+
+    Experience
+
+    Education
+
+    SQL, R (Programming Language), RStudio
+    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
+    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
+    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
+
+    Java
+    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
+    Experienced in creating simple applications.
+
+    JavaScript, HTML, CSS, ReactJS
+    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
+    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
+    compatibility.
+
+    Microsoft Office: Excel, Word, PowerPoint, OutLook
+    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
+    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
+    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
+    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
+    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
+    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
+    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
+    change on a global scale.
+
+    Skills
+
+    Experience
+
+    Education
+
+    SQL, R (Programming Language), RStudio
+    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
+    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
+    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
+
+    Java
+    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
+    Experienced in creating simple applications.
+
+    JavaScript, HTML, CSS, ReactJS
+    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
+    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
+    compatibility.
+
+    Microsoft Office: Excel, Word, PowerPoint, OutLook
+    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
+    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
+    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
+    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
+    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
+    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
+    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
+    change on a global scale.
+
+    Skills
+
+    Experience
+
+    Education
+
+    SQL, R (Programming Language), RStudio
+    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
+    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
+    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
+
+    Java
+    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
+    Experienced in creating simple applications.
+
+    JavaScript, HTML, CSS, ReactJS
+    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
+    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
+    compatibility.
+
+    Microsoft Office: Excel, Word, PowerPoint, OutLook
+    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
+    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
+    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
+    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
+    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
+    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
+    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
+    change on a global scale.
+
+    Skills
+
+    Experience
+
+    Education
+
+    SQL, R (Programming Language), RStudio
+    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
+    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
+    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
+
+    Java
+    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
+    Experienced in creating simple applications.
+
+    JavaScript, HTML, CSS, ReactJS
+    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
+    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
+    compatibility.
+
+    Microsoft Office: Excel, Word, PowerPoint, OutLook
+    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
+    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
   </section>
 
   <footer>
-
     Connect with me:
-    <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank" rel="noopener noreferrer"><img
-        src="src/assets/linkedin.png" alt="linkedin Logo" width="30" height="30"></a>
-
-    <a href="mailto:shresthagris@gmail.com" target="_blank" rel="noopener noreferrer"><img
-        src="src/assets/Gmail_Logo_White_512px.png" alt="Gmail Logo" width="25" height="20"></a>
-
-    <a href="https://github.com/grishma-a " target="_blank" rel="noopener noreferrer">
+    <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank">
+      <img src="src/assets/linkedin.png" alt="linkedin Logo" width="30" height="30">
+    </a>
+    <a href="mailto:shresthagris@gmail.com">
+      <img src="src/assets/Gmail_Logo_White_512px.png" alt="Gmail Logo" width="25" height="20">
+    </a>
+    <a href="https://github.com/grishma-a" target="_blank">
       <img src="src/assets/github.png" alt="github Logo" width="30" height="30">
     </a>
-
-
   </footer>
-
-  <script>
-    function showSection(sectionId) {
-      // Hide all sections
-      document.querySelectorAll("section").forEach(section => {
-        section.style.display = "none";
-      });
-
-      // Show only the selected section
-      document.getElementById(sectionId).style.display = "block";
-    }
-
-    // Show home section by default
-    document.addEventListener("DOMContentLoaded", function () {
-      showSection("home");
-    });
-  </script>
 </body>
-
-
 
 </html>
