@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grishma Shrestha</title>
   <link rel="icon" type="image/png" href="gsinitials.png">
-  <link href="index.css" rel="stylesheet" type="text/css" />
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -12,13 +14,14 @@
 
     body,
     html {
-      background-color: rgb(141, 83, 7);
-      /*< !-- #d5bbaa -->*/
       margin: 0;
       padding: 0;
-      font-family: 'Courier New';
+      font-family: 'Helvetica', monospace;
+      background-color: rgb(141, 83, 7);
+      color: white;
     }
 
+    /* Navbar styling */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -26,7 +29,6 @@
       position: sticky;
       top: 0;
       background: rgb(141, 83, 7);
-      color: white;
       padding: 10px 20px;
       font-weight: bold;
       font-size: 20px;
@@ -36,16 +38,22 @@
     .nav-list {
       display: flex;
       list-style: none;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-list li {
-      margin-right: 20px;
+      position: relative;
     }
 
     .nav-list li a {
       text-decoration: none;
       color: white;
-      font-size: 18px;
+      font-size: 20px;
+      padding-bottom: 5px;
+      display: inline-block;
+      position: relative;
       transition: color 0.3s ease-in-out;
     }
 
@@ -53,22 +61,37 @@
       color: #d5bbaa;
     }
 
-    .logo img {
-      display: block;
-      margin: 0 auto;
+    .nav-list li a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #ffffff;
     }
 
+    /* Logo styling */
+    .logo img {
+      width: 70px;
+      height: 70px;
+      display: block;
+    }
+
+    /* Social links */
     .social-links a {
       margin-left: 15px;
     }
 
     .social-links img {
       vertical-align: middle;
+      width: 30px;
+      height: 30px;
     }
 
-    .home-section,
-    .about-section,
-    .projects-section {
+    /* Sections styling */
+    section {
+      height: 100vh;
       padding: 50px;
     }
 
@@ -96,7 +119,7 @@
     .intro-text h2 {
       font-size: 24px;
       margin-bottom: 15px;
-      color: rgb(141, 83, 7);
+      color: rgb(18, 11, 1);
     }
 
     .intro-text p {
@@ -104,225 +127,108 @@
       line-height: 1.6;
     }
 
+    /* Footer */
     footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
       background-color: rgb(141, 83, 7);
       color: white;
-      padding: 15px;
       text-align: center;
+      padding: 15px;
       font-weight: bold;
-      font-size: 25px;
+      font-size: 20px;
+    }
+
+    footer a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
     }
   </style>
 </head>
 
 <body>
+  <!-- Navbar -->
   <nav class="navbar">
-    <ul class="nav-list left">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
+    <ul class="nav-list">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About Me</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
     </ul>
 
     <div class="logo">
-      <img src="src/assets/gsinitials.png" alt="gs" width="70" height="70">
+      <img src="src/assets/gsinitials.png" alt="GS Logo">
     </div>
 
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/linkedin.png" alt="LinkedIn Logo" width="30" height="30">
+      <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank">
+        <img src="src/assets/linkedin.png" alt="LinkedIn Logo">
       </a>
       <a href="mailto:shresthagris@gmail.com">
-        <img src="src/assets/Gmail_Logo_White_512px.png" alt="Gmail Logo" width="35" height="30">
+        <img src="src/assets/Gmail_Logo_White_512px.png" alt="Gmail Logo">
       </a>
-      <a href="https://github.com/grishma-a" target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/github.png" alt="GitHub Logo" width="35" height="35">
+      <a href="https://github.com/grishma-a" target="_blank">
+        <img src="src/assets/github.png" alt="GitHub Logo">
       </a>
     </div>
   </nav>
 
+  <!-- Home Section -->
   <section id="home" class="home-section">
-    <img src="src/assets/brown-shirt-headshot-transparent (1).png" alt="Grishma's Headshot" class="headshot">
+    <img src="src/assets/brown-shirt-headshot-transparent (1).png" alt="Grishma Headshot" class="headshot">
     <div class="intro-text">
       <h1>Hi! My name is Grishma Shrestha, and I'm from Baton Rouge, Louisiana</h1>
       <h2>Software Engineer & Mathematician</h2>
+      <p>
+        I am a detail-oriented and data-driven student pursuing a B.S. in Data Science. I enjoy leveraging technology
+        and mathematics to create innovative solutions.
+      </p>
     </div>
   </section>
 
-  <section id="about" class="about-section">
-    <h2>About Me</h2>
-    <p>Information about myself...</p>
-    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
-    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
-    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
-    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
-    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
-    change on a global scale.
-
-    Skills
-
-    Experience
-
-    Education
-
-    SQL, R (Programming Language), RStudio
-    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
-    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
-    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
-
-    Java
-    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
-    Experienced in creating simple applications.
-
-    JavaScript, HTML, CSS, ReactJS
-    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
-    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
-    compatibility.
-
-    Microsoft Office: Excel, Word, PowerPoint, OutLook
-    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
-    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
+  <!-- About Section -->
+  <section id="about">
+    <h1>About Me</h1>
+    <p>
+      I am a first-generation student with a passion for software engineering, mathematics, and data science. I
+      specialize in SQL, R, Java, JavaScript, HTML, CSS, and ReactJS. I also have advanced skills in Microsoft Office.
+    </p>
   </section>
 
-  <section id="projects" class="projects-section">
-    <h2>My Projects</h2>
-    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
-    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
-    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
-    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
-    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
-    change on a global scale.
-
-    Skills
-
-    Experience
-
-    Education
-
-    SQL, R (Programming Language), RStudio
-    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
-    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
-    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
-
-    Java
-    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
-    Experienced in creating simple applications.
-
-    JavaScript, HTML, CSS, ReactJS
-    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
-    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
-    compatibility.
-
-    Microsoft Office: Excel, Word, PowerPoint, OutLook
-    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
-    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
-    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
-    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
-    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
-    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
-    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
-    change on a global scale.
-
-    Skills
-
-    Experience
-
-    Education
-
-    SQL, R (Programming Language), RStudio
-    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
-    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
-    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
-
-    Java
-    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
-    Experienced in creating simple applications.
-
-    JavaScript, HTML, CSS, ReactJS
-    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
-    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
-    compatibility.
-
-    Microsoft Office: Excel, Word, PowerPoint, OutLook
-    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
-    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
-    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
-    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
-    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
-    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
-    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
-    change on a global scale.
-
-    Skills
-
-    Experience
-
-    Education
-
-    SQL, R (Programming Language), RStudio
-    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
-    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
-    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
-
-    Java
-    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
-    Experienced in creating simple applications.
-
-    JavaScript, HTML, CSS, ReactJS
-    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
-    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
-    compatibility.
-
-    Microsoft Office: Excel, Word, PowerPoint, OutLook
-    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
-    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
-    Data-driven and detail-oriented, I am pursuing a B.S. in Data Science at the University of Texas at Dallas as a
-    first-generation third year student. With a strong academic background, I am passionate about leveraging data to
-    drive insights and make informed decisions. At a young age, my fascination with technology and its potential to
-    transform the world has been a driving force in my life. Eager to contribute to this digital revolution, I am
-    dedicated to pursuing a career in data science and analytics, seeking innovative solutions that empower positive
-    change on a global scale.
-
-    Skills
-
-    Experience
-
-    Education
-
-    SQL, R (Programming Language), RStudio
-    Familiar in data analysis using SQL and R programming language, along with experience in RStudio for development.
-    Skilled in executing SQL queries for data retrieval and analysis. Familiar with best practices in coding and
-    debugging R scripts in RStudio to handle large datasets and perform statistical analyses.
-
-    Java
-    Familiar with Java programming, with a solid understanding of object-oriented principles and data structures.
-    Experienced in creating simple applications.
-
-    JavaScript, HTML, CSS, ReactJS
-    Experienced in full-stack web development for building frontend interfaces. Skilled in using ReactJS for creating
-    efficient and reusable UI components. Proficient in implementing responsive web design and ensuring cross-browser
-    compatibility.
-
-    Microsoft Office: Excel, Word, PowerPoint, OutLook
-    Advanced skills in creating and manipulating Excel spreadsheets, drafting comprehensive Word documents, designing
-    engaging PowerPoint presentations, and effectively utilizing Outlook for communication
+  <!-- Projects Section -->
+  <section id="projects">
+    <h1>Projects</h1>
+    <p>
+      I have worked on several projects in full-stack web development and data analysis, applying my skills to build
+      interactive, data-driven applications.
+    </p>
   </section>
 
+  <!-- Footer -->
   <footer>
     Connect with me:
-    <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank">
-      <img src="src/assets/linkedin.png" alt="linkedin Logo" width="30" height="30">
-    </a>
-    <a href="mailto:shresthagris@gmail.com">
-      <img src="src/assets/Gmail_Logo_White_512px.png" alt="Gmail Logo" width="25" height="20">
-    </a>
-    <a href="https://github.com/grishma-a" target="_blank">
-      <img src="src/assets/github.png" alt="github Logo" width="30" height="30">
-    </a>
+    <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank">LinkedIn</a>
+    <a href="mailto:shresthagris@gmail.com">Gmail</a>
+    <a href="https://github.com/grishma-a" target="_blank">GitHub</a>
   </footer>
+
+  <!-- JavaScript for active tab underline -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function activateNavLink() {
+      let scrollPos = window.scrollY + window.innerHeight / 3;
+
+      sections.forEach((section, index) => {
+        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+          navLinks.forEach(link => link.classList.remove("active"));
+          navLinks[index].classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", activateNavLink);
+    window.addEventListener("load", activateNavLink);
+  </script>
 </body>
 
 </html>
