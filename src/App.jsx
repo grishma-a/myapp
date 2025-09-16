@@ -12,7 +12,7 @@ function App() {
       <nav>
         <button onClick={() => scrollToSection(home)}>Home</button>
         <button onClick={() => scrollToSection(about)}>About Me</button>
-        <button onClick={() => scrollToSection(project)}>Projects</button>
+        <button onClick={() => scrollToSection(experience)}>Experience</button>
       </nav>
       {/* ... section components with refs */}
     </div>
