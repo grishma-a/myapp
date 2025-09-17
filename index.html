@@ -17,7 +17,8 @@
       margin: 0;
       padding: 0;
       font-family: 'Helvetica', monospace;
-      background-color: rgb(141, 83, 7);
+      background-color: #d5bbaa;
+      /*background-color: rgb(141, 83, 7);*/
       color: white;
     }
 
@@ -29,8 +30,9 @@
       align-items: center;
       position: sticky;
       top: 0;
-      background: rgb(141, 83, 7);
-      padding: 10px 20px;
+      background: #d5bbaa;
+      /*background: rgb(141, 83, 7);*/
+      padding: 0px 20px;
       font-weight: bold;
       font-size: 20px;
       z-index: 1000;
@@ -61,7 +63,7 @@
     }
 
     .nav-list li a:hover {
-      color: #d5bbaa;
+      color: rgb(141, 83, 7);
     }
 
     .nav-list li a.active::after {
@@ -115,10 +117,91 @@
       gap: 30px;
     }
 
-    .headshot {
-      width: 500px;
-      height: auto;
+    .headshot-ring {
+      position: relative;
+      width: 400px;
+      /* adjust size */
+      height: 400px;
+      border-radius: 50%;
+      overflow: hidden;
+      /* circular crop */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .headshot {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* keeps full face visible */
+      object-position: center top;
+      /* adjust vertical centering */
+      border-radius: 50%;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Shooting star border */
+    .spark {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      mask: linear-gradient(white, transparent 50%);
+      animation: flip 6s infinite steps(2, end);
+    }
+
+    @keyframes flip {
+      to {
+        rotate: 360deg;
+      }
+    }
+
+    .spark:before {
+      content: "";
+      position: absolute;
+      width: 220%;
+      aspect-ratio: 1;
+      inset: 0 auto auto 50%;
+      translate: -50% -15%;
+      transform: rotate(-90deg);
+      opacity: 1;
+      background: conic-gradient(from 0deg, transparent 0 340deg, white 360deg);
+      animation: rotate 3s linear infinite both;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(90deg);
+      }
+    }
+
+    /* Moving star */
+    .star {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+          79% 91%, 50% 70%, 21% 91%, 32% 57%,
+          2% 35%, 39% 35%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -180px);
+      /* place on the circle */
+      animation: orbit 3s linear infinite;
+    }
+
+    @keyframes orbit {
+      to {
+        transform: rotate(360deg) translate(-50%, -180px) rotate(-360deg);
+      }
+    }
+
+
+
+
 
     .intro-text {
       max-width: 600px;
@@ -142,7 +225,8 @@
 
     /* Footer */
     footer {
-      background-color: rgb(141, 83, 7);
+      background-color: #d5bbaa;
+      /*background-color: rgb(141, 83, 7);*/
       color: white;
       text-align: center;
       padding: 15px;
@@ -186,13 +270,20 @@
 
   <!-- Home Section -->
   <section id="home" class="home-section">
-    <img src="src/assets/brown-shirt-headshot-transparent (1).png" alt="Grishma Headshot" class="headshot">
+    <div class="headshot-ring">
+      <img src="src/assets/brown-shirt-headshot-transparent (1).png" alt="Grishma Headshot" class="headshot" />
+      <span class="spark"></span>
+      <span class="star"></span>
+    </div>
     <div class="intro-text">
-      <h1>Hello there! My name is Grishma Shrestha, and I'm from Baton Rouge, Louisiana</h1>
+      <h1>Hello there! My name is Grishma Shrestha</h1>
       <h2>Computer Science & Mathematics Student</h2>
-
     </div>
   </section>
+
+
+
+
 
   <!-- About Section -->
   <section id="about">
