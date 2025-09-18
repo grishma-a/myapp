@@ -94,6 +94,43 @@ html {
   height: 30px;
 }
 
+
+
+.resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #8d530787;
+  color: white;
+  border: none;
+  padding: 3px 12px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resume-btn img {
+  width: 20px;
+  /* Control width */
+  height: 30px;
+  /* Control height */
+  object-fit: contain;
+  /* Maintain aspect ratio */
+
+}
+
+.resume-btn:hover {
+  background-color: rgb(141, 83, 7);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.resume-btn:active {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Sections styling */
 section {
   height: 100vh;
@@ -265,34 +302,6 @@ section {
   display: block;
 }
 
-/* Internships Grid */
-.internships-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-.internship-box {
-  background: #8d530746;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border-left: 4px solid #8d530787;
-  /*8d5307*/
-  position: relative;
-  overflow: hidden;
-}
-
-.internship-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px #8d530787;
-  /*rgba(0, 0, 0, 0.15)*/
-  border-left: 4px solid #8d5307;
-  /*8d530787*/
-}
-
 .chevron-logo {
   position: absolute;
   top: 1rem;
@@ -320,6 +329,33 @@ section {
   height: auto;
 }
 
+/* Internships Grid */
+.internships-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.internship-box {
+  background: #8d530746;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #8d530787;
+  /*8d5307*/
+  position: relative;
+  overflow: hidden;
+}
+
+.internship-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px #8d530787;
+  /*rgba(0, 0, 0, 0.15)*/
+  border-left: 4px solid #8d5307;
+  /*8d530787*/
+}
 
 .internship-title {
   font-size: 1.3rem;
@@ -352,22 +388,3 @@ section {
   position: absolute;
   left: 0;
 }
-
-
-/* Footer 
-footer {
-  background-color: #d5bbaa;
-
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-footer a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
-}
-*/
