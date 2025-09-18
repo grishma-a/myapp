@@ -311,6 +311,10 @@ section {
   gap: 0.5rem;
 }
 
+.sub-menu.open {
+  display: flex;
+}
+
 /* Sub-buttons smaller style */
 .sub-btn {
   background-color: #e8e8e8;
