@@ -302,6 +302,33 @@ section {
   display: block;
 }
 
+/* Sub-menu hidden by default */
+.sub-menu {
+  display: none;
+  flex-direction: column;
+  margin-left: 1rem;
+  /* indent to look nested */
+  gap: 0.5rem;
+}
+
+/* Sub-buttons smaller style */
+.sub-btn {
+  background-color: #e8e8e8;
+  font-size: 0.9rem;
+}
+
+.sub-btn:hover {
+  background-color: #a58772;
+  color: white;
+}
+
+/* Active sub-tab */
+.sub-btn.active {
+  background-color: #8d5307;
+  color: white;
+}
+
+
 .chevron-logo {
   position: absolute;
   top: 1rem;
@@ -347,6 +374,23 @@ section {
   /*8d5307*/
   position: relative;
   overflow: hidden;
+}
+
+.internship-bigbox {
+  background: #8d530746;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #8d530787;
+  position: relative;
+  overflow: hidden;
+  width: 200%;
+  /* Makes it twice as wide */
+  max-width: none;
+  /* Removes any max-width restriction */
+  box-sizing: border-box;
+  /* Ensures padding is included in the width */
 }
 
 .internship-box:hover {

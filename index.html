@@ -74,9 +74,16 @@
     <div class="experience-container">
       <!-- Vertical buttons -->
       <div class="experience-menu">
-        <button class="exp-btn active" data-tab="internships">Internships</button>
-        <button class="exp-btn" data-tab="research">Research</button>
-        <button class="exp-btn" data-tab="tutoring">Tutoring</button>
+        <button class="exp-btn active" data-target="internships">Internships</button>
+        <button class="exp-btn" data-target="research">Research</button>
+        <button class="exp-btn" data-target="tutoring">Tutoring</button>
+
+        <!-- Projects main toggle -->
+        <button class="exp-btn projects-toggle">Projects</button>
+        <div class="sub-menu">
+          <button class="exp-btn sub-btn" data-target="renvi">RENVI</button>
+          <button class="exp-btn sub-btn" data-target="elyssiu">Elyssiu</button>
+        </div>
       </div>
 
       <!-- Content -->
@@ -159,6 +166,32 @@
           </div>
         </div>
 
+        <div id="renvi" class="exp-panel">
+          <div class="internship-box">
+            <h3 class="internship-title">RENVI | Interior Design: Full Stack Project</h3>
+            <span class="internship-period">August 2024 – December 2024 | Louisiana State University</span>
+            <ul class="internship-details">
+              <li>Supervised version control for a 5-person team...</li>
+              <li>Developed a REST API backend with .NET and Swagger UI...</li>
+              <li>Architected a scalable cloud database solution using Firestore...</li>
+            </ul>
+            <img src="src/assets/renvi1.png" alt="renvi screenshot" />
+          </div>
+        </div>
+
+        <div id="elyssiu" class="exp-panel">
+          <div class="internship-box">
+            <h3 class="internship-title">Elyssiu | Game Development: Full Stack Project</h3>
+            <span class="internship-period">January 2024 – May 2024 | Louisiana State University</span>
+            <ul class="internship-details">
+              <li>Led version control as Git Master...</li>
+              <li>Created and integrated sound effects...</li>
+              <li>Wrote engaging dialogue and managed in-game quests...</li>
+            </ul>
+          </div>
+        </div>
+
+
         <div id="research" class="exp-panel">
           <!-- <div class="internship-box">
             <img src="src/assets/finalacm.png" alt="acm Logo" class="runatek-logo" />
@@ -190,8 +223,7 @@
 
             <!-- Internship 2 -->
             <div class="internship-box">
-              <embed src="https://dl.acm.org/doi/pdf/10.1145/3736578" type="application/pdf" width="100%"
-                height="600px">
+              <embed src="acm_submission.pdf" type="application/pdf" width="100%" height="600px">
             </div>
           </div>
         </div>
@@ -286,6 +318,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
     </nav>
@@ -330,12 +363,48 @@
     document.getElementById('resumeDownload').addEventListener('click', function () {
       // Create a link to download the PDF
       const link = document.createElement('a');
-      link.href = '"C:\Users\Grishma Shrestha\Downloads\Halliburton Grishma Shrestha 2025 Resume.pdf"'; // Replace with actual path to your PDF
+      link.href = 'Halliburton Grishma Shrestha 2025 Resume.pdf'; // Replace with actual path to your PDF
       link.download = 'Grishma_Shrestha_Resume.pdf'; // Replace with your desired filename
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     });
+
+    // Toggle sub-menu when clicking "Projects"
+
+
+    const projectsToggle = document.querySelector(".projects-toggle");
+    const subMenu = document.querySelector(".sub-menu");
+
+    projectsToggle.addEventListener("click", () => {
+      const isOpen = subMenu.style.display === "flex";
+      subMenu.style.display = isOpen ? "none" : "flex";
+      projectsToggle.textContent = isOpen ? "Projects" : "Projects ▼";
+
+      if (!isOpen) {
+        // automatically activate RENVI panel
+        document.querySelectorAll('.exp-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.exp-panel').forEach(panel => panel.classList.remove('active'));
+
+        const renviBtn = document.querySelector('.sub-btn[data-target="renvi"]');
+        renviBtn.classList.add('active');
+        document.getElementById('renvi').classList.add('active');
+      }
+    });
+
+
+    // Handle sub-menu clicks
+    document.querySelectorAll('.exp-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.exp-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.exp-panel').forEach(panel => panel.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.target).classList.add('active');
+      });
+    });
+
+
 
   </script>
 </body>
