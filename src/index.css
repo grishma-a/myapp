@@ -293,13 +293,33 @@ section {
   /*8d530787*/
 }
 
-.chevron {
+.chevron-logo {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 1.5rem;
-  color: #3498db;
+  width: 100px;
+  /* adjust size */
+  height: auto;
 }
+
+.runatek-logo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 70px;
+  /* adjust size */
+  height: auto;
+}
+
+.act-logo {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  width: 120px;
+  /* adjust size */
+  height: auto;
+}
+
 
 .internship-title {
   font-size: 1.3rem;
