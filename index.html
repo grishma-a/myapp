@@ -7,9 +7,6 @@
   <title>Grishma Shrestha</title>
   <link rel="icon" type="image/png" href="gsinitials.png">
   <link rel="stylesheet" href="./src/index.css">
-
-
-
 </head>
 
 <body>
@@ -51,10 +48,6 @@
     </div>
   </section>
 
-
-
-
-
   <!-- About Section -->
   <section id="about">
     <h1>About Me</h1>
@@ -62,59 +55,221 @@
       I am a first-generation student with a passion for software engineering, mathematics, and data science. I
       specialize in SQL, R, Java, JavaScript, HTML, CSS, and ReactJS. I also have advanced skills in Microsoft Office.
     </p>
+
   </section>
 
   <!-- Experience Section -->
   <section id="experience">
     <h1>Experience</h1>
+    <div class="experience-container">
+      <!-- Vertical buttons -->
+      <div class="experience-menu">
+        <button class="exp-btn active" data-tab="internships">Internships</button>
+        <button class="exp-btn" data-tab="research">Research</button>
+        <button class="exp-btn" data-tab="tutoring">Tutoring</button>
+      </div>
 
-    <!-- Tabs -->
-    <nav class="experience-nav">
-      <ul>
-        <li><a href="#internships" class="active" data-tab="internships">Internships</a></li>
-        <li><a href="#leadership" data-tab="leadership">Leadership</a></li>
-        <li><a href="#research" data-tab="research">Research</a></li>
-        <li><a href="#projects" data-tab="projects">Projects</a></li>
-        <li><a href="#tutoring" data-tab="tutoring">Tutoring</a></li>
-      </ul>
+      <!-- Content -->
+      <div class="experience-content">
+        <div id="internships" class="exp-panel active">
+          <div class="internships-grid">
+
+            <!-- Internship 1 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">Software Engineering Intern | Chevron</h3>
+              <span class="internship-period">May 2025 – August 2025 | Houston, Texas</span>
+              <ul class="internship-details">
+                <li>
+                  Created and deployed an automated, scalable redirect solution for Chevron's legacy Medicare
+                  reporting SharePoint site using Azure FrontDoor, Ansible, and ADO pipelines to ensure zero downtime,
+                  preserve organizational bookmarks, maintain uninterrupted legal access, and eliminate 100% of manual
+                  intervention
+                  <ul style="list-style-type: none; padding-left: 20px; margin-top: 8px;">
+                    <li style="position: relative;">
+                      Reduced page load time by 53%, improving performance from 6.97 seconds to 3.25 seconds, and
+                      enhancing usability and operational efficiency for legal teams accessing Medicare related content
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Internship 2 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">Software Engineering Intern | Chevron</h3>
+              <span class="internship-period">May 2024 – August 2024 | Houston, Texas</span>
+              <ul class="internship-details">
+                <li>
+                  Created interactive charts and dynamic graphs using C#, Blazor, and JavaScript, enabling users to
+                  build dynamic charts and make higher fidelity decisions when allocating CAPEX in the deepwater
+                  opportunity backlog
+                </li>
+                <li>
+                  Implemented an on-demand data refresh feature on an administration page, streamlining operations,
+                  saving 5 manual steps, and reducing reliance on manual IT support
+                </li>
+              </ul>
+            </div>
+
+            <!-- Internship 3 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">Software Engineering Intern | Chevron</h3>
+              <span class="internship-period">May 2023 – August 2023 | Houston, Texas</span>
+              <ul class="internship-details">
+                <li>
+                  Built and deployed user-friendly PowerApps and SharePoint applications to help 40+ teammates organize
+                  weekly updates
+                </li>
+                <li>
+                  Developed a comprehensive Power BI dashboard to analyze performance across 19 support regions,
+                  optimizing resource allocation and enabling data-driven decision-making for regional leadership
+                </li>
+              </ul>
+            </div>
+
+            <!-- Internship 4 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">Software Engineering Intern | Runatek</h3>
+              <span class="internship-period">August 2022 – December 2022 | Dallas Fortworth, Texas</span>
+              <ul class="internship-details">
+                <li>Led a firmware team of 3 people to package the Sotiras medical device, using Arduino to optimize the
+                  foundational algorithm that safely delivers consistent opioid concentrations to patients
+                </li>
+                <li>Built 2 front-end GUIs using JavaScript, HTML, and CSS, enabling doctors to set dosing and monitor
+                  patient treatment data</li>
+                <li>Optimized material selection and developed relations with 2 external partners to expedite supply
+                  chain management
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="research" class="exp-panel">
+          <div class="internship-box">
+            <i class="fas fa-chevron-circle-right chevron"></i>
+            <h3 class="internship-title">Research Assistant at IntelliSys Lab</h3>
+            <span class="internship-period">October 2022 – June 2023</span>
+            <ul class="internship-details">
+              <li>Attended weekly group meetings discussing Federated Learning and cloud computing topics.</li>
+              <li>Worked with testing code to recognize vulnerabilities in Machine Learning and implement solutions.
+              </li>
+              <li>Delivered a series of presentations showcasing the results of in-depth analysis of research papers and
+                the accompanying code.</li>
+            </ul>
+            <a href="#" class="credentials-link">Learn more</a>
+          </div>
+        </div>
+
+        <div id="tutoring" class="exp-panel">
+          <div class="internships-grid">
+            <!-- tutoring 1 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">Teacher | Sylvan Learning Center</h3>
+              <span class="internship-period">August 2024 – Present | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>
+                  Teach and tutor students in ACT test preparation, ensuring significant improvements in their test
+                  scores
+                </li>
+                <li>Deliver math instruction to students from various grade levels, ranging from foundational to
+                  advanced math concepts</li>
+                <li>Foster a positive and engaging learning environment that encourages student confidence and curiosity
+                </li>
+              </ul>
+            </div>
+
+            <!-- tutoring 2 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">Computer Science Lab Teaching Assistant | Louisiana State University</h3>
+              <span class="internship-period">January 2023 – May 2023 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>Effectively communicate with 40+ students and professor to debug lab problems for intermediate Java
+                  classes
+                </li>
+              </ul>
+            </div>
+            <!-- tutoring 3 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">Assistant Director | Mathnasium</h3>
+              <span class="internship-period">June 2022 – August 2024 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>Evaluate assessments and generate 60+ students’ individual learning plans</li>
+                <li>Communicate with parents via phone calls, email, and in person meetings</li>
+                <li>Operate virtual learning and scheduling</li>
+                <li>Collaborate with 60+ students’ teachers and update their binders with school topics</li>
+              </ul>
+            </div>
+
+            <!-- tutoring 4 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">Instructor | Mathnasium</h3>
+              <span class="internship-period">March 2021 – August 2024 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>Tutor 100+ students K-12 in math to increase confidence and show positive results in grades</li>
+                <li>Develop more personalized studying techniques and efficient learning styles while enhancing
+                  communication skills</li>
+              </ul>
+            </div>
+
+
+            <!-- tutoring 5 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">ACT Tutor | Volunteer</h3>
+              <span class="internship-period">January 2024 – May 2024 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>
+                  Raised client ACT scores by an average of 40% through tailored instruction and strategic test-taking
+                  methods
+                </li>
+                <li>
+                  Developed and implemented individualized lesson plans, customized to meet each student's unique
+                  learning style and ACT goal
+                </li>
+                <li>
+                  Provided one-on-one ACT tutoring, fostering confidence and improving comprehension of challenging
+                  concepts
+                </li>
+              </ul>
+            </div>
+
+            <!-- tutoring 6 -->
+            <div class="internship-box">
+              <i class="fas fa-chevron-circle-right chevron"></i>
+              <h3 class="internship-title">English Tutor | Volunteer</h3>
+              <span class="internship-period">August 2022 – December 2022 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>Tutor Japanese students in English to increase confidence in communication abilities
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </nav>
-
-    <!-- Content areas -->
-    <div id="internships" class="experience-content active">
-      <h2>Internships</h2>
-      <p>Your internship experience goes here...</p>
-    </div>
-
-    <div id="leadership" class="experience-content">
-      <h2>Leadership</h2>
-      <p>Your leadership experience goes here...</p>
-    </div>
-
-    <div id="research" class="experience-content">
-      <h2>Research</h2>
-      <p>Your research experience goes here...</p>
-    </div>
-
-    <div id="projects" class="experience-content">
-      <h2>Projects</h2>
-      <p>Your projects go here...</p>
-    </div>
-
-    <div id="tutoring" class="experience-content">
-      <h2>Tutoring</h2>
-      <p>Your tutoring experience goes here...</p>
-    </div>
   </section>
 
 
-  <!-- Footer -->
+
+  <!-- Footer 
   <footer>
     Connect with me:
     <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank">LinkedIn</a>
     <a href="mailto:shresthagris@gmail.com">Gmail</a>
     <a href="https://github.com/grishma-a" target="_blank">GitHub</a>
   </footer>
-
+-->
   <!-- JavaScript for active tab underline -->
   <script>
     const sections = document.querySelectorAll("section");
@@ -133,6 +288,20 @@
 
     window.addEventListener("scroll", activateNavLink);
     window.addEventListener("load", activateNavLink);
+
+    document.querySelectorAll('.exp-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        // reset all buttons
+        document.querySelectorAll('.exp-btn').forEach(btn => btn.classList.remove('active'));
+        // hide all panels
+        document.querySelectorAll('.exp-panel').forEach(panel => panel.classList.remove('active'));
+
+        // activate clicked button + its panel
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+
   </script>
 </body>
 
