@@ -146,9 +146,9 @@ section {
 
 .headshot-ring {
   position: relative;
-  width: 400px;
+  width: 680px;
   /* adjust size */
-  height: 400px;
+  height: 680px;
   border-radius: 50%;
   overflow: hidden;
   /* circular crop */
@@ -232,12 +232,12 @@ section {
 }
 
 .intro-text h1 {
-  font-size: 65px;
+  font-size: 85px;
   margin-bottom: 10px;
 }
 
 .intro-text h2 {
-  font-size: 29px;
+  font-size: 39px;
   margin-bottom: 15px;
   color: #8d5307;
 }
