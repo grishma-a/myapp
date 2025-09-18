@@ -20,8 +20,8 @@ html {
   align-items: center;
   position: sticky;
   top: 0;
-  background: #d5bbaa;
-  /*background: rgb(141, 83, 7);*/
+  background: #a58772;
+  /*background: rgb(141, 83, 7); d5bbaa*/
   padding: 0px 20px;
   font-weight: bold;
   font-size: 20px;
@@ -202,7 +202,7 @@ section {
 .intro-text h2 {
   font-size: 25px;
   margin-bottom: 15px;
-  color: rgb(18, 11, 1);
+  color: #8d5307;
 }
 
 .intro-text p {
@@ -241,8 +241,9 @@ section {
 }
 
 .exp-btn:hover {
-  background-color: #ddd;
+  background-color: #a58772;
   transform: translateX(5px);
+  color: white;
 }
 
 .exp-btn.active {
@@ -278,15 +279,18 @@ section {
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border-left: 4px solid #8d5307;
+  border-left: 4px solid #8d530787;
+  /*8d5307*/
   position: relative;
   overflow: hidden;
 }
 
 .internship-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-left: 4px solid #8d530787;
+  box-shadow: 0 10px 25px #8d530787;
+  /*rgba(0, 0, 0, 0.15)*/
+  border-left: 4px solid #8d5307;
+  /*8d530787*/
 }
 
 .chevron {
