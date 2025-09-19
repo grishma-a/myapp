@@ -136,7 +136,16 @@ html {
 section {
   height: 100vh;
   padding: 50px;
+  padding-bottom: 30rem;
+  /* adjust to how much space you want */
 }
+
+#tutoring,
+#renvi,
+#elyssiu {
+  padding-bottom: 10rem;
+}
+
 
 .home-section {
   display: flex;
