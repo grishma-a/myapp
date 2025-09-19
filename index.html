@@ -182,7 +182,7 @@
           </div>
 
           <!-- 🔽 Gallery starts here -->
-          <div class="gallery">
+          <div class="gallery portrait-gallery">
             <button class="gallery-btn prev">&#10094;</button>
             <div class="gallery-images">
               <img src="src/assets/renvi1 (1).png" alt="RENVI Screenshot 1" class="gallery-img active">
@@ -211,6 +211,31 @@
               <li>Wrote engaging dialogue and managed in-game quests...</li>
             </ul>
           </div>
+
+          <!-- 🔽 Gallery starts here -->
+          <div class="gallery landscape-gallery">
+            <button class="gallery-btn prev">&#10094;</button>
+            <div class="gallery-images">
+              <img src="src/assets/elyssiu1.png" alt="RENVI Screenshot 1" class="gallery-img active">
+              <img src="src/assets/elyssiu2.png" alt="RENVI Screenshot 2" class="gallery-img">
+              <img src="src/assets/elyssiu3.png" alt="RENVI Screenshot 3" class="gallery-img">
+              <img src="src/assets/elyssiu4.png" alt="RENVI Screenshot 4" class="gallery-img">
+              <img src="src/assets/elyssiu5.png" alt="RENVI Screenshot 5" class="gallery-img">
+              <img src="src/assets/elyssiu6.png" alt="RENVI Screenshot 6" class="gallery-img">
+              <img src="src/assets/elyssiu7.png" alt="RENVI Screenshot 7" class="gallery-img">
+              <img src="src/assets/elyssiu8.png" alt="RENVI Screenshot 8" class="gallery-img">
+              <img src="src/assets/elyssiu9.png" alt="RENVI Screenshot 9" class="gallery-img">
+              <img src="src/assets/elyssiu10.png" alt="RENVI Screenshot 10" class="gallery-img">
+              <img src="src/assets/elyssiu11.png" alt="RENVI Screenshot 10" class="gallery-img">
+            </div>
+            <button class="gallery-btn next">&#10095;</button>
+          </div>
+          <!-- 🔼 Gallery ends here -->
+
+
+          <iframe src="https://drive.google.com/file/d/1gJp5VvLw_eMfnuW5eeL-9qpwPdK2kvSz/preview" width="100%"
+            height="480" frameborder="0" allowfullscreen>
+          </iframe>
         </div>
 
 
@@ -436,31 +461,36 @@
       }
     });
 
-    /* --- RENVI gallery --- */
-    const gallery = document.querySelector('.gallery');
-    if (gallery) {
+    // Handle all galleries on the page
+    document.querySelectorAll('.gallery').forEach(gallery => {
       const images = gallery.querySelectorAll('.gallery-img');
       const prevBtn = gallery.querySelector('.prev');
       const nextBtn = gallery.querySelector('.next');
       let currentIndex = 0;
 
+      // Show the image at given index
       function showImage(index) {
-        images.forEach((img, i) => img.classList.toggle('active', i === index));
+        images.forEach((img, i) => {
+          img.classList.toggle('active', i === index);
+        });
       }
 
+      // Click event for previous button
       prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         showImage(currentIndex);
       });
 
+      // Click event for next button
       nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
       });
 
-      // default first image
+      // Show the first image by default
       showImage(currentIndex);
-    }
+    });
+
 
 
     // ensure initial state: internships panel visible by default (your HTML already sets this)

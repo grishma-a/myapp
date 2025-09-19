@@ -447,6 +447,7 @@ section {
   margin: 20px 0;
 }
 
+/* Shared gallery styles */
 .gallery {
   position: relative;
   display: flex;
@@ -457,26 +458,49 @@ section {
 
 .gallery-images {
   position: relative;
-  width: 250px;
-  /* adjust width for your vertical screenshots */
-  height: 500px;
-  /* adjust height */
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-img {
-  display: none;
+/* 🔹 Portrait Gallery (RENVI) */
+.portrait-gallery .gallery-images {
+  width: 250px;
+  /* narrower */
+  height: 500px;
+  /* taller */
+}
+
+.portrait-gallery .gallery-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* 🔹 Landscape Gallery (Elyssiu) */
+.landscape-gallery .gallery-images {
+  width: 500px;
+  /* wider */
+  height: 300px;
+  /* shorter */
+}
+
+.landscape-gallery .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Shared image behavior */
+.gallery-img {
+  display: none;
 }
 
 .gallery-img.active {
   display: block;
 }
 
+/* Buttons */
 .gallery-btn {
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
@@ -484,7 +508,7 @@ section {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 0%;
   margin: 0 1rem;
   transition: background-color 0.3s;
 }
