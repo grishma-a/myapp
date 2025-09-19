@@ -175,8 +175,30 @@
               <li>Developed a REST API backend with .NET and Swagger UI...</li>
               <li>Architected a scalable cloud database solution using Firestore...</li>
             </ul>
-            <img src="src/assets/renvi1.png" alt="renvi screenshot" />
+            <iframe src="https://drive.google.com/file/d/12bT836j3q9EOX7NpFqhJ1sydE_lK5cLk/preview" width="100%"
+              height="480" frameborder="0" allowfullscreen>
+            </iframe>
+
           </div>
+
+          <!-- 🔽 Gallery starts here -->
+          <div class="gallery">
+            <button class="gallery-btn prev">&#10094;</button>
+            <div class="gallery-images">
+              <img src="src/assets/renvi1 (1).png" alt="RENVI Screenshot 1" class="gallery-img active">
+              <img src="src/assets/renvi2.webp" alt="RENVI Screenshot 2" class="gallery-img">
+              <img src="src/assets/renvi3.webp" alt="RENVI Screenshot 3" class="gallery-img">
+              <img src="src/assets/renvi4.webp" alt="RENVI Screenshot 4" class="gallery-img">
+              <img src="src/assets/renvi5.webp" alt="RENVI Screenshot 5" class="gallery-img">
+              <img src="src/assets/renvi6.webp" alt="RENVI Screenshot 6" class="gallery-img">
+              <img src="src/assets/renvi7.webp" alt="RENVI Screenshot 7" class="gallery-img">
+              <img src="src/assets/renvi8.webp" alt="RENVI Screenshot 8" class="gallery-img">
+              <img src="src/assets/renvi9.webp" alt="RENVI Screenshot 9" class="gallery-img">
+              <img src="src/assets/renvi10.png" alt="RENVI Screenshot 10" class="gallery-img">
+            </div>
+            <button class="gallery-btn next">&#10095;</button>
+          </div>
+          <!-- 🔼 Gallery ends here -->
         </div>
 
         <div id="elyssiu" class="exp-panel">
@@ -413,6 +435,33 @@
         if (panel) panel.classList.add('active');
       }
     });
+
+    /* --- RENVI gallery --- */
+    const gallery = document.querySelector('.gallery');
+    if (gallery) {
+      const images = gallery.querySelectorAll('.gallery-img');
+      const prevBtn = gallery.querySelector('.prev');
+      const nextBtn = gallery.querySelector('.next');
+      let currentIndex = 0;
+
+      function showImage(index) {
+        images.forEach((img, i) => img.classList.toggle('active', i === index));
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+
+      // default first image
+      showImage(currentIndex);
+    }
+
 
     // ensure initial state: internships panel visible by default (your HTML already sets this)
   </script>

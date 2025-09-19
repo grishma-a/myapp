@@ -439,3 +439,56 @@ section {
   position: absolute;
   left: 0;
 }
+
+.video-container {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+}
+
+.gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.gallery-images {
+  position: relative;
+  width: 250px;
+  /* adjust width for your vertical screenshots */
+  height: 500px;
+  /* adjust height */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-img.active {
+  display: block;
+}
+
+.gallery-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 1rem;
+  transition: background-color 0.3s;
+}
+
+.gallery-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
