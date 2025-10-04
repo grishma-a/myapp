@@ -247,7 +247,7 @@ section {
 }
 
 .intro-text h2 {
-  font-size: 39px;
+  font-size: 20px;
   margin-bottom: 15px;
   color: #8d5307;
 }
@@ -271,7 +271,8 @@ section {
 /* Vertical button menu */
 .experience-menu {
   display: flex;
-  font-family: 'Alien League', monospace;
+  /* font-family: 'Alien League', monospace; */
+  font-family: agrandir;
   flex-direction: column;
   gap: 1rem;
   min-width: 200px;
