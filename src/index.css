@@ -455,6 +455,29 @@ section {
 
 
 
+/* Responsive design for tablets */
+@media (max-width: 1024px) {
+  .content-box {
+    padding: 30px;
+    gap: 30px;
+    min-height: 350px;
+  }
+
+  .content-box-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .content-box-text h1 {
+    font-size: 42px;
+  }
+
+  .content-box-text h2 {
+    font-size: 18px;
+  }
+}
+
+/* Responsive design for mobile */
 /* Responsive design for mobile */
 @media (max-width: 768px) {
   .content-box {
@@ -485,21 +508,15 @@ section {
 @media (max-width: 480px) {
   .content-box {
     padding: 25px 20px;
+    padding: 25px 15px;
+    /* Further reduce horizontal padding */
     gap: 20px;
-    width: 80%;
+    width: 98%;
+    /* Even wider on very small screens */
+    max-width: 98%;
   }
 
-<<<<<<< HEAD
-=======
-  .content-box {
-    background: red !important;
-    /* Make it obvious */
-    width: 100vw !important;
-    border: 5px solid yellow !important;
-  }
-
->>>>>>> parent of 309205e (the section titl on phone)
-  .content-box-image {
+  >>>>>>>parent of 309205e (the section titl on phone) .content-box-image {
     width: 180px !important;
     height: 180px !important;
   }
@@ -512,7 +529,6 @@ section {
     font-size: 16px;
   }
 }
-
 
 .headshot {
   width: 100%;
