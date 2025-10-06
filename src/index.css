@@ -455,42 +455,18 @@ section {
 
 
 
-/* Responsive design for tablets */
-@media (max-width: 1024px) {
-  .content-box {
-    padding: 30px;
-    gap: 30px;
-    min-height: 350px;
-  }
-
-  .content-box-image {
-    width: 250px;
-    height: 250px;
-  }
-
-  .content-box-text h1 {
-    font-size: 42px;
-  }
-
-  .content-box-text h2 {
-    font-size: 18px;
-  }
-}
-
-/* Responsive design for mobile */
 /* Responsive design for mobile */
 @media (max-width: 768px) {
   .content-box {
     flex-direction: column;
     text-align: center;
-    padding: 30px 20px;
-    /* Reduce horizontal padding */
+    padding: 30px 15px;
+    /* Reduced from 20px to 15px */
     gap: 25px;
     min-height: auto;
-    width: 95%;
-    /* Increase width from 85% to 95% */
-    max-width: 95%;
-    /* Add max-width constraint */
+    width: 98%;
+    /* Increased from 95% to 98% */
+    max-width: 98%;
     margin: 0 auto;
     box-sizing: border-box;
   }
@@ -504,27 +480,30 @@ section {
     font-size: 36px;
     margin-bottom: 15px;
     line-height: 1.2;
-    /* Add line-height for better spacing */
+    padding: 0 10px;
+    /* Add small horizontal padding to text */
   }
 
   .content-box-text h2 {
     font-size: 17px;
     line-height: 1.4;
-    /* Add line-height for better readability */
     word-wrap: break-word;
-    /* Ensure long words break properly */
+    padding: 0 10px;
+    /* Add small horizontal padding to text */
   }
 }
 
 /* For very small mobile devices */
 @media (max-width: 480px) {
   .content-box {
-    padding: 25px 15px;
-    /* Further reduce horizontal padding */
+    padding: 25px 10px;
+    /* Further reduced from 15px to 10px */
     gap: 20px;
-    width: 98%;
-    /* Even wider on very small screens */
-    max-width: 98%;
+    width: 100%;
+    /* Full width on very small screens */
+    max-width: 100%;
+    border-radius: 20px;
+    /* Slightly smaller radius for full width */
   }
 
   .content-box-image {
@@ -535,13 +514,16 @@ section {
   .content-box-text h1 {
     font-size: 32px;
     line-height: 1.2;
+    padding: 0 8px;
   }
 
   .content-box-text h2 {
     font-size: 16px;
     line-height: 1.4;
+    padding: 0 8px;
   }
 }
+
 
 .headshot {
   width: 100%;
