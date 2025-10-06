@@ -376,25 +376,22 @@ section {
 
 @media (max-width: 768px) {
   .section-header {
-    justify-content: flex-start;
-    /* Align to left instead of center */
-    text-align: left;
-    /* Text aligned to left */
-    padding-left: 20px;
-    /* Add some left padding */
-  }
-
-  .section-header h1 {
-    text-align: left;
-    /* Ensure heading is left-aligned */
-    margin: 0;
-    /* Remove any centering margins */
-    width: 100%;
+    display: block;
+    /* Change from flex to block */
+    text-align: center;
   }
 
   .horizontal-line {
     display: none;
-    /* Keep the line hidden */
+    /* Completely remove the line */
+  }
+
+  .section-header h1 {
+    text-align: center;
+    margin: 0 auto;
+    /* Center the heading */
+    width: auto;
+    /* Remove any width constraints */
   }
 }
 
@@ -509,7 +506,12 @@ section {
     /* Slightly smaller radius for full width */
   }
 
-
+  .content-box {
+    background: red !important;
+    /* Make it obvious */
+    width: 100vw !important;
+    border: 5px solid yellow !important;
+  }
 
   .content-box-image {
     width: 180px !important;
