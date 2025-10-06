@@ -458,25 +458,12 @@ section {
 /* Responsive design for mobile */
 @media (max-width: 768px) {
   .content-box {
-    flex-direction: column !important;
-    text-align: center !important;
-    padding: 30px 10px !important;
-    /* Reduced from 20px to 15px */
-    <<<<<<< HEAD gap: 25px !important;
-    min-height: auto !important;
-    width: 100% !important;
-    /* Increased from 95% to 98% */
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
-    =======gap: 25px;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 25px;
+    gap: 25px;
     min-height: auto;
-    width: 98%;
-    /* Increased from 95% to 98% */
-    max-width: 98%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    >>>>>>>parent of bf671df (outline box)
+    width: 85%;
   }
 
   .content-box-image {
@@ -485,33 +472,21 @@ section {
   }
 
   .content-box-text h1 {
-    font-size: 36px !important;
-    margin-bottom: 15px !important;
-    line-height: 1.2 !important;
-    padding: 0 20px !important;
-    /* Add small horizontal padding to text */
+    font-size: 36px;
+    margin-bottom: 15px;
   }
 
   .content-box-text h2 {
-    font-size: 17px !important;
-    line-height: 1.4 !important;
-    word-wrap: break-word !important;
-    padding: 0 20px !important;
-    /* Add small horizontal padding to text */
+    font-size: 17px;
   }
 }
 
 /* For very small mobile devices */
 @media (max-width: 480px) {
   .content-box {
-    padding: 25px 5px !important;
-    /* Further reduced from 15px to 10px */
-    gap: 20px !important;
-    width: 100% !important;
-    /* Full width on very small screens */
-    max-width: 100% !important;
-    border-radius: 20px !important;
-    /* Slightly smaller radius for full width */
+    padding: 25px 20px;
+    gap: 20px;
+    width: 80%;
   }
 
   .content-box-image {
@@ -520,15 +495,11 @@ section {
   }
 
   .content-box-text h1 {
-    font-size: 32px !important;
-    line-height: 1.2 !important;
-    padding: 0 3px !important;
+    font-size: 32px;
   }
 
   .content-box-text h2 {
-    font-size: 16px !important;
-    line-height: 1.4 !important;
-    padding: 0 3px !important;
+    font-size: 16px;
   }
 }
 
