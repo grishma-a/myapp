@@ -506,6 +506,13 @@ section {
     /* Slightly smaller radius for full width */
   }
 
+  .content-box {
+    background: red !important;
+    /* Make it obvious */
+    width: 100vw !important;
+    border: 5px solid yellow !important;
+  }
+
   .content-box-image {
     width: 180px !important;
     height: 180px !important;
