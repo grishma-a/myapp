@@ -460,7 +460,7 @@ section {
   .content-box {
     flex-direction: column;
     text-align: center;
-    padding: 30px 15px;
+    padding: 30px 10px;
     /* Reduced from 20px to 15px */
     gap: 25px;
     min-height: auto;
@@ -480,7 +480,7 @@ section {
     font-size: 36px;
     margin-bottom: 15px;
     line-height: 1.2;
-    padding: 0 10px;
+    padding: 0 20px;
     /* Add small horizontal padding to text */
   }
 
@@ -488,7 +488,7 @@ section {
     font-size: 17px;
     line-height: 1.4;
     word-wrap: break-word;
-    padding: 0 10px;
+    padding: 0 20px;
     /* Add small horizontal padding to text */
   }
 }
@@ -496,7 +496,7 @@ section {
 /* For very small mobile devices */
 @media (max-width: 480px) {
   .content-box {
-    padding: 25px 10px;
+    padding: 25px 5px;
     /* Further reduced from 15px to 10px */
     gap: 20px;
     width: 100%;
