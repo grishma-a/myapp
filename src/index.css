@@ -1,68 +1,1327 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  scroll-behavior: smooth;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+body,
+html {
   margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif, monospace;
+  /* background-color: #d5bbaa; */
+  /*background-color: rgb(141, 83, 7); Helvetica*/
+  color: white;
+}
+
+/* Navbar styling */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  top: 0;
+  background: #b0a092;
+  padding: 0px 20px;
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 1000;
+}
+
+.nav-list {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Left navigation - align to the right within its container */
+.nav-list-left {
+  justify-content: flex-end;
+  gap: 30px;
 }
 
-button {
+/* Right navigation - align to the left within its container */
+.nav-list-right {
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+  /* Add space around logo */
+}
+
+.logo img {
+  width: 65px;
+  height: 70px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 5px;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffffff;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+.nav-list li a.active::after {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+
+
+#home {
+  background-color: #b0a092;
+  height: 80vh;
+}
+
+#education {
+  background-color: #fffbf5;
+  height: 90vh;
+  color: black;
+}
+
+#leadership {
+  background-color: #095fa6;
+  height: fit-content;
+}
+
+#research {
+  background-color: #dcd5cf;
+  color: black;
+
+}
+
+#tutoring {
+  background-color: #98774f;
+}
+
+#projects {
+  background-color: #dcd5cf;
+  color: black;
+
+}
+
+#internships {
+  background-color: #99a6c7;
+}
+
+/* Hide mobile elements by default */
+.hamburger,
+.mobile-menu-overlay,
+.mobile-nav-list {
+  display: none;
+}
+
+/* Mobile Navigation Styles - For tablets and phones */
+@media (max-width: 1200px) {
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  /* Hide desktop nav on mobile/tablet */
+  .nav-list-left,
+  .nav-list-right {
+    display: none;
+  }
+
+  /* Show mobile menu elements */
+  .mobile-menu-overlay,
+  .mobile-nav-list {
+    display: block !important;
+  }
+
+  /* Adjust navbar for mobile/tablet - keep grid but modify */
+  .navbar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    position: relative;
+  }
+
+  /* Center logo on mobile/tablet */
+  .logo {
+    justify-self: center;
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  /* Position hamburger on left */
+  .hamburger {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  /* Mobile menu overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav-list {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    background-color: #b0a092;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 30px 30px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-nav-list.active {
+    left: 0;
+  }
+
+  .mobile-nav-list li {
+    margin-bottom: 15px;
+    list-style: none;
+  }
+
+  .mobile-nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-list li a:hover {
+    color: rgb(141, 83, 7);
+    transform: translateX(10px);
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Hamburger animation when active */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+
+
+
+/* Logo styling */
+
+.logo {
+  display: flex;
+}
+
+
+.logo img {
+  width: 65px;
+  height: 70px;
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  padding-top: 40px;
+  gap: 15px;
+}
+
+.social-links img {
+  vertical-align: middle;
+  width: 35px;
+  height: 30px;
+}
+
+
+
+.resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #8d530787;
+  color: white;
+  border: none;
+  padding: 3px 12px;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  /* font-family: 'Alien League', monospace; */
+  font-family: "Open Sans", sans-serif, monospace;
+  font-size: 20px;
+  font-weight: 600;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.resume-btn img {
+  width: 20px;
+  /* Control width */
+  height: 30px;
+  /* Control height */
+  object-fit: contain;
+  /* Maintain aspect ratio */
+
+}
+
+.resume-btn:hover {
+  background-color: rgb(141, 83, 7);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.resume-btn:active {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections styling */
+section {
+  height: 100vh;
+  padding: 50px;
+  /* adjust to how much space you want */
+}
+
+/* Section headers with horizontal line */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.section-header h1 {
+  white-space: nowrap;
+  margin: 0;
+  flex-shrink: 0;
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.horizontal-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: currentColor;
+  /* Uses the text color */
+  opacity: 0.9;
+}
+
+/* #tutoring,
+#renvi,
+#elyssiu {
+  padding-bottom: 10rem;
+} */
+
+
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive content box for home section */
+.content-box {
+  border: 2px solid white;
+  border-radius: 29px;
+  padding: 40px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 90%;
+  max-width: 1900px;
+  min-height: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.content-box-image {
+  width: 500px;
+  height: 600px;
+  border-radius: 20px;
+  object-position: center 0%;
+  /* Move crop area upward */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.content-box-text {
+  color: white;
+  flex: 1;
+}
+
+.content-box-text h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.content-box-text h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+
+
+/* Responsive design for tablets */
+@media (max-width: 1024px) {
+  .content-box {
+    padding: 30px;
+    gap: 30px;
+    min-height: 350px;
   }
-  a:hover {
-    color: #747bff;
+
+  .content-box-image {
+    width: 250px;
+    height: 250px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .content-box-text h1 {
+    font-size: 42px;
   }
+
+  .content-box-text h2 {
+    font-size: 18px;
+  }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .content-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 25px;
+    gap: 25px;
+    min-height: auto;
+    width: 85%;
+  }
+
+  .content-box-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .content-box-text h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .content-box-text h2 {
+    font-size: 17px;
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+  .content-box {
+    padding: 25px 20px;
+    gap: 20px;
+    width: 80%;
+  }
+
+  .content-box-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .content-box-text h1 {
+    font-size: 32px;
+  }
+
+  .content-box-text h2 {
+    font-size: 16px;
+  }
+}
+
+.headshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* keeps full face visible */
+  object-position: center top;
+  /* adjust vertical centering */
+  border-radius: 50%;
+  z-index: 1;
+  position: relative;
+}
+
+
+
+
+/* Education Section Layout */
+.education-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 80px;
+  align-items: stretch;
+}
+
+.education-image {
+  flex: 2;
+  /* Takes 2/3 of the space */
+  border-radius: 29px;
+  overflow: hidden;
+  min-height: 500px;
+  /* Make image container taller */
+  display: flex;
+  /* Added */
+}
+
+.education-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures image fills the container */
+  display: block;
+  border-radius: 29px;
+}
+
+.education-content {
+  flex: 1;
+  /* Takes 1/3 of the space */
+  border: 2px solid black;
+  border-radius: 29px;
+  padding: 30px;
+  background: transparent;
+
+  /* Add scroll if content overflows */
+  /* Remove max-height and overflow-y */
+  display: flex;
+  flex-direction: column;
+}
+
+.education-content h1 {
+  font-size: 50 px;
+  margin-bottom: 0px;
+  color: black;
+}
+
+.education-content h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  color: black;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.education-content p {
+  font-size: 30 px;
+  color: black;
+  line-height: 1.2;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.degree {
+  font-size: 20px;
+  color: black;
+  margin-bottom: -5px;
+  font-weight: 600;
+}
+
+.divider-line {
+  width: 95%;
+  height: 2px;
+  background-color: #000000;
+  margin: 40px 0;
+  opacity: 0.7;
+}
+
+/* If you want more spacing between sections */
+.education-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+/* Mobile Responsive Design for Education Section */
+@media (max-width: 768px) {
+  .education-container {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+    height: auto;
+    /* Remove fixed height */
+    min-height: auto;
+    /* Remove min-height */
+  }
+
+  .education-image {
+    flex: none;
+    width: 100%;
+    min-height: 300px;
+    height: 300px;
+    /* Set fixed height for image */
+    order: 1;
+  }
+
+  .education-content {
+    flex: none;
+    width: 100%;
+    order: 2;
+    padding: 25px;
+    height: auto;
+    /* Let content determine its own height */
+    min-height: auto;
+    /* Remove min-height */
+    overflow: visible;
+    /* Remove scrolling */
+  }
+
+  /* Adjust section padding for mobile */
+  #education {
+    padding-bottom: 50px;
+    /* Add more space at bottom */
+  }
+
+  .education-content h1 {
+    font-size: 40px;
+  }
+
+  .education-content h2 {
+    font-size: 28px;
+  }
+
+  .education-content p {
+    font-size: 24px;
+  }
+
+  .degree {
+    font-size: 18px;
+  }
+
+  .divider-line {
+    margin: 30px 0;
+  }
+}
+
+/* Fix horizontal overflow while keeping padding */
+@media (max-width: 768px) {
+  #education {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding: 30px 50px 100px 50px !important;
+    /* Keep generous horizontal padding */
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 120vh !important;
+    background-color: #fffbf5 !important;
+    color: black !important;
+  }
+
+  .education-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    min-height: 80vh !important;
+    /* Keep original gap */
+    gap: 40px !important;
+  }
+
+  .education-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border: 2px solid black !important;
+    border-radius: 29px !important;
+    padding: 30px !important;
+    /* Keep original padding */
+    background: transparent !important;
+    height: auto !important;
+    min-height: 400px !important;
+  }
+
+  /* Ensure section header has proper spacing */
+  .section-header {
+    padding: 0 20px !important;
+    /* Add padding to section header */
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+
+  .education-container {
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .education-image {
+    min-height: 250px;
+    height: 250px;
+  }
+
+  .education-content {
+    padding: 20px;
+  }
+
+  #education {
+    padding-bottom: 40px;
+  }
+
+  .education-content h1 {
+    font-size: 32px;
+  }
+
+  .education-content h2 {
+    font-size: 24px;
+  }
+
+  .education-content p {
+    font-size: 20px;
+  }
+
+  .degree {
+    font-size: 16px;
+  }
+
+  .divider-line {
+    margin: 25px 0;
+  }
+}
+
+
+/* Increase space below section header for ALL sections */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 60px;
+  /* Increased from 30px to 60px */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .education-container {
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .education-image {
+    min-height: 400px;
+  }
+
+  .education-content {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-container {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .education-image,
+  .education-content {
+    flex: none;
+    width: 100%;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+}
+
+
+
+/* Leadership Section Styles */
+.leadership-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+/* First row - 2 bigger boxes */
+.leadership-row-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Second row - 3 smaller boxes */
+.leadership-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+/* Leadership box styles */
+.leadership-box {
+  background: rgba(255, 255, 255, 0.1);
+  background: #ffffff !important;
+  border-radius: 20px;
+  padding-bottom: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.leadership-box:hover {
+  transform: translateY(-5px);
+  border-color: white;
+}
+
+/* Bigger boxes (first row) */
+.leadership-row-1 .leadership-box {
+  min-height: 200px;
+  justify-content: center;
+}
+
+/* Smaller boxes (second row) */
+.leadership-row-2 .leadership-box {
+  min-height: 200px;
+  justify-content: center;
+}
+
+/* Logo styling */
+.leadership-logo {
+  width: 280px;
+  height: 160px;
+  object-fit: contain;
+}
+
+.wics-logo {
+  width: 900px !important;
+  height: 250px !important;
+  object-fit: contain;
+}
+
+.leadership-row-2 .leadership-logoGDSC {
+  width: 100px;
+  height: 100px;
+}
+
+.leadership-row-2 .leadership-logoSWE {
+  width: 130px;
+  height: 60px;
+  padding: 18px;
+}
+
+.leadership-row-2 .leadership-logoChevron {
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+}
+
+/* Text styling */
+.leadership-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #095fa6;
+}
+
+.leadership-years {
+  font-size: 16px;
+  color: #095fa6;
+  font-style: italic;
+}
+
+.leadership-row-2 .leadership-title {
+  font-size: 18px;
+}
+
+.leadership-row-2 .leadership-years {
+  font-size: 14px;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+  .leadership-row-1,
+  .leadership-row-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .leadership-box {
+    min-height: 180px;
+    padding: 25px;
+  }
+
+  .leadership-logo {
+    width: 200px;
+    /* Bigger for mobile */
+    height: 120px;
+    /* Bigger for mobile */
+  }
+
+  /* Make WICS logo bigger on mobile */
+  .wics-logo {
+    width: 300px !important;
+    /* Smaller than desktop but still big */
+    height: 100px !important;
+  }
+
+  /* Make SASE logo bigger on mobile */
+  .leadership-logo[alt*="sase"] {
+    width: 220px !important;
+    height: 130px !important;
+  }
+}
+
+
+/* Leadership Photos Section */
+.leadership-photos {
+  margin-top: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  /* Ensure it takes full available width */
+}
+
+.photo-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  /* Same gap as leadership boxes */
+  margin-bottom: 30px;
+  /* Same gap as leadership boxes */
+  flex-wrap: wrap;
+  width: 100%;
+  /* Ensure full width */
+}
+
+.leadership-photo {
+  width: calc(33.333% - 20px);
+  /* Make each photo take 1/3 of the row minus gap */
+  max-width: 380px;
+  /* Limit maximum size */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  /* Include padding in width calculation */
+}
+
+/* For holi picture */
+.leadership-photo[alt="holi pic"] {
+  object-position: center 25%;
+}
+
+/* For sase picture */
+.leadership-photo[alt="sase pic"] {
+  object-position: center 50%;
+}
+
+/* For gbm picture */
+.leadership-photo[alt="gbm pic"] {
+  object-position: center 0%;
+}
+
+.leadership-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .photo-row {
+    gap: 20px;
+    /* Same as mobile leadership boxes */
+  }
+
+  .leadership-photo {
+    width: 100%;
+    /* 2 per row on smaller tablets */
+    max-width: none;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leadership-photo {
+    width: 100%;
+    /* 1 per row on mobile */
+    height: 180px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Experience Section */
+#experience {
+  padding: 2rem;
+}
+
+.experience-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Vertical button menu */
+.experience-menu {
+  display: flex;
+  /* font-family: 'Alien League', monospace; */
+  font-family: "Open Sans", sans-serif, monospace;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+}
+
+.exp-btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  /* font-family: 'Alien League', monospace; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.exp-btn:hover {
+  background-color: #a58772;
+  transform: translateX(5px);
+  color: white;
+}
+
+.exp-btn.active {
+  background-color: #8d5307;
+  color: white;
+}
+
+/* Content panels */
+.experience-content {
+  flex: 1;
+}
+
+.exp-panel {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.exp-panel.active {
+  display: block;
+}
+
+/* Sub-menu hidden by default */
+.sub-menu {
+  display: none;
+  flex-direction: column;
+  margin-left: 1rem;
+  /* indent to look nested */
+  gap: 0.5rem;
+}
+
+.sub-menu.open {
+  display: flex;
+}
+
+/* Sub-buttons smaller style */
+.sub-btn {
+  background-color: #e8e8e8;
+  font-size: 0.9rem;
+}
+
+.sub-btn:hover {
+  background-color: #a58772;
+  color: white;
+}
+
+/* Active sub-tab */
+.sub-btn.active {
+  background-color: #8d5307;
+  color: white;
+}
+
+
+.chevron-logo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 100px;
+  /* adjust size */
+  height: auto;
+}
+
+.runatek-logo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 70px;
+  /* adjust size */
+  height: auto;
+}
+
+.act-logo {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  width: 120px;
+  /* adjust size */
+  height: auto;
+}
+
+/* Internships Grid */
+.internships-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.internship-box {
+  background: #8d530746;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #8d530787;
+  /*8d5307*/
+  position: relative;
+  overflow: hidden;
+}
+
+.internship-bigbox {
+  background: #8d530746;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #8d530787;
+  position: relative;
+  overflow: hidden;
+  width: 200%;
+  /* Makes it twice as wide */
+  max-width: none;
+  /* Removes any max-width restriction */
+  box-sizing: border-box;
+  /* Ensures padding is included in the width */
+}
+
+.internship-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px #8d530787;
+  /*rgba(0, 0, 0, 0.15)*/
+  border-left: 4px solid #8d5307;
+  /*8d530787*/
+}
+
+.internship-title {
+  font-size: 1.3rem;
+  color: #8d5307;
+  margin-bottom: 0.5rem;
+  padding-right: 2rem;
+}
+
+.internship-period {
+  color: #8d5307;
+  font-style: italic;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.internship-details {
+  list-style-type: none;
+}
+
+.internship-details li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.internship-details li:before {
+  content: "•";
+  color: #8d5307;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.video-container {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+}
+
+/* Shared gallery styles */
+.gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.gallery-images {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Portrait Gallery (RENVI) */
+.portrait-gallery .gallery-images {
+  width: 250px;
+  /* narrower */
+  height: 500px;
+  /* taller */
+}
+
+.portrait-gallery .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔹 Landscape Gallery (Elyssiu) */
+.landscape-gallery .gallery-images {
+  width: 500px;
+  /* wider */
+  height: 300px;
+  /* shorter */
+}
+
+.landscape-gallery .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Shared image behavior */
+.gallery-img {
+  display: none;
+}
+
+.gallery-img.active {
+  display: block;
+}
+
+/* Buttons */
+.gallery-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0%;
+  margin: 0 1rem;
+  transition: background-color 0.3s;
+}
+
+.gallery-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }

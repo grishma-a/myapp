@@ -1,13 +1,697 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grishma Shrestha</title>
+  <link rel="icon" type="image/png" href="gsinitials.png">
+  <link rel="stylesheet" href="./src/index.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Left Navigation (Desktop) -->
+    <ul class="nav-list nav-list-left">
+      <li><a href="#home" class="nav-link">HOME</a></li>
+      <li><a href="#education" class="nav-link">EDUCATION</a></li>
+      <li><a href="#leadership" class="nav-link">LEADERSHIP</a></li>
+      <li><a href="#research" class="nav-link">RESEARCH</a></li>
+    </ul>
+
+    <!-- Center Logo (Desktop) -->
+    <div class="logo">
+      <a href="#home">
+        <img src="src/assets/gsfinallogo.png" alt="GS Logo">
+      </a>
+    </div>
+
+    <!-- Right Navigation (Desktop) -->
+    <ul class="nav-list nav-list-right">
+      <li><a href="#tutoring" class="nav-link">TUTORING</a></li>
+      <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+      <li><a href="#internships" class="nav-link">INTERNSHIPS</a></li>
+      <li><a href="#contact" class="nav-link">CONTACT</a></li>
+    </ul>
+
+    <!-- Mobile Only Elements (Hidden on desktop) -->
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <ul class="mobile-nav-list" id="mobileNav">
+      <button class="close-menu" id="closeMenu">&times;</button>
+      <li><a href="#home" class="nav-link">HOME</a></li>
+      <li><a href="#education" class="nav-link">EDUCATION</a></li>
+      <li><a href="#leadership" class="nav-link">LEADERSHIP</a></li>
+      <li><a href="#research" class="nav-link">RESEARCH</a></li>
+      <li><a href="#tutoring" class="nav-link">TUTORING</a></li>
+      <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+      <li><a href="#internships" class="nav-link">INTERNSHIPS</a></li>
+      <li><a href="#contact" class="nav-link">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="home-section">
+    <div class="content-box">
+      <img src="src/assets/1-Grishma_Shrestha_Headshot_Offwhite_Background.png" alt="Grishma Headshot"
+        class="content-box-image" />
+      <div class="content-box-text">
+        <h1>Grishma Shrestha</h1>
+        <h2>I'm a first generation Mathematics and Computer Science student at Louisiana State University. After
+          graduation, I will be working as a full time software engineer at Chevron in Houston, Texas!</h2>
+        <div class="social-links">
+          <button id="resumeDownload" class="resume-btn">
+            <img src="src/assets/downloadicon.png" alt="download icon">
+            Resume
+          </button>
+
+
+          <a href=" https://www.linkedin.com/in/grishma-shrestha/" target="_blank">
+            <img src="src/assets/logos/linkedin.png" alt="LinkedIn Logo">
+          </a>
+          <a href="mailto:shresthagris@gmail.com">
+            <img src="src/assets/logos/Gmail_Logo_White_512px.png" alt="Gmail Logo">
+          </a>
+          <a href="https://github.com/grishma-a" target="_blank">
+            <img src="src/assets/logos/github.png" alt="GitHub Logo">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="section-header">
+      <h1>EDUCATION</h1>
+      <div class="horizontal-line"></div>
+    </div>
+
+    <div class="education-container">
+      <!-- Left side - Image -->
+      <div class="education-image">
+        <img src="src/assets/lsuTower.webp" alt="LSU Tower" />
+      </div>
+
+      <!-- Right side - Content -->
+      <div class="education-content">
+        <h2>
+          Louisiana<br>
+          State<br>
+          University
+        </h2>
+
+        <p class="degree">B.S. Computer Science</p>
+        <p class="degree">B.S. Mathematics</p>
+
+        <div class="divider-line"></div>
+
+        <p class="degree">2022 - 2026</p>
+        <p class="degree">GPA: 4.19 / 4.3</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section id="leadership">
+    <div class="section-header">
+      <h1>LEADERSHIP</h1>
+      <div class="horizontal-line"></div>
+    </div>
+
+    <div class="leadership-container">
+      <!-- First Row - 2 Bigger Boxes -->
+      <div class="leadership-row-1">
+        <div class="leadership-box">
+          <img src="src/assets/logos/sase logo - 2 color - side plus text.png" alt="sase Logo2" class="leadership-logo">
+          <div class="leadership-title">Society of Asian Scientists and Engineers</div>
+          <div class="leadership-years">
+            <br>2022 - 2023, Active Member</br>
+            <br>2023 - 2024, Professional Development Chair</br>
+            <br>2024 - 2025, Vice President</br>
+            <br>2025 - Present, Senior Advisor</br>
+          </div>
+        </div>
+
+        <div class="leadership-box">
+          <img src="src/assets/logos/WiCS_logo_LightBckg.png" alt="WICS Logo" class="leadership-logo .wics-logo">
+          <div class="leadership-title">Women in Computer Science</div>
+          <div class="leadership-years">
+            <br>2022 - 2023, Active Member</br>
+            <br>2023 - 2024, Outreach Chair</br>
+            <br>2024 - 2025, Vice President</br>
+            <br>2025 - Present, Senior Advisor</br>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row - 3 Smaller Boxes -->
+      <div class="leadership-row-2">
+        <div class="leadership-box">
+          <img src="src/assets/logos/Chevron_Logo.svg.png" alt="cla Logo" class="leadership-logoChevron">
+          <div class="leadership-title">Chevron Leadership Academy</div>
+          <div class="leadership-years">
+            <br>2023 - Present, Active Member</br>
+            <br>2023 - Present, Chevron Energy Leadership Scholarship Recipient</br>
+          </div>
+        </div>
+
+        <div class="leadership-box">
+          <img src="src/assets/logos/swe.png" alt="swe Logo" class="leadership-logoSWE">
+          <div class="leadership-title">Society of Women Engineers</div>
+          <div class="leadership-years">
+            <br>2022 - 2023, Freshman Ambassador</br>
+            <br>2023 - Present, Active Member</br>
+          </div>
+        </div>
+
+        <div class="leadership-box">
+          <img src="src/assets/logos/gdsc-logo.png" alt="gdsc Logo" class="leadership-logoGDSC">
+          <div class="leadership-title">Google Developer Sudent Club</div>
+          <div class="leadership-years">
+            <br>2022 - 2023, Core Team Lead</br>
+            <br>2023 - Present, Active Member</br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leadership Photos -->
+    <div class="leadership-photos">
+      <!-- Row 1 -->
+      <div class="photo-row">
+        <img src="src/assets/leadership/hackathon.png" alt="hackathon pic" class="leadership-photo">
+        <img src="src/assets/leadership/holi.png" alt="holi pic" class="leadership-photo">
+        <img src="src/assets/leadership/etc.png" alt="etc pic" class="leadership-photo">
+      </div>
+
+      <!-- Row 2 -->
+      <div class="photo-row">
+        <img src="src/assets/leadership/saseeboard.png" alt="sase pic" class="leadership-photo">
+        <img src="src/assets/leadership/banquet.png" alt="banquet pic" class="leadership-photo">
+        <img src="src/assets/leadership/sasegbm.png" alt="gbm pic" class="leadership-photo">
+      </div>
+    </div>
+
+  </section>
+
+  </section>
+
+  <!-- Research Section -->
+  <section id="research">
+    <div class="section-header">
+      <h1>RESEARCH</h1>
+      <div class="horizontal-line"></div>
+    </div>
+    <p>
+      I am a first-generation student with a passion for software engineering, mathematics, and data science...
+    </p>
+  </section>
+
+  <!-- Tutoring Section -->
+  <section id="tutoring">
+    <div class="section-header">
+      <h1>TUTORING</h1>
+      <div class="horizontal-line"></div>
+    </div>
+    <p>
+      I am a first-generation student with a passion for software engineering, mathematics, and data science...
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="section-header">
+      <h1>PROJECTS</h1>
+      <div class="horizontal-line"></div>
+    </div>
+    <p>
+      I am a first-generation student with a passion for software engineering, mathematics, and data science...
+    </p>
+  </section>
+
+  <!-- Internships Section -->
+  <section id="internships">
+    <div class="section-header">
+      <h1>INTERNSHIPS</h1>
+      <div class="horizontal-line"></div>
+    </div>
+    <p>
+      hiiii
+    </p>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h1>Experience</h1>
+    <div class="experience-container">
+      <!-- Vertical buttons -->
+      <div class="experience-menu">
+        <button class="exp-btn active" data-target="internships">Internships</button>
+        <button class="exp-btn" data-target="research">Research</button>
+        <button class="exp-btn" data-target="tutoring">Tutoring</button>
+
+        <!-- Projects main toggle -->
+        <button class="exp-btn projects-toggle">Projects</button>
+        <div class="sub-menu">
+          <button class="exp-btn sub-btn" data-target="renvi">RENVI</button>
+          <button class="exp-btn sub-btn" data-target="elyssiu">Elyssiu</button>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="experience-content">
+        <div id="internships" class="exp-panel active">
+          <div class="internships-grid">
+
+            <!-- Internship 1 -->
+            <div class="internship-box">
+              <img src="src/assets/chevronlogo.png" alt="Chevron Logo" class="chevron-logo" />
+              <h3 class="internship-title">Software Engineering Intern | Chevron</h3>
+              <span class="internship-period">May 2025 – August 2025 | Houston, Texas</span>
+              <ul class="internship-details">
+                <li>
+                  Created and deployed an automated, scalable redirect solution for Chevron's legacy Medicare
+                  reporting SharePoint site using Azure FrontDoor, Ansible, and ADO pipelines to ensure zero downtime,
+                  preserve organizational bookmarks, maintain uninterrupted legal access, and eliminate 100% of manual
+                  intervention
+                  <ul style="list-style-type: none; padding-left: 20px; margin-top: 8px;">
+                    <li style="position: relative;">
+                      Reduced page load time by 53%, improving performance from 6.97 seconds to 3.25 seconds, and
+                      enhancing usability and operational efficiency for legal teams accessing Medicare related content
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Internship 2 -->
+            <div class="internship-box">
+              <img src="src/assets/chevronlogo.png" alt="Chevron Logo" class="chevron-logo" />
+              <h3 class="internship-title">Software Engineering Intern | Chevron</h3>
+              <span class="internship-period">May 2024 – August 2024 | Houston, Texas</span>
+              <ul class="internship-details">
+                <li>
+                  Created interactive charts and dynamic graphs using C#, Blazor, and JavaScript, enabling users to
+                  build dynamic charts and make higher fidelity decisions when allocating CAPEX in the deepwater
+                  opportunity backlog
+                </li>
+                <li>
+                  Implemented an on-demand data refresh feature on an administration page, streamlining operations,
+                  saving 5 manual steps, and reducing reliance on manual IT support
+                </li>
+              </ul>
+            </div>
+
+            <!-- Internship 3 -->
+            <div class="internship-box">
+              <img src="src/assets/chevronlogo.png" alt="Chevron Logo" class="chevron-logo" />
+              <h3 class="internship-title">Software Engineering Intern | Chevron</h3>
+              <span class="internship-period">May 2023 – August 2023 | Houston, Texas</span>
+              <ul class="internship-details">
+                <li>
+                  Built and deployed user-friendly PowerApps and SharePoint applications to help 40+ teammates organize
+                  weekly updates
+                </li>
+                <li>
+                  Developed a comprehensive Power BI dashboard to analyze performance across 19 support regions,
+                  optimizing resource allocation and enabling data-driven decision-making for regional leadership
+                </li>
+              </ul>
+            </div>
+
+            <!-- Internship 4 -->
+            <div class="internship-box">
+              <img src="src/assets/whiterunatek.png" alt="Runatek Logo" class="runatek-logo" />
+              <h3 class="internship-title">Software Engineering Intern | Runatek</h3>
+              <span class="internship-period">August 2022 – December 2022 | Dallas Fortworth, Texas</span>
+              <ul class="internship-details">
+                <li>Led a firmware team of 3 people to package the Sotiras medical device, using Arduino to optimize the
+                  foundational algorithm that safely delivers consistent opioid concentrations to patients
+                </li>
+                <li>Built 2 front-end GUIs using JavaScript, HTML, and CSS, enabling doctors to set dosing and monitor
+                  patient treatment data</li>
+                <li>Optimized material selection and developed relations with 2 external partners to expedite supply
+                  chain management
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="renvi" class="exp-panel">
+          <div class="internship-box">
+            <h3 class="internship-title">RENVI | Interior Design: Full Stack Project</h3>
+            <span class="internship-period">August 2024 – December 2024 | Louisiana State University</span>
+            <ul class="internship-details">
+              <li>Supervised version control for a 5-person team...</li>
+              <li>Developed a REST API backend with .NET and Swagger UI...</li>
+              <li>Architected a scalable cloud database solution using Firestore...</li>
+            </ul>
+            <iframe src="https://drive.google.com/file/d/12bT836j3q9EOX7NpFqhJ1sydE_lK5cLk/preview" width="100%"
+              height="480" frameborder="0" allowfullscreen>
+            </iframe>
+
+          </div>
+
+          <!-- 🔽 Gallery starts here -->
+          <div class="gallery portrait-gallery">
+            <button class="gallery-btn prev">&#10094;</button>
+            <div class="gallery-images">
+              <img src="src/assets/renvi1 (1).png" alt="RENVI Screenshot 1" class="gallery-img active">
+              <img src="src/assets/renvi2.webp" alt="RENVI Screenshot 2" class="gallery-img">
+              <img src="src/assets/renvi3.webp" alt="RENVI Screenshot 3" class="gallery-img">
+              <img src="src/assets/renvi4.webp" alt="RENVI Screenshot 4" class="gallery-img">
+              <img src="src/assets/renvi5.webp" alt="RENVI Screenshot 5" class="gallery-img">
+              <img src="src/assets/renvi6.webp" alt="RENVI Screenshot 6" class="gallery-img">
+              <img src="src/assets/renvi7.webp" alt="RENVI Screenshot 7" class="gallery-img">
+              <img src="src/assets/renvi8.webp" alt="RENVI Screenshot 8" class="gallery-img">
+              <img src="src/assets/renvi9.webp" alt="RENVI Screenshot 9" class="gallery-img">
+              <img src="src/assets/renvi10.png" alt="RENVI Screenshot 10" class="gallery-img">
+            </div>
+            <button class="gallery-btn next">&#10095;</button>
+          </div>
+          <!-- 🔼 Gallery ends here -->
+        </div>
+
+        <div id="elyssiu" class="exp-panel">
+          <div class="internship-box">
+            <h3 class="internship-title">Elyssiu | Game Development: Full Stack Project</h3>
+            <span class="internship-period">January 2024 – May 2024 | Louisiana State University</span>
+            <ul class="internship-details">
+              <li>Led version control as Git Master...</li>
+              <li>Created and integrated sound effects...</li>
+              <li>Wrote engaging dialogue and managed in-game quests...</li>
+            </ul>
+          </div>
+
+          <!-- 🔽 Gallery starts here -->
+          <div class="gallery landscape-gallery">
+            <button class="gallery-btn prev">&#10094;</button>
+            <div class="gallery-images">
+              <img src="src/assets/elyssiu1.png" alt="RENVI Screenshot 1" class="gallery-img active">
+              <img src="src/assets/elyssiu2.png" alt="RENVI Screenshot 2" class="gallery-img">
+              <img src="src/assets/elyssiu3.png" alt="RENVI Screenshot 3" class="gallery-img">
+              <img src="src/assets/elyssiu4.png" alt="RENVI Screenshot 4" class="gallery-img">
+              <img src="src/assets/elyssiu5.png" alt="RENVI Screenshot 5" class="gallery-img">
+              <img src="src/assets/elyssiu6.png" alt="RENVI Screenshot 6" class="gallery-img">
+              <img src="src/assets/elyssiu7.png" alt="RENVI Screenshot 7" class="gallery-img">
+              <img src="src/assets/elyssiu8.png" alt="RENVI Screenshot 8" class="gallery-img">
+              <img src="src/assets/elyssiu9.png" alt="RENVI Screenshot 9" class="gallery-img">
+              <img src="src/assets/elyssiu10.png" alt="RENVI Screenshot 10" class="gallery-img">
+              <img src="src/assets/elyssiu11.png" alt="RENVI Screenshot 10" class="gallery-img">
+            </div>
+            <button class="gallery-btn next">&#10095;</button>
+          </div>
+          <!-- 🔼 Gallery ends here -->
+
+
+          <iframe src="https://drive.google.com/file/d/1gJp5VvLw_eMfnuW5eeL-9qpwPdK2kvSz/preview" width="100%"
+            height="480" frameborder="0" allowfullscreen>
+          </iframe>
+        </div>
+
+
+        <div id="research" class="exp-panel">
+          <!-- <div class="internship-box">
+            <img src="src/assets/finalacm.png" alt="acm Logo" class="runatek-logo" />
+            <h3 class="internship-title">Undergraduate Research Assistant at SEEL Lab </h3>
+            <span class="internship-period">October 2022 – June 2023</span>
+            <ul class="internship-details">
+              Grishma Shrestha, Shristhi Shrestha, Anas Mahmoud. "No Country for Indie Developers: A Study of Google
+              Play's Closed Testing Requirements for New Personal Developer Accounts." ACM Transactions on Software
+              Engineering and Methodology (TOSEM), 2025.
+            </ul>
+            <a target="_blank" rel="noopener noreferrer" href="https://dl.acm.org/doi/10.1145/3736578 "
+              class="credentials-link">Link to Preprint</a>
+          </div> -->
+          <div class="internships-grid">
+
+            <!-- Internship 1 -->
+            <div class="internship-box">
+              <img src="src/assets/finalacm.png" alt="acm Logo" class="runatek-logo" />
+              <h3 class="internship-title">Undergraduate Researcher | SEEL Lab </h3>
+              <span class="internship-period">August 2023 – Present</span>
+              <ul class="internship-details">
+                Grishma Shrestha, Shristhi Shrestha, Anas Mahmoud. "No Country for Indie Developers: A Study of Google
+                Play's Closed Testing Requirements for New Personal Developer Accounts." ACM Transactions on Software
+                Engineering and Methodology (TOSEM), 2025.
+              </ul>
+              <a target="_blank" rel="noopener noreferrer" href="https://dl.acm.org/doi/10.1145/3736578 "
+                class="credentials-link">Link to Preprint</a>
+            </div>
+
+            <!-- Internship 2 -->
+            <div class="internship-box">
+              <embed src="acm_submission.pdf" type="application/pdf" width="100%" height="600px">
+            </div>
+          </div>
+        </div>
+
+        <div id="tutoring" class="exp-panel">
+          <div class="internships-grid">
+            <!-- tutoring 1 -->
+            <div class="internship-box">
+              <img src="src/assets/sylvanlogo.png" alt="Sylvan Logo" class="chevron-logo" />
+              <h3 class="internship-title">Teacher | Sylvan Learning Center</h3>
+              <span class="internship-period">August 2024 – Present | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>
+                  Teach and tutor students in ACT test preparation, ensuring significant improvements in their test
+                  scores
+                </li>
+                <li>Deliver math instruction to students from various grade levels, ranging from foundational to
+                  advanced math concepts</li>
+                <li>Foster a positive and engaging learning environment that encourages student confidence and curiosity
+                </li>
+              </ul>
+            </div>
+
+            <!-- tutoring 2 -->
+            <div class="internship-box">
+              <img src="src/assets/lsulogo.png" alt="LSU Logo" class="chevron-logo" />
+              <h3 class="internship-title">Lab Teaching Assistant | Louisiana State University</h3>
+              <span class="internship-period">January 2023 – May 2023 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>Effectively communicate with 40+ students and professor to debug lab problems for intermediate Java
+                  classes
+                </li>
+              </ul>
+            </div>
+            <!-- tutoring 3 -->
+            <div class="internship-box">
+              <img src="src/assets/mathnasium white.png" alt="Mathnasium Logo" class="act-logo" />
+              <h3 class="internship-title">Assistant Director | Mathnasium</h3>
+              <span class="internship-period">June 2022 – August 2024 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>Evaluate assessments and generate 60+ students’ individual learning plans</li>
+                <li>Communicate with parents via phone calls, email, and in person meetings</li>
+                <li>Operate virtual learning and scheduling</li>
+                <li>Collaborate with 60+ students’ teachers and update their binders with school topics</li>
+              </ul>
+            </div>
+
+            <!-- tutoring 4 -->
+            <div class="internship-box">
+              <img src="src/assets/mathnasium white.png" alt="Mathnasium Logo" class="act-logo" />
+              <h3 class="internship-title">Instructor | Mathnasium</h3>
+              <span class="internship-period">March 2021 – August 2024 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>Tutor 100+ students K-12 in math to increase confidence and show positive results in grades</li>
+                <li>Develop more personalized studying techniques and efficient learning styles while enhancing
+                  communication skills</li>
+              </ul>
+            </div>
+
+
+            <!-- tutoring 5 -->
+            <div class="internship-box">
+              <img src="src/assets/actwhite.png" alt="ACT Logo" class="act-logo" />
+              <h3 class="internship-title">ACT Tutor | Volunteer</h3>
+              <span class="internship-period">January 2024 – May 2024 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>
+                  Raised client ACT scores by an average of 40% through tailored instruction and strategic test-taking
+                  methods
+                </li>
+                <li>
+                  Developed and implemented individualized lesson plans, customized to meet each student's unique
+                  learning style and ACT goal
+                </li>
+                <li>
+                  Provided one-on-one ACT tutoring, fostering confidence and improving comprehension of challenging
+                  concepts
+                </li>
+              </ul>
+            </div>
+
+            <!-- tutoring 6 -->
+            <div class="internship-box">
+              <img src="src/assets/zoomlogo.png" alt="zoom Logo" class="act-logo" />
+              <h3 class="internship-title">English Tutor | Volunteer</h3>
+              <span class="internship-period">August 2022 – December 2022 | Baton Rouge, Louisiana</span>
+              <ul class="internship-details">
+                <li>Tutor Japanese students in English to increase confidence in communication abilities
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- JavaScript for active tab underline -->
+  <script>
+    /* --- resume download (unchanged) --- */
+    document.getElementById('resumeDownload').addEventListener('click', function () {
+      const link = document.createElement('a');
+      link.href = 'Halliburton Grishma Shrestha 2025 Resume.pdf'; // update path if needed
+      link.download = 'Grishma_Shrestha_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    /* --- unified Experience menu behavior --- */
+    const experienceMenu = document.querySelector('.experience-menu');
+    const subMenu = document.querySelector('.sub-menu');
+    const projectsToggle = document.querySelector('.projects-toggle');
+
+    function deactivateAllButtons() {
+      document.querySelectorAll('.experience-menu .exp-btn').forEach(b => b.classList.remove('active'));
+    }
+
+    function deactivateAllPanels() {
+      document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+    }
+
+    // Delegate clicks from the left menu (single listener)
+    experienceMenu.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn || !experienceMenu.contains(btn)) return;
+
+      // Projects toggle special case
+      if (btn.classList.contains('projects-toggle')) {
+        const isOpen = subMenu.classList.toggle('open');
+        projectsToggle.textContent = isOpen ? 'Projects ▼' : 'Projects';
+
+        if (isOpen) {
+          // open Projects -> default to RENVI
+          deactivateAllButtons();
+          deactivateAllPanels();
+
+          const renviBtn = document.querySelector('.sub-btn[data-target="renvi"]');
+          if (renviBtn) renviBtn.classList.add('active');
+
+          const renviPanel = document.getElementById('renvi');
+          if (renviPanel) renviPanel.classList.add('active');
+        }
+        return;
+      }
+
+      // If clicked a sub-btn, ensure submenu is open and label updated
+      if (btn.classList.contains('sub-btn')) {
+        subMenu.classList.add('open');
+        projectsToggle.textContent = 'Projects ▼';
+      } else {
+        // clicking a top-level (non-projects) button should close sub-menu
+        subMenu.classList.remove('open');
+        projectsToggle.textContent = 'Projects';
+      }
+
+      // Activate the clicked button and its target panel
+      deactivateAllButtons();
+      deactivateAllPanels();
+
+      btn.classList.add('active');
+      const target = btn.dataset.target;
+      if (target) {
+        const panel = document.getElementById(target);
+        if (panel) panel.classList.add('active');
+      }
+    });
+
+    // Handle all galleries on the page
+    document.querySelectorAll('.gallery').forEach(gallery => {
+      const images = gallery.querySelectorAll('.gallery-img');
+      const prevBtn = gallery.querySelector('.prev');
+      const nextBtn = gallery.querySelector('.next');
+      let currentIndex = 0;
+
+      // Show the image at given index
+      function showImage(index) {
+        images.forEach((img, i) => {
+          img.classList.toggle('active', i === index);
+        });
+      }
+
+      // Click event for previous button
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      // Click event for next button
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+
+      // Show the first image by default
+      showImage(currentIndex);
+
+
+    });
+
+
+    /* --- Mobile Navigation --- */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const closeMenu = document.getElementById('closeMenu');
+
+    function toggleMobileMenu() {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      mobileOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Event listeners for mobile menu
+    if (hamburger) {
+      hamburger.addEventListener('click', toggleMobileMenu);
+    }
+    if (closeMenu) {
+      closeMenu.addEventListener('click', toggleMobileMenu);
+    }
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+      link.addEventListener('click', toggleMobileMenu);
+    });
+
+
+
+    // ensure initial state: internships panel visible by default (your HTML already sets this)
+  </script>
+
+</body>
+
 </html>
