@@ -113,6 +113,7 @@ html {
 
 #tutoring {
   background-color: #98774f;
+  height: fit-content;
 }
 
 #projects {
@@ -1028,6 +1029,118 @@ section {
   }
 }
 
+/* Tutoring Section Styles */
+.tutoring-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.tutoring-box {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  position: relative;
+  min-height: 250px;
+  width: 1 00 px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo positioning */
+.tutoring-logoLSU {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 120px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.tutoring-logoSylvan {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.tutoring-logoMathnasium {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Text styling */
+.tutoring-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #7c622a;
+  margin-bottom: 8px;
+  padding-right: 70px;
+  /* Space for logo */
+}
+
+.tutoring-period {
+  font-size: 15px;
+  color: #000000;
+  font-style: italic;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.tutoring-details {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.tutoring-details li {
+  margin-bottom: 12px;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.tutoring-details li:before {
+  content: "•";
+  color: #984f59;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .tutoring-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .tutoring-box {
+    padding: 25px;
+    min-height: auto;
+  }
+
+  .tutoring-logo {
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .tutoring-title {
+    padding-right: 60px;
+  }
+}
 
 
 
