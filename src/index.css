@@ -374,27 +374,6 @@ section {
   opacity: 0.9;
 }
 
-@media (max-width: 768px) {
-  .section-header {
-    display: block;
-    /* Change from flex to block */
-    text-align: center;
-  }
-
-  .horizontal-line {
-    display: none;
-    /* Completely remove the line */
-  }
-
-  .section-header h1 {
-    text-align: center;
-    margin: 0 auto;
-    /* Center the heading */
-    width: auto;
-    /* Remove any width constraints */
-  }
-}
-
 /* #tutoring,
 #renvi,
 #elyssiu {
@@ -478,7 +457,6 @@ section {
 }
 
 /* Responsive design for mobile */
-/* Responsive design for mobile */
 @media (max-width: 768px) {
   .content-box {
     flex-direction: column;
@@ -490,8 +468,8 @@ section {
   }
 
   .content-box-image {
-    width: 200px !important;
-    height: 200px !important;
+    width: 200px;
+    height: 200px;
   }
 
   .content-box-text h1 {
@@ -508,17 +486,13 @@ section {
 @media (max-width: 480px) {
   .content-box {
     padding: 25px 20px;
-    padding: 25px 15px;
-    /* Further reduce horizontal padding */
     gap: 20px;
-    width: 98%;
-    /* Even wider on very small screens */
-    max-width: 98%;
+    width: 80%;
   }
 
-  >>>>>>>parent of 309205e (the section titl on phone) .content-box-image {
-    width: 180px !important;
-    height: 180px !important;
+  .content-box-image {
+    width: 180px;
+    height: 180px;
   }
 
   .content-box-text h1 {
