@@ -489,6 +489,16 @@ section {
     width: 80%;
   }
 
+<<<<<<< HEAD
+=======
+  .content-box {
+    background: red !important;
+    /* Make it obvious */
+    width: 100vw !important;
+    border: 5px solid yellow !important;
+  }
+
+>>>>>>> parent of 309205e (the section titl on phone)
   .content-box-image {
     width: 180px !important;
     height: 180px !important;
