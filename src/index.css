@@ -478,14 +478,21 @@ section {
 }
 
 /* Responsive design for mobile */
+/* Responsive design for mobile */
 @media (max-width: 768px) {
   .content-box {
     flex-direction: column;
     text-align: center;
-    padding: 30px 25px;
+    padding: 30px 20px;
+    /* Reduce horizontal padding */
     gap: 25px;
     min-height: auto;
-    width: 85%;
+    width: 95%;
+    /* Increase width from 85% to 95% */
+    max-width: 95%;
+    /* Add max-width constraint */
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .content-box-image {
@@ -496,19 +503,28 @@ section {
   .content-box-text h1 {
     font-size: 36px;
     margin-bottom: 15px;
+    line-height: 1.2;
+    /* Add line-height for better spacing */
   }
 
   .content-box-text h2 {
     font-size: 17px;
+    line-height: 1.4;
+    /* Add line-height for better readability */
+    word-wrap: break-word;
+    /* Ensure long words break properly */
   }
 }
 
 /* For very small mobile devices */
 @media (max-width: 480px) {
   .content-box {
-    padding: 25px 20px;
+    padding: 25px 15px;
+    /* Further reduce horizontal padding */
     gap: 20px;
-    width: 80%;
+    width: 98%;
+    /* Even wider on very small screens */
+    max-width: 98%;
   }
 
   .content-box-image {
@@ -518,10 +534,12 @@ section {
 
   .content-box-text h1 {
     font-size: 32px;
+    line-height: 1.2;
   }
 
   .content-box-text h2 {
     font-size: 16px;
+    line-height: 1.4;
   }
 }
 
