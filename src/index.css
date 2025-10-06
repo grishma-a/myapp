@@ -374,6 +374,21 @@ section {
   opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+
+
+  .section-header h1 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* #tutoring,
 #renvi,
 #elyssiu {
