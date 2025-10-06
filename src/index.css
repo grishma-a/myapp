@@ -376,16 +376,22 @@ section {
 
 @media (max-width: 768px) {
   .section-header {
-    flex-direction: column;
+    display: block;
+    /* Change from flex to block */
     text-align: center;
-    gap: 15px;
   }
 
-
+  .horizontal-line {
+    display: none;
+    /* Completely remove the line */
+  }
 
   .section-header h1 {
-    width: 100%;
     text-align: center;
+    margin: 0 auto;
+    /* Center the heading */
+    width: auto;
+    /* Remove any width constraints */
   }
 }
 
