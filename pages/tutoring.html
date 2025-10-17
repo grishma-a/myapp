@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Grishma Shrestha</title>
+    <link rel="icon" type="image/png" href="../gsinitials.png"> <!-- UPDATED -->
+    <link rel="stylesheet" href="../src/index.css"> <!-- UPDATED -->
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <!-- Left Navigation (Desktop) -->
+        <ul class="nav-list nav-list-left">
+            <li><a href="../index.html" class="nav-link">HOME</a></li> <!-- UPDATED -->
+            <li><a href="education.html" class="nav-link">EDUCATION</a></li>
+            <li><a href="internships.html" class="nav-link">INTERNSHIPS</a></li> <!-- UPDATED -->
+            <li><a href="projects.html" class="nav-link">PROJECTS</a></li> <!-- UPDATED -->
+        </ul>
+
+        <!-- Center Logo (Desktop) -->
+        <div class="logo">
+            <a href="../index.html"> <!-- UPDATED -->
+                <img src="../src/assets/gsfinallogo.png" alt="GS Logo"> <!-- UPDATED -->
+            </a>
+        </div>
+
+        <!-- Right Navigation (Desktop) -->
+        <ul class="nav-list nav-list-right">
+            <li><a href="research.html" class="nav-link">RESEARCH</a></li> <!-- UPDATED -->
+            <li><a href="leadership.html" class="nav-link">LEADERSHIP</a></li> <!-- UPDATED -->
+            <li><a href="tutoring.html" class="nav-link">TUTORING</a></li> <!-- UPDATED -->
+            <li><a href="contact.html" class="nav-link">CONTACT</a></li> <!-- UPDATED -->
+        </ul>
+
+        <!-- Mobile Only Elements -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+        <ul class="mobile-nav-list" id="mobileNav">
+            <button class="close-menu" id="closeMenu">&times;</button>
+            <li><a href="../index.html" class="nav-link">HOME</a></li> <!-- UPDATED -->
+            <li><a href="education.html" class="nav-link">EDUCATION</a></li>
+            <li><a href="internships.html" class="nav-link">INTERNSHIPS</a></li> <!-- UPDATED -->
+            <li><a href="projects.html" class="nav-link">PROJECTS</a></li> <!-- UPDATED -->
+            <li><a href="research.html" class="nav-link">RESEARCH</a></li> <!-- UPDATED -->
+            <li><a href="leadership.html" class="nav-link">LEADERSHIP</a></li> <!-- UPDATED -->
+            <li><a href="tutoring.html" class="nav-link">TUTORING</a></li> <!-- UPDATED -->
+            <li><a href="contact.html" class="nav-link">CONTACT</a></li> <!-- UPDATED -->
+        </ul>
+    </nav>
+
+    <!-- Tutoring Section -->
+    <section id="tutoring">
+
+        <div class="tutoring-container">
+            <!-- Box 1 -->
+            <div class="tutoring-box">
+                <img src="../src/assets/logos/sylvan.jpg" alt="Sylvan Logo" class="tutoring-logoSylvan">
+                <div class="tutoring-title">Teacher | Sylvan Learning Center</div>
+                <span class="tutoring-period">August 2024 – Present | Baton Rouge, LA</span>
+                <ul class="tutoring-details">
+                    <li>Teach and tutor students in ACT test preparation, ensuring significant improvements in their
+                        test scores
+                    </li>
+                    <li>Deliver math instruction to students from various grade levels, ranging from foundational to
+                        advanced math
+                        concepts</li>
+                    <li>Foster a positive and engaging learning environment that encourages student confidence and
+                        curiosity</li>
+                </ul>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="tutoring-box">
+                <img src="../src/assets/logos/lsu.png" alt="LSU Logo" class="tutoring-logoLSU">
+                <div class="tutoring-title">Lab Teaching Assistant | LSU</div>
+                <span class="tutoring-period">January 2023 – May 2023 | Baton Rouge, LA</span>
+                <ul class="tutoring-details">
+                    <li>Effectively communicated with 40+ students and professor to debug lab problems for intermediate
+                        Java
+                        classes</li>
+                    <li>Developed more personalized studying techniques and efficient learning styles while enhancing
+                        communication skills</li>
+                </ul>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="tutoring-box">
+                <img src="../src/assets/logos/mathnasium.png" alt="Mathnasium Logo" class="tutoring-logoMathnasium">
+                <div class="tutoring-title">Assistant Director | Mathnasium</div>
+                <span class="tutoring-period">June 2022 – August 2024 | Baton Rouge, LA</span>
+                <ul class="tutoring-details">
+                    <li>Developed and implemented 80+ individualized lesson plans, customized to meet each student's
+                        unique
+                        learning style and goals</li>
+                    <li>Operated virtual learning and scheduling</li>
+                    <li>Collaborated with 60+ students' teachers and update their binders with school topics</li>
+                </ul>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="tutoring-box">
+                <img src="../src/assets/logos/mathnasium.png" alt="Mathnasium Logo" class="tutoring-logoMathnasium">
+                <div class="tutoring-title">Instructor | Mathnasium</div>
+                <span class="tutoring-period">March 2021 – August 2024 | Baton Rouge, LA</span>
+                <ul class="tutoring-details">
+                    <li>Tutored 100+ students K-12 in math to increase confidence and show positive results in grades
+                    </li>
+                    <li>Raised client ACT scores by an average of 40% through tailored instruction and strategic
+                        test-taking
+                        methods</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        // Copy the same mobile navigation JavaScript from your main file
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+
+        function toggleMobileMenu() {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
+        if (closeMenu) closeMenu.addEventListener('click', toggleMobileMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+    </script>
+</body>
+
+</html>
