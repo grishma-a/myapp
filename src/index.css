@@ -7,9 +7,9 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif, monospace;
+  background-color: #fffbf5;
   /* background-color: #d5bbaa; */
   /*background-color: rgb(141, 83, 7); Helvetica*/
-  color: white;
 }
 
 /* Navbar styling */
@@ -59,7 +59,7 @@ html {
 
 .nav-list li a {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 20px;
   padding-bottom: 5px;
   display: inline-block;
@@ -90,18 +90,18 @@ html {
 
 
 #home {
-  background-color: #b0a092;
-  height: 80vh;
+  background-color: #fffbf5;
+
+
 }
 
 #education {
   background-color: #fffbf5;
-  height: 90vh;
   color: black;
 }
 
 #leadership {
-  background-color: #095fa6;
+  background-color: #fffbf5;
   height: fit-content;
 }
 
@@ -113,18 +113,25 @@ html {
 }
 
 #tutoring {
-  background-color: #98774f;
+  background-color: #fffbf5;
   height: fit-content;
 }
 
 #projects {
-  background-color: #dcd5cf;
+  background-color: #fffbf5;
   color: black;
 
 }
 
 #internships {
-  background-color: #99a6c7;
+  background-color: #fffbf5;
+  height: fit-content;
+}
+
+#contacts {
+  background-color: #fffbf5;
+  color: black;
+
 }
 
 /* Hide mobile elements by default */
@@ -348,39 +355,11 @@ html {
 /* Sections styling */
 section {
   height: 100vh;
-  padding: 50px;
+  padding: 5px;
   /* adjust to how much space you want */
 }
 
-/* Section headers with horizontal line */
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-}
 
-.section-header h1 {
-  white-space: nowrap;
-  margin: 0;
-  flex-shrink: 0;
-  font-weight: bolder;
-  font-size: 50px;
-}
-
-.horizontal-line {
-  flex-grow: 1;
-  height: 2px;
-  background-color: currentColor;
-  /* Uses the text color */
-  opacity: 0.9;
-}
-
-/* #tutoring,
-#renvi,
-#elyssiu {
-  padding-bottom: 10rem;
-} */
 
 
 .home-section {
@@ -391,7 +370,7 @@ section {
 
 /* Responsive content box for home section */
 .content-box {
-  border: 2px solid white;
+  border: 2px solid #b0a092;
   border-radius: 29px;
   padding: 40px;
   background: transparent;
@@ -416,7 +395,7 @@ section {
 }
 
 .content-box-text {
-  color: white;
+  color: #7b5636;
   flex: 1;
 }
 
@@ -429,7 +408,7 @@ section {
 .content-box-text h2 {
   font-size: 25px;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #7b5636;
   font-weight: normal;
   line-height: 1.5;
 }
@@ -554,7 +533,7 @@ section {
 .education-content {
   flex: 1;
   /* Takes 1/3 of the space */
-  border: 2px solid black;
+  border: 2px solid #b0a092;
   border-radius: 29px;
   padding: 30px;
   background: transparent;
@@ -568,20 +547,20 @@ section {
 .education-content h1 {
   font-size: 50 px;
   margin-bottom: 0px;
-  color: black;
+  color: #4f331a;
 }
 
 .education-content h2 {
   font-size: 35px;
   margin-bottom: 20px;
-  color: black;
+  color: #4f331a;
   line-height: 1.2;
   font-weight: bold;
 }
 
 .education-content p {
   font-size: 30 px;
-  color: black;
+  color: #7b5636;
   line-height: 1.2;
   margin-top: 10px;
   font-weight: bold;
@@ -589,7 +568,7 @@ section {
 
 .degree {
   font-size: 20px;
-  color: black;
+  color: #7b5636;
   margin-bottom: -5px;
   font-weight: 600;
 }
@@ -597,7 +576,7 @@ section {
 .divider-line {
   width: 95%;
   height: 2px;
-  background-color: #000000;
+  background-color: #7b5636;
   margin: 40px 0;
   opacity: 0.7;
 }
@@ -1043,14 +1022,92 @@ section {
 .tutoring-box {
   background: white;
   border-radius: 20px;
-  padding: 25px;
+  padding: 15px;
   position: relative;
   min-height: 250px;
-  width: 1 00 px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(21, 6, 75, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
 }
 
-/* Logo positioning */
+.tutoring-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(21, 6, 75, 0.2);
+}
+
+/* Base state (centered content) */
+.tutoring-content-base {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-padding: 15px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  transition: all 0s ease;
+  /* Fast transition back to base */
+}
+
+.tutoring-content-details {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s ease;
+}
+
+/* Hover state */
+.tutoring-box:hover .tutoring-content-base {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tutoring-box:hover .tutoring-content-details {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Centered logo styling for base state */
+.tutoring-logo-centered {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* Text styling for centered base content */
+.tutoring-title-centered {
+  font-size: 22px;
+  font-weight: bold;
+  color: #095fa6;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.tutoring-position-centered {
+  font-size: 18px;
+  color: #4f331a;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.tutoring-period-centered {
+  font-size: 15px;
+  color: #4f331a;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Original logo positioning (for details state) */
 .tutoring-logoLSU {
   position: absolute;
   top: 20px;
@@ -1078,19 +1135,18 @@ section {
   object-fit: contain;
 }
 
-/* Text styling */
+/* Original text styling (for details state) */
 .tutoring-title {
   font-size: 25px;
   font-weight: bold;
-  color: #7c622a;
+  color: #095fa6;
   margin-bottom: 8px;
   padding-right: 70px;
-  /* Space for logo */
 }
 
 .tutoring-period {
   font-size: 15px;
-  color: #000000;
+  color: #4f331a;
   font-style: italic;
   margin-bottom: 20px;
   display: block;
@@ -1107,13 +1163,13 @@ section {
   margin-bottom: 12px;
   padding-left: 1.5rem;
   position: relative;
-  color: #000000;
+  color: #4f331a;
   line-height: 1.5;
 }
 
 .tutoring-details li:before {
   content: "•";
-  color: #984f59;
+  color: #095fa6;
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -1131,15 +1187,36 @@ section {
     min-height: auto;
   }
 
-  .tutoring-logo {
-    width: 50px;
-    height: 50px;
-    top: 15px;
-    right: 15px;
+  .tutoring-logo-centered {
+    width: 80px;
+    height: 80px;
   }
 
-  .tutoring-title {
-    padding-right: 60px;
+  .tutoring-title-centered {
+    font-size: 20px;
+  }
+
+  .tutoring-position-centered {
+    font-size: 16px;
+  }
+
+  /* On mobile, show details by default instead of hover */
+  @media (max-width: 768px) {
+    .tutoring-content-base {
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: relative;
+    }
+
+    .tutoring-content-details {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .tutoring-box {
+      cursor: default;
+      flex-direction: column;
+    }
   }
 }
 
