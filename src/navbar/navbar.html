@@ -1,0 +1,74 @@
+<!-- Navbar -->
+<nav class="navbar">
+    <!-- Left Navigation (Desktop) -->
+    <ul class="nav-list nav-list-left">
+        <li><a href="../index.html" class="nav-link">HOME</a></li>
+        <li><a href="../pages/education.html" class="nav-link">EDUCATION</a></li>
+        <li><a href="../pages/internships.html" class="nav-link">INTERNSHIPS</a></li>
+        <li><a href="../pages/projects.html" class="nav-link">PROJECTS</a></li>
+    </ul>
+
+    <!-- Center Logo (Desktop) -->
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../src/assets/gsfinallogo.png" alt="GS Logo">
+        </a>
+    </div>
+
+    <!-- Right Navigation (Desktop) -->
+    <ul class="nav-list nav-list-right">
+        <li><a href="../pages/research.html" class="nav-link">RESEARCH</a></li>
+        <li><a href="../pages/leadership.html" class="nav-link">LEADERSHIP</a></li>
+        <li><a href="../pages/tutoring.html" class="nav-link">TUTORING</a></li>
+        <li><a href="../pages/contact.html" class="nav-link">CONTACT</a></li>
+    </ul>
+
+    <!-- Mobile Only Elements -->
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <ul class="mobile-nav-list" id="mobileNav">
+        <button class="close-menu" id="closeMenu">&times;</button>
+        <li><a href="../index.html" class="nav-link">HOME</a></li>
+        <li><a href="../pages/education.html" class="nav-link">EDUCATION</a></li>
+        <li><a href="../pages/internships.html" class="nav-link">INTERNSHIPS</a></li>
+        <li><a href="../pages/projects.html" class="nav-link">PROJECTS</a></li>
+        <li><a href="../pages/research.html" class="nav-link">RESEARCH</a></li>
+        <li><a href="../pages/leadership.html" class="nav-link">LEADERSHIP</a></li>
+        <li><a href="../pages/tutoring.html" class="nav-link">TUTORING</a></li>
+        <li><a href="../pages/contact.html" class="nav-link">CONTACT</a></li>
+    </ul>
+</nav>
+
+<script>
+    // Mobile Navigation JavaScript
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const closeMenu = document.getElementById('closeMenu');
+
+    function toggleMobileMenu() {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+    if (closeMenu) {
+        closeMenu.addEventListener('click', toggleMobileMenu);
+    }
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Close mobile menu when clicking on links
+    document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+        link.addEventListener('click', toggleMobileMenu);
+    });
+</script>
