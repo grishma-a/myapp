@@ -16,31 +16,13 @@
 
     <!-- Research Section -->
     <section id="research">
-        <div class="section-header">
-            <h1>RESEARCH PUBLICATIONS</h1>
-            <div class="horizontal-line"></div>
-        </div>
 
         <div class="research-hero">
             <!-- Left side - Paper Visualization -->
             <div class="paper-visualization">
-                <div class="paper-stack">
-                    <div class="paper-page page-1">
-                        <div class="paper-content">
-                            <h3>No Country for Indie Developers</h3>
-                            <p>A Study of Google Play's Closed Testing Requirements for New Personal Developer Accounts
-                            </p>
-                            <div class="authors">
-                                <span class="highlight-author">Grishma Shrestha</span>, Shristhi Shrestha, Anas Mahmoud
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paper-page page-2"></div>
-                    <div class="paper-page page-3"></div>
-                </div>
+
                 <div class="paper-screenshot">
-                    <img src="../src/assets/research/paper-screenshot.png" alt="Research Paper Screenshot"
-                        class="paper-image">
+                    <img src="../src/assets/paper.png" alt="Research Paper Screenshot" class="paper-image">
                     <div class="screenshot-overlay">
                         <button class="view-paper-btn" onclick="openPaper()">View Full Paper</button>
                     </div>
@@ -51,8 +33,9 @@
             <div class="publication-details">
                 <div class="publication-card">
                     <div class="journal-badge">
-                        <img src="../src/assets/logos/acm-logo.png" alt="ACM Logo" class="journal-logo">
-                        <span class="journal-name">ACM TOSEM</span>
+                        <img src="../src/assets/logos/acmbrown.png" alt="ACM Logo" class="journal-logo">
+                        <span class="journal-name">ACM Transactions on Software Engineering and Methodology
+                            (TOSEM)</span>
                     </div>
 
                     <h2 class="paper-title">No Country for Indie Developers: A Study of Google Play's Closed Testing
@@ -74,11 +57,7 @@
                     </div>
 
                     <div class="publication-info">
-                        <div class="info-item">
-                            <span class="info-label">Journal:</span>
-                            <span class="info-value">ACM Transactions on Software Engineering and Methodology
-                                (TOSEM)</span>
-                        </div>
+
                         <div class="info-item">
                             <span class="info-label">Status:</span>
                             <span class="info-value status-published">Published 2025</span>
@@ -101,91 +80,29 @@
                             maintaining platform security.</p>
                     </div>
 
-                    <div class="action-buttons">
-                        <a href="https://dl.acm.org/doi/10.1145/3736578" target="_blank" class="btn btn-primary">
-                            📄 Read Paper on ACM
-                        </a>
-                    </div>
+
 
                     <div class="research-metrics">
                         <div class="metric">
-                            <span class="metric-number">15+</span>
-                            <span class="metric-label">Citations</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-number">500+</span>
-                            <span class="metric-label">Downloads</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-number">Q1</span>
+                            <span class="metric-number">A*</span>
                             <span class="metric-label">Journal Rank</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">226</span>
+                            <span class="metric-label">Downloads</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Research Impact Section -->
-        <div class="research-impact">
-            <h3>Research Impact</h3>
-            <div class="impact-grid">
-                <div class="impact-card">
-                    <div class="impact-icon">🔍</div>
-                    <h4>Novel Analysis</h4>
-                    <p>First comprehensive study of Google Play's testing requirements impact on indie developers</p>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-icon">🛠️</div>
-                    <h4>Practical Solutions</h4>
-                    <p>Proposed actionable recommendations for platform improvement</p>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-icon">📱</div>
-                    <h4>Developer Advocacy</h4>
-                    <p>Highlighted challenges faced by independent mobile app developers</p>
-                </div>
-            </div>
-        </div>
+
     </section>
 
     <script>
-        // Copy the same mobile navigation JavaScript from your main file
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileOverlay = document.getElementById('mobileOverlay');
-        const closeMenu = document.getElementById('closeMenu');
-
-        function toggleMobileMenu() {
-            hamburger.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            mobileOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
-
-        if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
-        if (closeMenu) closeMenu.addEventListener('click', toggleMobileMenu);
-        if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileMenu);
-
-        document.querySelectorAll('.mobile-nav-list a').forEach(link => {
-            link.addEventListener('click', toggleMobileMenu);
-        });
-
-
-
         function openPaper() {
             window.open('https://dl.acm.org/doi/10.1145/3736578', '_blank');
         }
-
-        // Add paper stack animation
-        document.addEventListener('DOMContentLoaded', function () {
-            const paperStack = document.querySelector('.paper-stack');
-            paperStack.addEventListener('mouseenter', function () {
-                this.style.transform = 'rotate(-5deg)';
-            });
-            paperStack.addEventListener('mouseleave', function () {
-                this.style.transform = 'rotate(0deg)';
-            });
-        });
     </script>
 </body>
 
