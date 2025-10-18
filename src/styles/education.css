@@ -1,0 +1,246 @@
+/* CHATPT DESIGN BELOW */
+/* Education Section - Creative Design */
+#education {
+    background: linear-gradient(135deg, #fffbf5 0%, #f8f4f0 100%);
+    padding: 80px 0;
+    min-height: 100vh;
+}
+
+.education-timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Timeline Card */
+.timeline-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(141, 83, 7, 0.1);
+    border: 2px solid rgba(141, 83, 7, 0.1);
+    position: relative;
+    margin-bottom: 50px;
+}
+
+
+
+
+/* University Header */
+.university-header {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.university-logo {
+    flex-shrink: 0;
+}
+
+.university-logo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 3px solid #b0a092;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.university-info {
+    flex: 1;
+}
+
+.university-name {
+    font-size: 32px;
+    color: #4f331a;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.location {
+    font-size: 18px;
+    color: #7b5636;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.gpa-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #b0a092, #b0a092);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Degrees Container */
+.degrees-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.degree-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    border-left: 4px solid #b0a092;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.degree-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(141, 83, 7, 0.1);
+}
+
+.degree-info h3 {
+    color: #4f331a;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.degree-info p {
+    color: #7b5636;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+
+
+/* Achievements */
+.achievements {
+    margin-bottom: 40px;
+}
+
+.achievements h4 {
+    color: #4f331a;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid rgba(141, 83, 7, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateX(10px);
+    border-color: #8d5307;
+}
+
+.achievement-icon {
+    font-size: 20px;
+}
+
+/* Progress Timeline */
+.progress-timeline {
+    margin-top: 40px;
+}
+
+.timeline-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #8d5307, #b0a092);
+    border-radius: 4px;
+    position: relative;
+}
+
+.timeline-progress::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #8d5307;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(141, 83, 7, 0.5);
+}
+
+.timeline-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #7b5636;
+    font-weight: 500;
+}
+
+.timeline-labels .current {
+    color: #8d5307;
+    font-weight: bold;
+}
+
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .education-timeline {
+        padding: 0 15px;
+    }
+
+    .timeline-card {
+        padding: 30px 20px;
+    }
+
+
+
+    .university-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .degrees-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+
+    .achievement-item {
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-card {
+        padding: 25px 15px;
+    }
+
+    .university-name {
+        font-size: 24px;
+    }
+
+    .degree-card {
+        padding: 20px;
+    }
+
+
+}

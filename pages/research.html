@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Grishma Shrestha</title>
+    <link rel="icon" type="image/png" href="../gsinitials.png">
+    <link rel="stylesheet" href="../src/index.css">
+    <link rel="stylesheet" href="../src/styles/research.css">
+    <script src="../src/navbar/load-navbar.js" defer></script>
+</head>
+
+<body>
+
+
+    <!-- Research Section -->
+    <section id="research">
+
+        <div class="research-hero">
+            <!-- Left side - Paper Visualization -->
+            <div class="paper-visualization">
+
+                <div class="paper-screenshot">
+                    <img src="../src/assets/paper.png" alt="Research Paper Screenshot" class="paper-image">
+                    <div class="screenshot-overlay">
+                        <button class="view-paper-btn" onclick="openPaper()">View Full Paper</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side - Publication Details -->
+            <div class="publication-details">
+                <div class="publication-card">
+                    <div class="journal-badge">
+                        <img src="../src/assets/logos/acmbrown.png" alt="ACM Logo" class="journal-logo">
+                        <span class="journal-name">ACM Transactions on Software Engineering and Methodology
+                            (TOSEM)</span>
+                    </div>
+
+                    <h2 class="paper-title">No Country for Indie Developers: A Study of Google Play's Closed Testing
+                        Requirements for New Personal Developer Accounts</h2>
+
+                    <div class="authors-list">
+                        <div class="author primary-author">
+                            <span class="author-name">Grishma Shrestha</span>
+                            <span class="author-role">Undergraduate Researcher</span>
+                        </div>
+                        <div class="author">
+                            <span class="author-name">Shristhi Shrestha</span>
+                            <span class="author-role">Co-author</span>
+                        </div>
+                        <div class="author">
+                            <span class="author-name">Anas Mahmoud</span>
+                            <span class="author-role">Advisor</span>
+                        </div>
+                    </div>
+
+                    <div class="publication-info">
+
+                        <div class="info-item">
+                            <span class="info-label">Status:</span>
+                            <span class="info-value status-published">Published 2025</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">DOI:</span>
+                            <span class="info-value">10.1145/3736578</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Lab:</span>
+                            <span class="info-value">SEEL Lab, Louisiana State University</span>
+                        </div>
+                    </div>
+
+                    <div class="research-abstract">
+                        <h4>Abstract</h4>
+                        <p>This study investigates the impact of Google Play's closed testing requirements on new
+                            personal developer accounts. Our research analyzes the challenges faced by indie developers
+                            in meeting these requirements and proposes solutions to streamline the process while
+                            maintaining platform security.</p>
+                    </div>
+
+
+
+                    <div class="research-metrics">
+                        <div class="metric">
+                            <span class="metric-number">A*</span>
+                            <span class="metric-label">Journal Rank</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">226</span>
+                            <span class="metric-label">Downloads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <script>
+        function openPaper() {
+            window.open('https://dl.acm.org/doi/10.1145/3736578', '_blank');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership - Grishma Shrestha</title>
+    <link rel="icon" type="image/png" href="../gsinitials.png"> <!-- UPDATED -->
+    <link rel="stylesheet" href="../src/index.css"> <!-- UPDATED -->
+    <link rel="stylesheet" href="../src/styles/leadership.css"> <!-- UPDATED -->
+    <script src="../src/navbar/load-navbar.js" defer></script>
+</head>
+
+<body>
+
+
+    <!-- Leadership Section -->
+    <section id="leadership">
+
+
+        <div class="leadership-container">
+            <!-- First Row - 2 Bigger Boxes -->
+            <div class="leadership-row-1">
+                <div class="leadership-box">
+                    <div class="leadership-content-base">
+                        <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="sase Logo"
+                            class="leadership-logo-centered">
+                        <div class="leadership-title-centered">Society of Asian Scientists and Engineers</div>
+                    </div>
+                    <div class="leadership-content-details">
+                        <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="sase Logo"
+                            class="leadership-logo">
+                        <div class="leadership-title">Society of Asian Scientists and Engineers</div>
+                        <div class="leadership-years">
+                            2022 - 2023, Active Member<br>
+                            2023 - 2024, Professional Development Chair<br>
+                            2024 - 2025, Vice President<br>
+                            2025 - Present, Senior Advisor
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leadership-box">
+                    <div class="leadership-content-base">
+                        <img src="../src/assets/logos/WiCS_logo_LightBckg.png" alt="WICS Logo"
+                            class="leadership-logo-centered wics-logo">
+                        <div class="leadership-title-centered">Women in Computer Science</div>
+                    </div>
+                    <div class="leadership-content-details">
+                        <img src="../src/assets/logos/WiCS_logo_LightBckg.png" alt="WICS Logo"
+                            class="leadership-logo wics-logo">
+                        <div class="leadership-title">Women in Computer Science</div>
+                        <div class="leadership-years">
+                            2022 - 2023, Active Member<br>
+                            2023 - 2024, Outreach Chair<br>
+                            2024 - 2025, Vice President<br>
+                            2025 - Present, Senior Advisor
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row - 3 Smaller Boxes -->
+            <div class="leadership-row-2">
+                <div class="leadership-box">
+                    <div class="leadership-content-base">
+                        <img src="../src/assets/logos/Chevron_Logo.svg.png" alt="Chevron Logo"
+                            class="leadership-logo-centered">
+                        <div class="leadership-title-centered">Chevron Leadership Academy</div>
+                    </div>
+                    <div class="leadership-content-details">
+                        <img src="../src/assets/logos/Chevron_Logo.svg.png" alt="Chevron Logo"
+                            class="leadership-logoChevron">
+                        <div class="leadership-title">Chevron Leadership Academy</div>
+                        <div class="leadership-years">
+                            2023 - Present, Active Member<br>
+                            2023 - Present, Chevron Energy Leadership Scholarship Recipient
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leadership-box">
+                    <div class="leadership-content-base">
+                        <img src="../src/assets/logos/swe.png" alt="SWE Logo" class="leadership-logo-centered">
+                        <div class="leadership-title-centered">Society of Women Engineers</div>
+                    </div>
+                    <div class="leadership-content-details">
+                        <img src="../src/assets/logos/swe.png" alt="SWE Logo" class="leadership-logoSWE">
+                        <div class="leadership-title">Society of Women Engineers</div>
+                        <div class="leadership-years">
+                            2022 - 2023, Freshman Ambassador<br>
+                            2023 - Present, Active Member
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leadership-box">
+                    <div class="leadership-content-base">
+                        <img src="../src/assets/logos/gdsc-logo.png" alt="GDSC Logo" class="leadership-logo-centered">
+                        <div class="leadership-title-centered">Google Developer Student Club</div>
+                    </div>
+                    <div class="leadership-content-details">
+                        <img src="../src/assets/logos/gdsc-logo.png" alt="GDSC Logo" class="leadership-logoGDSC">
+                        <div class="leadership-title">Google Developer Student Club</div>
+                        <div class="leadership-years">
+                            2022 - 2023, Core Team Lead<br>
+                            2023 - Present, Active Member
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leadership Photos -->
+        <div class="leadership-photos">
+            <!-- Row 1 -->
+            <div class="photo-row">
+                <img src="../src/assets/leadership/hackathon.png" alt="hackathon pic" class="leadership-photo">
+                <img src="../src/assets/leadership/holi.png" alt="holi pic" class="leadership-photo">
+                <img src="../src/assets/leadership/etc.png" alt="etc pic" class="leadership-photo">
+            </div>
+
+            <!-- Row 2 -->
+            <div class="photo-row">
+                <img src="../src/assets/leadership/saseeboard.png" alt="sase pic" class="leadership-photo">
+                <img src="../src/assets/leadership/banquet.png" alt="banquet pic" class="leadership-photo">
+                <img src="../src/assets/leadership/sasegbm.png" alt="gbm pic" class="leadership-photo">
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script>
+        // Copy the same mobile navigation JavaScript from your main file
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+
+        function toggleMobileMenu() {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
+        if (closeMenu) closeMenu.addEventListener('click', toggleMobileMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+    </script>
+</body>
+
+</html>

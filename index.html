@@ -1,13 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grishma Shrestha</title>
+  <link rel="icon" type="image/png" href="gsinitials.png">
+  <link rel="stylesheet" href="./src/index.css">
+  <link rel="stylesheet" href="./src/navbar/navbar.css">
+  <script src="./src/navbar/load-navbar.js" defer></script>
+  <!-- this is the nav bar -->
+</head>
+
+<body>
+
+
+  <!-- Home Section -->
+  <section id="home" class="home-section">
+    <div class="content-box">
+      <img src="src/assets/1-Grishma_Shrestha_Headshot_Offwhite_Background.png" alt="Grishma Headshot"
+        class="content-box-image" />
+      <div class="content-box-text">
+        <h1>Grishma Shrestha</h1>
+        <h2>I'm a first generation Mathematics and Computer Science student at Louisiana State University. After
+          graduation, I will be working as a full time software engineer at Chevron in Houston, Texas!</h2>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- JavaScript for active tab underline -->
+  <script>
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const closeMenu = document.getElementById('closeMenu');
+
+    function toggleMobileMenu() {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      mobileOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+
+    if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
+    if (closeMenu) closeMenu.addEventListener('click', toggleMobileMenu);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+    document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+      link.addEventListener('click', toggleMobileMenu);
+    });
+
+
+
+    // ensure initial state: internships panel visible by default (your HTML already sets this)
+  </script>
+
+</body>
+
 </html>

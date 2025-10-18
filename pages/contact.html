@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts - Grishma Shrestha</title>
+    <link rel="icon" type="image/png" href="../gsinitials.png"> <!-- UPDATED -->
+    <link rel="stylesheet" href="../src/styles/contact.css"> <!-- UPDATED -->
+    <link rel="stylesheet" href="../src/index.css"> <!-- UPDATED -->
+    <script src="../src/navbar/load-navbar.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h1 class="contact-title">Let's Keep In Touch! </h1>
+
+            <!-- Contact Methods Grid -->
+            <div class="contact-grid">
+                <!-- LinkedIn -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="../src/assets/logos/linkedin2.png" alt="LinkedIn">
+                    </div>
+                    <h3 class="contact-card-title">LinkedIn</h3>
+                    <p class="contact-card-desc">Connect with me professionally and view my career journey</p>
+                    <a href="https://www.linkedin.com/in/grishma-shrestha/" target="_blank" class="contact-link">
+                        Visit Profile
+                    </a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="../src/assets/logos/github.png" alt="GitHub">
+                    </div>
+                    <h3 class="contact-card-title">GitHub</h3>
+                    <p class="contact-card-desc">Explore my projects, contributions, and coding portfolio</p>
+                    <a href="https://github.com/grishma-a" target="_blank" class="contact-link">
+                        View Projects
+                    </a>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="../src/assets/logos/mail.png" alt="Email" class="gmail-logo">
+                    </div>
+                    <h3 class="contact-card-title">Email</h3>
+                    <p class="contact-card-desc">Send me a direct message for collaborations or inquiries</p>
+                    <a href="mailto:shresthagris@gmail.com" class="contact-link">
+                        Send Email
+                    </a>
+
+                </div>
+
+                <!-- Google Scholar -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="../src/assets/logos/googlescholar.png" alt="Google Scholar">
+                    </div>
+                    <h3 class="contact-card-title">Google Scholar</h3>
+                    <p class="contact-card-desc">View my research publications and academic contributions</p>
+                    <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AH8HC4yP1tlToDxbbKUGgla-dcqzlhphrjJPrz6aw0Zasxo8hVRMt3eCXe5tto694B362oZY7q3JNBBfQmeWvQ&user=ZzuToJIAAAAJ"
+                        target="_blank" class="contact-link">
+                        View Research
+                    </a>
+                </div>
+
+                <!-- Download Resume -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="../src/assets/downloadicon.png" alt="download">
+                    </div>
+                    <h3 class="contact-card-title">Resume</h3>
+                    <p class="contact-card-desc">Get a comprehensive overview of my experience and achievements.</p>
+                    <a href="../Halliburton Grishma Shrestha 2025 Resume.pdf" download="Grishma_Shrestha_Resume.pdf"
+                        class="contact-link">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+
+            <!-- Resume Download Section
+            <div class="resume-section">
+                <h2 class="resume-title">Download My Resume</h2>
+                <p class="resume-desc">
+                    Get a comprehensive overview of my education, experience, skills, and achievements in a single
+                    document.
+                </p>
+                <button id="contactResumeDownload" class="resume-btn">
+                    <img src="../src/assets/downloadicon.png" alt="Download">
+                    Download Resume
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+
+
+    <script>
+        // Copy the same mobile navigation JavaScript from your main file
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+
+        function toggleMobileMenu() {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
+        if (closeMenu) closeMenu.addEventListener('click', toggleMobileMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // Resume download for contact section
+        document.getElementById('contactResumeDownload').addEventListener('click', function () {
+            const link = document.createElement('a');
+            link.href = 'Halliburton Grishma Shrestha 2025 Resume.pdf';
+            link.download = 'Grishma_Shrestha_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+
+</html>
