@@ -1,15 +1,8 @@
-import { useState } from 'react'
+import { HashRouter } from 'react-router-dom';
 
-import './App.css'
-
-function App() {
-  return (
-    <div>
-      <h1>Welcome to Grishmas App!</h1>
-      <p>Start building something awesome 🚀</p>
-    </div>
-  );
-}
-
-
-export default App;
+// Replace BrowserRouter with HashRouter
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <HashRouter>
+    <App />
+  </HashRouter>
+);

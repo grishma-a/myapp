@@ -8,10 +8,53 @@
     <link rel="icon" type="image/png" href="../gsinitials.png"> <!-- UPDATED -->
     <link rel="stylesheet" href="../src/index.css"> <!-- UPDATED -->
     <link rel="stylesheet" href="../src/styles/projects.css"> <!-- UPDATED -->
-    <script src="../src/navbar/load-navbar.js" defer></script>
+    <link rel="stylesheet" href="/src/navbar/navbar.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <!-- Left Navigation -->
+        <ul class="nav-list nav-list-left">
+            <li><a href="/myapp/index.html" class="nav-link">HOME</a></li>
+            <li><a href="/myapp/pages/education.html" class="nav-link">EDUCATION</a></li>
+            <li><a href="/myapp/pages/internships.html" class="nav-link">INTERNSHIPS</a></li>
+            <li><a href="/myapp/pages/projects.html" class="nav-link">PROJECTS</a></li>
+        </ul>
+
+        <!-- Center Logo -->
+        <div class="logo">
+            <a href="/myapp/index.html">
+                <img src="/src/assets/gsfinallogo.png" alt="GS Logo">
+            </a>
+        </div>
+
+        <!-- Right Navigation -->
+        <ul class="nav-list nav-list-right">
+            <li><a href="/myapp/pages/research.html" class="nav-link">RESEARCH</a></li>
+            <li><a href="/myapp/pages/leadership.html" class="nav-link">LEADERSHIP</a></li>
+            <li><a href="/myapp/pages/tutoring.html" class="nav-link">TUTORING</a></li>
+            <li><a href="/myapp/pages/contact.html" class="nav-link">CONTACT</a></li>
+        </ul>
+
+        <!-- Mobile Navigation -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+        <ul class="mobile-nav-list" id="mobileNav">
+            <button class="close-menu" id="closeMenu">&times;</button>
+            <li><a href="/myapp/index.html" class="nav-link">HOME</a></li>
+            <li><a href="/myapp/pages/education.html" class="nav-link">EDUCATION</a></li>
+            <li><a href="/myapp/pages/internships.html" class="nav-link">INTERNSHIPS</a></li>
+            <li><a href="/myapp/pages/projects.html" class="nav-link">PROJECTS</a></li>
+            <li><a href="/myapp/pages/research.html" class="nav-link">RESEARCH</a></li>
+            <li><a href="/myapp/pages/leadership.html" class="nav-link">LEADERSHIP</a></li>
+            <li><a href="/myapp/pages/tutoring.html" class="nav-link">TUTORING</a></li>
+            <li><a href="/myapp/pages/contact.html" class="nav-link">CONTACT</a></li>
+        </ul>
+    </nav>
 
 
     <!-- Projects Section -->
