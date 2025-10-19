@@ -3,3 +3,375 @@
     color: black;
 
 }
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Project Navigation */
+.project-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.project-tab {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-tab:hover::before {
+    left: 100%;
+}
+
+.project-tab.active {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.project-tab.elyssiu {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.project-tab.elyssiu.active {
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+}
+
+/* Project Content */
+.project-content {
+    display: none;
+    animation: fadeInUp 0.6s ease;
+}
+
+.project-content.active {
+    display: block;
+}
+
+/* RENVI - Left-aligned dominant layout */
+.renvi-project {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    align-items: start;
+}
+
+.renvi-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.renvi-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    transform: rotate(30deg);
+}
+
+.renvi-media {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ELYSSIU - Right-aligned secondary layout */
+.elyssiu-project {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.elyssiu-content {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    order: 2;
+}
+
+.elyssiu-media {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    order: 1;
+}
+
+/* Shared Components */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.project-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.project-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    backdrop-filter: blur(10px);
+}
+
+.contributions-block {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contribution-item {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.contribution-item::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+}
+
+.video-container {
+    background: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Update video container styles for iframe */
+.video-container iframe {
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    height: 300px;
+}
+
+/* Adjust height for different screen sizes */
+@media (max-width: 768px) {
+    .video-container iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container iframe {
+        height: 200px;
+    }
+}
+
+.project-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.renvi-gallery {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.elyssiu-gallery {
+    grid-template-columns: 1fr;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Vertical phone frames for Renvi */
+.phone-frame {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.phone-frame::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    backdrop-filter: blur(10px);
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Active state animations */
+.project-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+
+    .renvi-project,
+    .elyssiu-project {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .elyssiu-content {
+        order: 1;
+    }
+
+    .elyssiu-media {
+        order: 2;
+    }
+
+    .project-title {
+        font-size: 2em;
+    }
+
+    .project-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-tab {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .renvi-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-container {
+        padding: 20px 15px;
+    }
+
+    .renvi-content,
+    .elyssiu-content {
+        padding: 25px;
+    }
+
+    .project-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}

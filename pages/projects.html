@@ -56,12 +56,118 @@
         </ul>
     </nav>
 
+    <div class="projects-container">
+        <!-- Project Navigation Tabs -->
+        <div class="project-navigation">
+            <button class="project-tab active" data-project="renvi">Renvi</button>
+            <button class="project-tab elyssiu" data-project="elyssiu">Elyssiu</button>
+        </div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <p>
-            hiiii
-    </section>
+        <!-- RENVI PROJECT -->
+        <section class="project-content active" id="renvi-content">
+            <div class="renvi-project">
+                <div class="renvi-content floating">
+                    <div class="project-header">
+                        <h1 class="project-title">Renvi</h1>
+                        <span class="project-badge">Featured Project</span>
+                    </div>
+
+                    <div class="contributions-block">
+                        <h3>My Contributions</h3>
+                        <div class="contribution-item">Led development of real-time environmental monitoring dashboard
+                        </div>
+                        <div class="contribution-item">Implemented machine learning algorithms for pollution prediction
+                        </div>
+                        <div class="contribution-item">Designed responsive mobile interface for field data collection
+                        </div>
+                        <div class="contribution-item">Optimized database queries for handling 10,000+ data points</div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="renvi-media">
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/12bT836j3q9EOX7NpFqhJ1sydE_lK5cLk/preview"
+                            width="100%" height="300" allow="autoplay" class="project-video">
+                        </iframe>
+                    </div>
+
+                    <div class="gallery renvi-gallery">
+                        <div class="phone-frame gallery-item">
+                            <img src="/src/assets/renvi1 (1).png" alt="Renvi Mobile App Screen 1">
+                        </div>
+                        <div class="phone-frame gallery-item">
+                            <img src="renvi-phone2.jpg" alt="Renvi Mobile App Screen 2">
+                        </div>
+                        <div class="phone-frame gallery-item">
+                            <img src="renvi-phone3.jpg" alt="Renvi Mobile App Screen 3">
+                        </div>
+                        <div class="phone-frame gallery-item">
+                            <img src="renvi-phone4.jpg" alt="Renvi Mobile App Screen 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ELYSSIU PROJECT -->
+        <section class="project-content" id="elyssiu-content">
+            <div class="elyssiu-project">
+                <div class="elyssiu-media">
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/1gJp5VvLw_eMfnuW5eeL-9qpwPdK2kvSz/preview"
+                            width="100%" height="300" allow="autoplay" class="project-video">
+                        </iframe>
+                    </div>
+
+                    <div class="gallery elyssiu-gallery">
+                        <div class="gallery-item">
+                            <img src="/src/assets/elyssiu4.png" alt="Elyssiu Dashboard">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="/src/assets/elyssiu4.png" alt="Elyssiu Analytics">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="/src/assets/elyssiu4.png" alt="Elyssiu Mobile View">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="elyssiu-content">
+                    <div class="project-header">
+                        <h1 class="project-title">Elyssiu</h1>
+                        <span class="project-badge">Web Platform</span>
+                    </div>
+
+                    <div class="contributions-block">
+                        <h3>My Contributions</h3>
+                        <div class="contribution-item">Architected microservices infrastructure using Docker and
+                            Kubernetes</div>
+                        <div class="contribution-item">Developed real-time chat functionality with WebSocket integration
+                        </div>
+                        <div class="contribution-item">Created comprehensive admin dashboard with data visualization
+                        </div>
+                        <div class="contribution-item">Implemented OAuth 2.0 authentication system</div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
 
 
@@ -85,6 +191,210 @@
 
         document.querySelectorAll('.mobile-nav-list a').forEach(link => {
             link.addEventListener('click', toggleMobileMenu);
+        });
+
+
+
+        // Projects page interactions and animations
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tab switching functionality
+            const projectTabs = document.querySelectorAll('.project-tab');
+            const projectContents = document.querySelectorAll('.project-content');
+            let currentProject = 'renvi';
+
+            function switchProject(projectName) {
+                // Update tabs
+                projectTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.dataset.project === projectName) {
+                        tab.classList.add('active');
+                    }
+                });
+
+                // Update contents
+                projectContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${projectName}-content`) {
+                        content.classList.add('active');
+                    }
+                });
+
+                currentProject = projectName;
+
+                // Update URL hash without scrolling
+                history.replaceState(null, null, `#${projectName}`);
+
+                // Track analytics (optional)
+                console.log(`Switched to project: ${projectName}`);
+            }
+
+            // Add click events to tabs
+            projectTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const projectName = this.dataset.project;
+                    if (projectName !== currentProject) {
+                        switchProject(projectName);
+                    }
+                });
+            });
+
+            // Handle URL hash on load
+            function handleHashOnLoad() {
+                const hash = window.location.hash.replace('#', '');
+                if (hash === 'renvi' || hash === 'elyssiu') {
+                    switchProject(hash);
+                }
+            }
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', handleHashOnLoad);
+
+            // Initialize based on URL hash
+            handleHashOnLoad();
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') {
+                    switchProject('renvi');
+                } else if (e.key === 'ArrowRight') {
+                    switchProject('elyssiu');
+                }
+            });
+
+            // Lazy loading for images
+            const lazyImages = document.querySelectorAll('.gallery-item img');
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        // Only load if not already loaded
+                        if (!img.src || img.src.includes('data:image/svg+xml')) {
+                            img.src = img.dataset.src;
+                        }
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => {
+                // Store original source and show placeholder
+                if (!img.dataset.src) {
+                    img.dataset.src = img.src;
+                    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PC9zdmc+';
+                }
+                imageObserver.observe(img);
+            });
+
+            // Video hover play preview (only for active project)
+            function setupVideoInteractions() {
+                const videos = document.querySelectorAll('.project-content.active .project-video');
+
+                videos.forEach(video => {
+                    let hoverTimeout;
+
+                    video.addEventListener('mouseenter', function () {
+                        hoverTimeout = setTimeout(() => {
+                            video.play().catch(e => console.log('Autoplay prevented:', e));
+                        }, 1000);
+                    });
+
+                    video.addEventListener('mouseleave', function () {
+                        clearTimeout(hoverTimeout);
+                        video.pause();
+                        video.currentTime = 0;
+                    });
+
+                    // Click to play/pause
+                    video.addEventListener('click', function () {
+                        if (video.paused) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                });
+            }
+
+            // Re-setup video interactions when switching projects
+            const originalSwitchProject = switchProject;
+            switchProject = function (projectName) {
+                originalSwitchProject(projectName);
+                setTimeout(setupVideoInteractions, 100);
+            };
+
+            // Initial video setup
+            setupVideoInteractions();
+
+            // Gallery lightbox functionality
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const img = this.querySelector('img');
+                    const lightbox = document.createElement('div');
+                    lightbox.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                cursor: zoom-out;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+
+                    const lightboxImg = document.createElement('img');
+                    lightboxImg.src = img.dataset.src || img.src;
+                    lightboxImg.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                border-radius: 10px;
+                transform: scale(0.8);
+                transition: transform 0.3s ease;
+            `;
+
+                    lightbox.appendChild(lightboxImg);
+                    document.body.appendChild(lightbox);
+
+                    // Animate in
+                    setTimeout(() => {
+                        lightbox.style.opacity = '1';
+                        lightboxImg.style.transform = 'scale(1)';
+                    }, 10);
+
+                    // Close lightbox
+                    function closeLightbox() {
+                        lightbox.style.opacity = '0';
+                        lightboxImg.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            if (document.body.contains(lightbox)) {
+                                document.body.removeChild(lightbox);
+                            }
+                        }, 300);
+                    }
+
+                    lightbox.addEventListener('click', closeLightbox);
+
+                    // Close with Escape key
+                    function handleEscape(e) {
+                        if (e.key === 'Escape') {
+                            closeLightbox();
+                            document.removeEventListener('keydown', handleEscape);
+                        }
+                    }
+                    document.addEventListener('keydown', handleEscape);
+                });
+            });
+
+            console.log('Projects page loaded with tab switching functionality!');
         });
     </script>
 </body>
