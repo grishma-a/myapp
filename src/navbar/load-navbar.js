@@ -1,6 +1,6 @@
 // Function to load navbar into any page
 function loadNavbar() {
-    fetch('../src/navbar/navbar.html')
+    fetch('/myapp/src/navbar/navbar.html')  // Changed to absolute path
         .then(response => response.text())
         .then(data => {
             // Insert navbar at the beginning of the body

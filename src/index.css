@@ -42,6 +42,8 @@ section {
 /* Responsive content box for home section */
 .content-box {
   border: 2px solid #b0a092;
+  box-shadow: 0 4px 16px rgba(79, 51, 26, 0.05) !important;
+  background: #ffffff !important;
   border-radius: 29px;
   padding: 40px;
   background: transparent;
@@ -53,6 +55,7 @@ section {
   min-height: 600px;
   margin: 0 auto;
   box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content-box-image {
@@ -63,10 +66,22 @@ section {
   /* Move crop area upward */
   object-fit: cover;
   flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-frame:hover .content-box-image {
-  transform: scale(1.05);
+/* Hover effect for the entire content box */
+.content-box:hover {
+  background: rgba(176, 160, 146, 0.15);
+  /* Slightly darker on hover */
+
+  transform: scale(1.02);
+
+}
+
+/* Hover effect specifically for the image */
+.content-box-image:hover {
+  transform: scale(1.02);
+  /* Make image bigger on hover */
 }
 
 .content-box-text {

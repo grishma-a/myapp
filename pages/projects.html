@@ -8,17 +8,269 @@
     <link rel="icon" type="image/png" href="../gsinitials.png"> <!-- UPDATED -->
     <link rel="stylesheet" href="../src/index.css"> <!-- UPDATED -->
     <link rel="stylesheet" href="../src/styles/projects.css"> <!-- UPDATED -->
-    <script src="../src/navbar/load-navbar.js" defer></script>
+    <link rel="stylesheet" href="/src/navbar/navbar.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <!-- Left Navigation -->
+        <ul class="nav-list nav-list-left">
+            <li><a href="/myapp/index.html" class="nav-link">HOME</a></li>
+            <li><a href="/myapp/pages/education.html" class="nav-link">EDUCATION</a></li>
+            <li><a href="/myapp/pages/internships.html" class="nav-link">INTERNSHIPS</a></li>
+            <li><a href="/myapp/pages/projects.html" class="nav-link">PROJECTS</a></li>
+        </ul>
+
+        <!-- Center Logo -->
+        <div class="logo">
+            <a href="/myapp/index.html">
+                <img src="/src/assets/gsfinallogo.png" alt="GS Logo">
+            </a>
+        </div>
+
+        <!-- Right Navigation -->
+        <ul class="nav-list nav-list-right">
+            <li><a href="/myapp/pages/research.html" class="nav-link">RESEARCH</a></li>
+            <li><a href="/myapp/pages/leadership.html" class="nav-link">LEADERSHIP</a></li>
+            <li><a href="/myapp/pages/tutoring.html" class="nav-link">TUTORING</a></li>
+            <li><a href="/myapp/pages/contact.html" class="nav-link">CONTACT</a></li>
+        </ul>
+
+        <!-- Mobile Navigation -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+        <ul class="mobile-nav-list" id="mobileNav">
+            <button class="close-menu" id="closeMenu">&times;</button>
+            <li><a href="/myapp/index.html" class="nav-link">HOME</a></li>
+            <li><a href="/myapp/pages/education.html" class="nav-link">EDUCATION</a></li>
+            <li><a href="/myapp/pages/internships.html" class="nav-link">INTERNSHIPS</a></li>
+            <li><a href="/myapp/pages/projects.html" class="nav-link">PROJECTS</a></li>
+            <li><a href="/myapp/pages/research.html" class="nav-link">RESEARCH</a></li>
+            <li><a href="/myapp/pages/leadership.html" class="nav-link">LEADERSHIP</a></li>
+            <li><a href="/myapp/pages/tutoring.html" class="nav-link">TUTORING</a></li>
+            <li><a href="/myapp/pages/contact.html" class="nav-link">CONTACT</a></li>
+        </ul>
+    </nav>
 
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <p>
-            hiiii
-    </section>
+    <div class="projects-container">
+        <!-- Project Navigation -->
+        <div class="project-navigation">
+            <button class="project-tab active" data-project="renvi">RENVI</button>
+            <button class="project-tab elyssiu" data-project="elyssiu">ELYSSIU</button>
+        </div>
+
+        <!-- RENVI PROJECT -->
+        <section class="project-content active" id="renvi-content">
+            <div class="project-layout">
+                <!-- Resume Card Left -->
+                <div class="resume-card">
+                    <div class="project-header">
+                        <h1 class="project-title">RENVI</h1>
+                        <span class="project-badge">INTERIOR DESIGN APP</span>
+                    </div>
+
+                    <div class="contributions-block">
+                        <h3>August 2024 - December 2024</h3>
+                        <div class="contribution-item">Supervised version control for a 5-person team and managed code
+                            integration to maintain a clean codebase, enabling users to interact with RENVI across both
+                            iOS and Android devices
+                        </div>
+                        <div class="contribution-item">Developed a REST API backend with .NET and Swagger UI for
+                            seamless mobile-cloud data integration
+
+                        </div>
+                        <div class="contribution-item">Architected a scalable cloud database solution using Google Cloud
+                            Firestore to manage furniture inventory and layout configurations, optimizing application
+                            performance and data accessibility
+
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">.NET</span>
+                        <span class="tech-tag">Google Cloud</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Android Studio</span>
+                        <span class="tech-tag">XCode</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">FIGMA</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">FIGMA</span>
+                    </div>
+                </div>
+
+                <!-- Image Carousel Right -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <!-- Renvi Images -->
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi1 (1).png" alt="Renvi Screen 1" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi2.webp" alt="Renvi Screen 2" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi3.webp" alt="Renvi Screen 3" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi4.webp" alt="Renvi Screen 4" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi5.webp" alt="Renvi Screen 5" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi6.webp" alt="Renvi Screen 6" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi7.webp" alt="Renvi Screen 7" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi8.webp" alt="Renvi Screen 8" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi9.webp" alt="Renvi Screen 9" class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/renvi/renvi10.png" alt="Renvi Screen 10" class="carousel-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev-btn">‹</button>
+                        <div class="carousel-counter">
+                            <span class="current-slide">1</span> / <span class="total-slides">10</span>
+                        </div>
+                        <button class="carousel-btn next-btn">›</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Bottom -->
+            <div class="video-section">
+                <div class="video-container">
+                    <iframe src="https://drive.google.com/file/d/12bT836j3q9EOX7NpFqhJ1sydE_lK5cLk/preview"
+                        allow="autoplay">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ELYSSIU PROJECT -->
+        <section class="project-content elyssiu" id="elyssiu-content">
+            <div class="project-layout">
+                <!-- Resume Card Left -->
+                <div class="resume-card">
+                    <div class="project-header">
+                        <h1 class="project-title">ELYSSIU</h1>
+                        <span class="project-badge">LSU BASED ROLE PLAY GAME</span>
+                    </div>
+
+                    <div class="contributions-block">
+                        <h3>My Contributions</h3>
+                        <div class="contribution-item">Lead version control as Git Master, managing code integration,
+                            conducting reviews, and resolving merge conflicts to maintain a clean codebase for the game,
+                            Elyssiu</div>
+                        <div class="contribution-item">Create and integrate sound effects and background music,
+                            enhancing the game’s immersive experience
+
+                        </div>
+                        <div class="contribution-item">Write engaging dialogue and manage in-game quests, contributing
+                            to narrative development and gameplay design
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+
+                <!-- Image Carousel Right -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <!-- Elyssiu Images -->
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu1.png" alt="Elyssiu Screen 1"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu2.png" alt="Elyssiu Screen 2"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu3.png" alt="Elyssiu Screen 3"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu4.png" alt="Elyssiu Screen 1"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu5.png" alt="Elyssiu Screen 5"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu6.png" alt="Elyssiu Screen 6"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu7.png" alt="Elyssiu Screen 7"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu8.png" alt="Elyssiu Screen 8"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu9.png" alt="Elyssiu Screen 9"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu10.png" alt="Elyssiu Screen 10"
+                                    class="carousel-image">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/src/assets/elyssiu/elyssiu11.png" alt="Elyssiu Screen 11"
+                                    class="carousel-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev-btn">‹</button>
+                        <div class="carousel-counter">
+                            <span class="current-slide">1</span> / <span class="total-slides">11</span>
+                        </div>
+                        <button class="carousel-btn next-btn">›</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Bottom -->
+            <div class="video-section">
+                <div class="video-container">
+                    <iframe src="https://drive.google.com/file/d/1gJp5VvLw_eMfnuW5eeL-9qpwPdK2kvSz/preview"
+                        allow="autoplay">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </div>
 
 
 
@@ -43,6 +295,152 @@
         document.querySelectorAll('.mobile-nav-list a').forEach(link => {
             link.addEventListener('click', toggleMobileMenu);
         });
+
+        // Projects page interactions
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tab switching functionality
+            const projectTabs = document.querySelectorAll('.project-tab');
+            const projectContents = document.querySelectorAll('.project-content');
+            let currentProject = 'renvi';
+
+            function switchProject(projectName) {
+                projectTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.dataset.project === projectName) {
+                        tab.classList.add('active');
+                    }
+                });
+
+                projectContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${projectName}-content`) {
+                        content.classList.add('active');
+                    }
+                });
+
+                currentProject = projectName;
+                history.replaceState(null, null, `#${projectName}`);
+
+                // Reset carousel to first slide when switching projects
+                setTimeout(() => {
+                    initCarousels();
+                }, 100);
+            }
+
+            projectTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const projectName = this.dataset.project;
+                    if (projectName !== currentProject) {
+                        switchProject(projectName);
+                    }
+                });
+            });
+
+            // Handle URL hash
+            function handleHashOnLoad() {
+                const hash = window.location.hash.replace('#', '');
+                if (hash === 'renvi' || hash === 'elyssiu') {
+                    switchProject(hash);
+                }
+            }
+
+            window.addEventListener('popstate', handleHashOnLoad);
+            handleHashOnLoad();
+
+            // Carousel functionality
+            function initCarousels() {
+                const carousels = document.querySelectorAll('.carousel');
+
+                carousels.forEach(carousel => {
+                    const track = carousel.querySelector('.carousel-track');
+                    const slides = carousel.querySelectorAll('.carousel-slide');
+                    const prevBtn = carousel.closest('.carousel-container').querySelector('.prev-btn');
+                    const nextBtn = carousel.closest('.carousel-container').querySelector('.next-btn');
+                    const currentSlideEl = carousel.closest('.carousel-container').querySelector('.current-slide');
+                    const totalSlidesEl = carousel.closest('.carousel-container').querySelector('.total-slides');
+
+                    let currentSlide = 0;
+                    const totalSlides = slides.length;
+
+                    // Initialize counters
+                    totalSlidesEl.textContent = totalSlides;
+                    updateCounter();
+
+                    function updateCounter() {
+                        currentSlideEl.textContent = currentSlide + 1;
+                        prevBtn.disabled = currentSlide === 0;
+                        nextBtn.disabled = currentSlide === totalSlides - 1;
+                    }
+
+                    function goToSlide(slideIndex) {
+                        if (slideIndex < 0 || slideIndex >= totalSlides) return;
+
+                        currentSlide = slideIndex;
+                        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                        updateCounter();
+                    }
+
+                    function nextSlide() {
+                        if (currentSlide < totalSlides - 1) {
+                            goToSlide(currentSlide + 1);
+                        }
+                    }
+
+                    function prevSlide() {
+                        if (currentSlide > 0) {
+                            goToSlide(currentSlide - 1);
+                        }
+                    }
+
+                    // Event listeners
+                    nextBtn.addEventListener('click', nextSlide);
+                    prevBtn.addEventListener('click', prevSlide);
+
+                    // Keyboard navigation
+                    document.addEventListener('keydown', function (e) {
+                        if (carousel.closest('.project-content').classList.contains('active')) {
+                            if (e.key === 'ArrowLeft') {
+                                prevSlide();
+                            } else if (e.key === 'ArrowRight') {
+                                nextSlide();
+                            }
+                        }
+                    });
+
+                    // Touch/swipe support for mobile
+                    let startX = 0;
+                    let endX = 0;
+
+                    carousel.addEventListener('touchstart', function (e) {
+                        startX = e.touches[0].clientX;
+                    });
+
+                    carousel.addEventListener('touchend', function (e) {
+                        endX = e.changedTouches[0].clientX;
+                        handleSwipe();
+                    });
+
+                    function handleSwipe() {
+                        const swipeThreshold = 50;
+                        const diff = startX - endX;
+
+                        if (Math.abs(diff) > swipeThreshold) {
+                            if (diff > 0) {
+                                nextSlide(); // Swipe left
+                            } else {
+                                prevSlide(); // Swipe right
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Initialize carousels on load
+            initCarousels();
+
+            console.log('Projects page loaded with carousel functionality!');
+        });
+
     </script>
 </body>
 
