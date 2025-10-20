@@ -157,8 +157,42 @@ html {
     border-color: #8d5307;
 }
 
-.achievement-icon {
-    font-size: 20px;
+.achievement-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.achievement-card {
+    background: rgba(176, 160, 146, 0.08);
+    border: 1px solid rgba(176, 160, 146, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    background: rgba(176, 160, 146, 0.12);
+    transform: translateY(-3px);
+}
+
+.achievement-card h5 {
+    color: #8d5307;
+    margin: 0 0 8px 0;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.achievement-card p {
+    color: #4f331a;
+    margin: 0;
+    font-size: 0.95em;
+}
+
+
+.achievement-badge:hover {
+    background: rgba(176, 160, 146, 0.2);
+    transform: translateY(-2px);
 }
 
 /* Progress Timeline */
