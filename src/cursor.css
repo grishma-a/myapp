@@ -67,12 +67,10 @@ button,
     transform: scale(0.8);
 }
 
+/* Optional: Make cursor slightly larger on mobile for better visibility */
 @media (max-width: 768px) {
-    html {
-        cursor: auto;
-    }
-
     .custom-cursor {
-        display: none;
+        width: 16px;
+        height: 16px;
     }
 }
