@@ -75,23 +75,6 @@
 }
 
 
-
-
-
-.timeline-indicator {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    color: #8d5307;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    border: 1px solid rgba(141, 83, 7, 0.2);
-    z-index: 3;
-}
-
 /* Base State - Enhanced */
 .tutoring-content-base {
     display: flex;
@@ -118,6 +101,26 @@
 .tutoring-logo-centered {
     width: 100px;
     height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.lsu-logo-centered {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.sylvan-logo-centered {
+    width: 200px;
+    height: 110px;
     object-fit: contain;
     filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
     transition: all 0.4s ease;
@@ -240,6 +243,17 @@
     object-fit: contain;
     flex-shrink: 0;
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* Target LSU logo by alt text */
+.details-logo[alt="lsu Logo"] {
+    width: 90px;
+    height: 70px;
+}
+
+.details-logo[alt="sylvan Logo"] {
+    width: 100px;
+    height: 70px;
 }
 
 .header-content {
