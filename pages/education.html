@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education - Grishma Shrestha</title>
     <link rel="icon" type="image/png" href="../gsinitials.png">
-
+    <link rel="stylesheet" href="src/cursor.css">
     <link rel="stylesheet" href="/myapp/src/index.css">
     <link rel="stylesheet" href="/src/styles/education.css">
     <link rel="stylesheet" href="/src/navbar/navbar.css">
@@ -129,6 +129,35 @@
 
         </div>
     </section>
+
+    <script>
+
+
+        // Mobile menu code (from your original)
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+
+        function toggleMobileMenu() {
+            if (hamburger && mobileNav && mobileOverlay) {
+                hamburger.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                mobileOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
+        if (closeMenu) closeMenu.addEventListener('click', toggleMobileMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+        document.querySelectorAll('.mobile-nav-list a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+    </script>
+
+    <script src="src/cursor.js"></script>
 </body>
 
 </html>

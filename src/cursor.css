@@ -1,0 +1,78 @@
+/* custom-cursor.css */
+/* Custom brown dot cursor */
+html {
+    cursor: none !important;
+}
+
+/* Hide custom cursor when over video */
+.video-container:hover~.custom-cursor,
+.video-container *:hover~.custom-cursor,
+.project-video:hover~.custom-cursor,
+iframe:hover~.custom-cursor {
+    opacity: 0 !important;
+}
+
+/* Or hide cursor when mouse is over any video element */
+video:hover~.custom-cursor,
+iframe:hover~.custom-cursor {
+    opacity: 0;
+}
+
+/* Remove default cursor from all interactive elements */
+a,
+button,
+.nav-link,
+.carousel-btn,
+[onclick],
+[role="button"],
+[tabindex="0"] {
+    cursor: none !important;
+}
+
+/* Remove default cursor from ALL interactive elements and cards */
+a,
+button,
+.nav-link,
+.carousel-btn,
+.project-tab,
+.card,
+.internships-box,
+.tutoring-box,
+.leadership-box,
+.video-container,
+.resume-card,
+.content-box,
+.gallery-item,
+[onclick],
+[role="button"],
+[tabindex="0"],
+.contribution-item,
+.tech-tag,
+.project-badge {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: #8d5307;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+.custom-cursor.clicked {
+    transform: scale(0.8);
+}
+
+@media (max-width: 768px) {
+    html {
+        cursor: auto;
+    }
+
+    .custom-cursor {
+        display: none;
+    }
+}
