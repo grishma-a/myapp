@@ -30,7 +30,8 @@
 
 /* Leadership box styles - SAME HEIGHT FOR ALL */
 .leadership-box {
-    background: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+
     border-radius: 20px;
     padding: 25px;
     position: relative;
@@ -41,7 +42,7 @@
     margin: 0 auto;
     /* Center the 90% width boxes */
     box-shadow: 0 5px 15px rgba(21, 6, 75, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     overflow: hidden;
     cursor: pointer;
     display: flex;
@@ -54,8 +55,10 @@
 /* Hover - NO HEIGHT CHANGE, just lift and shadow */
 .leadership-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(21, 6, 75, 0.2);
-    transition: all 0.7s ease;
+    box-shadow:
+        0 20px 20px rgba(141, 83, 7, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: all 0.5s ease;
     /* NO min-height change */
 }
 
@@ -93,7 +96,7 @@
 .leadership-box:hover .leadership-content-details {
     opacity: 1;
     visibility: visible;
-    transition: all 0.7s ease;
+    transition: all 0.5s ease;
 }
 
 /* Logo styling */
@@ -228,7 +231,7 @@
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
     box-sizing: border-box;
     /* Include padding in width calculation */
 }
