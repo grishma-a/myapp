@@ -128,6 +128,8 @@ section {
 /* Responsive design for tablets */
 @media (max-width: 1024px) {
   .content-box {
+    flex-direction: column;
+    text-align: center;
     padding: 30px;
     gap: 30px;
     min-height: 350px;
