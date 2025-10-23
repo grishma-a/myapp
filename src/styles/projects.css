@@ -353,7 +353,7 @@
     }
 
     .video-container iframe {
-        height: 300px;
+        height: 400px;
     }
 }
 
@@ -390,6 +390,16 @@
         height: 40px;
         font-size: 1em;
     }
+
+    .video-container {
+
+        width: 90%;
+
+    }
+
+    .video-container iframe {
+        height: 400px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -402,7 +412,7 @@
     }
 
     .video-container iframe {
-        height: 200px;
+        height: 300px !important;
     }
 
     .carousel-title {

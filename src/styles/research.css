@@ -229,12 +229,26 @@
 /* Mobile Responsive */
 @media (max-width: 1024px) {
     .research-hero {
+
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .paper-visualization {
-        height: 400px;
+        height: 500px;
+        margin-bottom: 125px;
+        /* <--- ADD THIS LINE */
+    }
+
+
+    .paper-page {
+        width: 500px;
+        height: 600px;
+    }
+
+    .paper-image {
+        width: 500px;
+        height: 600px;
     }
 
     .btn {
@@ -253,8 +267,8 @@
     }
 
     .paper-image {
-        width: 220px;
-        height: 300px;
+        width: 400px;
+        height: 500px;
     }
 
     .publication-card {
