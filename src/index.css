@@ -22,16 +22,7 @@ html {
   transform: scale(0.8);
 }
 
-/* Hide custom cursor on mobile */
-@media (max-width: 768px) {
-  html {
-    cursor: auto;
-  }
 
-  .custom-cursor {
-    display: none;
-  }
-}
 
 body,
 html {
