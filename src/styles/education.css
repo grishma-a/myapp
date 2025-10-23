@@ -254,20 +254,22 @@ html {
         padding: 30px 20px;
     }
 
-
-
     .university-header {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
 
+    .location {
+        justify-content: center !important;
+        text-align: center !important;
+        /* This centers inline content like the location text */
+    }
+
     .degrees-container {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
-
 
     .achievement-item {
         padding: 12px 15px;
@@ -281,6 +283,12 @@ html {
 
     .university-name {
         font-size: 24px;
+    }
+
+    .location {
+        justify-content: center !important;
+        text-align: center !important;
+        /* This centers inline content like the location text */
     }
 
     .degree-card {
