@@ -178,6 +178,12 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    body {
+        padding-bottom: 400px !important;
+        /* Add padding to the bottom of the whole page content */
+        margin-bottom: 300px !important;
+    }
+
     .contact-title {
         font-size: 2.5rem;
     }
@@ -203,4 +209,6 @@
         padding: 14px 30px;
         font-size: 1rem;
     }
+
+
 }
