@@ -1,3 +1,289 @@
+/* Navbar styling */
+
+
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    top: 0;
+    background: #b0a092;
+    padding: 0px 20px;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Left navigation - align to the right within its container */
+.nav-list-left {
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+/* Right navigation - align to the left within its container */
+.nav-list-right {
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+    /* Add space around logo */
+}
+
+.logo img {
+    width: 65px;
+    height: 70px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255) !important;
+    font-size: 20px;
+    padding-bottom: 5px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-list li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ffffff;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
+}
+
+.nav-list li a.active::after {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+
+
+
+
+/* Hide mobile elements by default */
+.hamburger,
+.mobile-menu-overlay,
+.mobile-nav-list {
+    display: none;
+}
+
+/* Mobile Navigation Styles - For tablets and phones */
+@media (max-width: 1200px) {
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+
+    /* Hide desktop nav on mobile/tablet */
+    .nav-list-left,
+    .nav-list-right {
+        display: none;
+    }
+
+    /* Show mobile menu elements */
+    .mobile-menu-overlay,
+    .mobile-nav-list {
+        display: block !important;
+    }
+
+    /* Adjust navbar for mobile/tablet - keep grid but modify */
+    .navbar {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Center logo on mobile/tablet */
+    .logo {
+        justify-self: center;
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    /* Position hamburger on left */
+    .hamburger {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-nav-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100%;
+        background-color: #b0a092;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 30px 30px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-nav-list.active {
+        left: 0;
+    }
+
+    .mobile-nav-list li {
+        margin-bottom: 15px;
+        list-style: none;
+    }
+
+    .mobile-nav-list li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-list li a:hover {
+        color: rgb(141, 83, 7);
+        transform: translateX(10px);
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* Hamburger animation when active */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
+
+/* Nuclear option - remove visited styles globally for nav */
+a.nav-link:visited {
+    color: inherit !important;
+}
+
+/* Or even more specific */
+nav a:visited,
+.navbar a:visited,
+.nav-list a:visited,
+.mobile-nav-list a:visited {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Nuclear option - ensure ALL nav links stay white */
+.navbar a.nav-link,
+.navbar .nav-list a,
+.navbar .mobile-nav-list a,
+.nav-list a,
+.mobile-nav-list a {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Force navbar links to stay white - override any global styles */
+.navbar a,
+.navbar .nav-list a,
+.navbar .mobile-nav-list a,
+.nav-list a,
+.nav-list-left a,
+.nav-list-right a,
+.mobile-nav-list a,
+.nav-link {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Cover all link states */
+.navbar a:link,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active,
+.navbar a:focus,
+.nav-list a:link,
+.nav-list a:visited,
+.nav-list a:hover,
+.nav-list a:active,
+.nav-list a:focus,
+.mobile-nav-list a:link,
+.mobile-nav-list a:visited,
+.mobile-nav-list a:hover,
+.mobile-nav-list a:active,
+.mobile-nav-list a:focus {
+    color: rgb(255, 255, 255) !important;
+}
+
 .projects-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -124,6 +410,11 @@
     padding-left: 20px;
     position: relative;
     color: #4f331a;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.contribution-item:hover {
+    transform: translateX(10px);
 }
 
 .contribution-item::before {
@@ -293,7 +584,6 @@
 }
 
 .video-container {
-    background: #b0a092;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -332,6 +622,12 @@
 
 /* Responsive Design */
 @media (max-width: 968px) {
+    body {
+        padding-bottom: 400px !important;
+        /* Add padding to the bottom of the whole page content */
+        margin-bottom: 90px !important;
+    }
+
     .project-layout {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -348,11 +644,13 @@
     }
 
     .video-container iframe {
-        height: 300px;
+        height: 400px;
     }
 }
 
 @media (max-width: 768px) {
+
+
     .project-navigation {
         flex-direction: column;
         align-items: center;
@@ -385,9 +683,21 @@
         height: 40px;
         font-size: 1em;
     }
+
+    .video-container {
+
+        width: 90%;
+
+    }
+
+    .video-container iframe {
+        height: 400px;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+
+
     .projects-container {
         padding: 20px 15px;
     }
@@ -396,8 +706,15 @@
         height: 250px;
     }
 
+    .video-container {
+
+        width: 90%;
+        height: 250px;
+
+    }
+
     .video-container iframe {
-        height: 200px;
+        height: 250px !important;
     }
 
     .carousel-title {

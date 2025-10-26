@@ -1,6 +1,28 @@
 html {
   scroll-behavior: smooth;
+  cursor: none;
+  /* Hide default cursor */
 }
+
+
+.custom-cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: #8d5307;
+  /* Brown color */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+/* Smaller dot when clicking */
+.custom-cursor.clicked {
+  transform: scale(0.8);
+}
+
+
 
 body,
 html {
@@ -106,6 +128,8 @@ section {
 /* Responsive design for tablets */
 @media (max-width: 1024px) {
   .content-box {
+    flex-direction: column;
+    text-align: center;
     padding: 30px;
     gap: 30px;
     min-height: 350px;
