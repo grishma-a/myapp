@@ -351,19 +351,11 @@ nav a:visited,
     position: relative;
 }
 
-/* Keep arrows anchored to the step corners */
-.nav-arrow {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    z-index: 10;
-    /* ... your existing arrow styles ... */
-}
 
-.prev-arrow {
-    right: auto;
-    left: 15px;
-}
+
+/* Specific side positioning */
+
+
 
 /* Arrow Positioning */
 .nav-arrow {
@@ -378,14 +370,23 @@ nav a:visited,
     height: 30px;
     cursor: pointer;
     display: flex;
+    font-size: 20px;
     align-items: center;
     justify-content: center;
     transition: background 0.3s;
 }
 
+.next-arrow {
+    right: 20px;
+}
+
+
 .prev-arrow {
     right: auto;
     left: 15px;
+    left: 20px;
+    /* Using transform to flip ensures the icon is a perfect mirror */
+    transform: rotate(180deg);
 
     /* Position back arrow on the bottom left */
 }
