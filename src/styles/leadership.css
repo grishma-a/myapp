@@ -338,14 +338,71 @@ nav a:visited,
     text-align: center;
 }
 
-/* Hover - NO HEIGHT CHANGE, just lift and shadow */
-.leadership-box:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 20px 20px rgba(141, 83, 7, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    transition: all 0.5s ease;
-    /* NO min-height change */
+/* Hide steps by default */
+.leadership-step {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+/* Show the active step based on a data attribute */
+.leadership-box[data-step="1"] .step-1 {
+    display: flex;
+}
+
+.leadership-box[data-step="2"] .step-2 {
+    display: flex;
+}
+
+.leadership-box[data-step="3"] .step-3 {
+    display: flex;
+}
+
+/* Arrow Positioning */
+.nav-arrow {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #095fa6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.prev-arrow {
+    right: auto;
+    left: 15px;
+    /* Position back arrow on the bottom left */
+}
+
+.nav-arrow:hover {
+    background: #8d5307;
+}
+
+/* Resume Style List */
+.resume-list {
+    text-align: left;
+    font-size: 14px;
+    color: #095fa6;
+    padding-left: 20px;
+}
+
+.leadership-title-small {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #095fa6;
 }
 
 /* Base content */

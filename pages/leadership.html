@@ -66,15 +66,17 @@
         <div class="leadership-container">
             <!-- First Row - 2 Bigger Boxes -->
             <div class="leadership-row-1">
-                <div class="leadership-box">
-                    <div class="leadership-content-base">
+                <div class="leadership-box" data-step="1">
+                    <div class="leadership-step step-1">
                         <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="sase Logo"
                             class="leadership-logo-centered">
                         <div class="leadership-title-centered">Society of Asian Scientists and Engineers</div>
+                        <button class="nav-arrow next-arrow">➔</button>
                     </div>
-                    <div class="leadership-content-details">
-                        <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="sase Logo"
-                            class="leadership-logo">
+
+                    <div class="leadership-step step-2">
+                        <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="SASE Logo"
+                            class="leadership-logo wics-logo">
                         <div class="leadership-title">Society of Asian Scientists and Engineers</div>
                         <div class="leadership-years">
                             2022 - 2023, Active Member<br>
@@ -82,6 +84,23 @@
                             2024 - 2025, Vice President<br>
                             2025 - Present, Senior Advisor
                         </div>
+                        <div class="nav-controls">
+                            <button class="nav-arrow prev-arrow">⬅</button>
+                            <button class="nav-arrow next-arrow">➔</button>
+                        </div>
+                    </div>
+
+                    <div class="leadership-step step-3">
+                        <div class="leadership-title-small">Key Achievements</div>
+                        <ul class="resume-list">
+                            <li>Secured 2 sponsorships for National Convention, increasing the organization’s visibility
+                                and resources</li>
+                            <li>Directed the logistics committee for the annual hackathon, ensuring smooth operations
+                                and successful execution</li>
+                            <li>Organized 9 career development initiatives featuring diverse STEM professionals,
+                                attracting 40 – 80 attendees per event</li>
+                        </ul>
+                        <button class="nav-arrow prev-arrow">⬅</button>
                     </div>
                 </div>
 
@@ -197,6 +216,20 @@
 
         document.querySelectorAll('.mobile-nav-list a').forEach(link => {
             link.addEventListener('click', toggleMobileMenu);
+        });
+
+        document.querySelectorAll('.nav-arrow').forEach(arrow => {
+            arrow.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents conflict if box has other click events
+                const box = arrow.closest('.leadership-box');
+                let currentStep = parseInt(box.getAttribute('data-step'));
+
+                if (arrow.classList.contains('next-arrow')) {
+                    box.setAttribute('data-step', currentStep + 1);
+                } else {
+                    box.setAttribute('data-step', currentStep - 1);
+                }
+            });
         });
     </script>
 
