@@ -66,59 +66,85 @@
         <div class="leadership-container">
             <!-- First Row - 2 Bigger Boxes -->
             <div class="leadership-row-1">
-                <div class="leadership-box" data-step="1">
-                    <div class="leadership-step step-1">
-                        <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="sase Logo"
-                            class="leadership-logo-centered">
-                        <div class="leadership-title-centered">Society of Asian Scientists and Engineers</div>
-                        <button class="nav-arrow next-arrow">➔</button>
-                    </div>
-
-                    <div class="leadership-step step-2">
-                        <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="SASE Logo"
-                            class="leadership-logo wics-logo">
-                        <div class="leadership-title">Society of Asian Scientists and Engineers</div>
-                        <div class="leadership-years">
-                            2022 - 2023, Active Member<br>
-                            2023 - 2024, Professional Development Chair<br>
-                            2024 - 2025, Vice President<br>
-                            2025 - Present, Senior Advisor
+                <div class="leadership-box">
+                    <div class="leadership-carousel-track" style="transform: translateX(0%);">
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/sase logo - 2 color - side plus text.png"
+                                class="leadership-logo-centered">
+                            <div class="leadership-title-centered">Society of Asian Scientists and Engineers</div>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
                         </div>
-                        <div class="nav-controls">
-                            <button class="nav-arrow prev-arrow">⬅</button>
-                            <button class="nav-arrow next-arrow">➔</button>
-                        </div>
-                    </div>
 
-                    <div class="leadership-step step-3">
-                        <div class="leadership-title-small">Key Achievements</div>
-                        <ul class="resume-list">
-                            <li>Secured 2 sponsorships for National Convention, increasing the organization’s visibility
-                                and resources</li>
-                            <li>Directed the logistics committee for the annual hackathon, ensuring smooth operations
-                                and successful execution</li>
-                            <li>Organized 9 career development initiatives featuring diverse STEM professionals,
-                                attracting 40 – 80 attendees per event</li>
-                        </ul>
-                        <button class="nav-arrow prev-arrow">⬅</button>
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="sase Logo"
+                                class="leadership-logo sase-logo">
+                            <div class="leadership-title">Society of Asian Scientists and Engineers</div>
+                            <div class="leadership-years">
+                                2022 - 2023, Active Member<br>
+                                2023 - 2024, Professional Development Chair<br>
+                                2024 - 2025, Vice President<br>
+                                2025 - Present, Senior Advisor
+                            </div>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/sase logo - 2 color - side plus text.png" alt="sase Logo"
+                                class="leadership-logo sase-logo">
+                            <div class="leadership-title">Society of Asian Scientists and Engineers</div>
+                            <ul class="resume-list">
+                                <li>Secured 2 sponsorships for National Convention, increasing the organization’s
+                                    visibility
+                                    and resources</li>
+                                <li>Directed the logistics committee for the annual hackathon, ensuring smooth
+                                    operations
+                                    and successful execution</li>
+                                <li>Organized 9 career development initiatives featuring diverse STEM professionals,
+                                    attracting 40 – 80 attendees per event</li>
+                            </ul>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="leadership-box">
-                    <div class="leadership-content-base">
-                        <img src="../src/assets/logos/WiCS_logo_LightBckg.png" alt="WICS Logo"
-                            class="leadership-logo-centered wics-logo">
-                        <div class="leadership-title-centered">Women in Computer Science</div>
-                    </div>
-                    <div class="leadership-content-details">
-                        <img src="../src/assets/logos/WiCS_logo_LightBckg.png" alt="WICS Logo"
-                            class="leadership-logo wics-logo">
-                        <div class="leadership-title">Women in Computer Science</div>
-                        <div class="leadership-years">
-                            2022 - 2023, Active Member<br>
-                            2023 - 2024, Outreach Chair<br>
-                            2024 - 2025, Vice President<br>
-                            2025 - Present, Senior Advisor
+                    <div class="leadership-carousel-track" style="transform: translateX(0%);">
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/WiCS_logo_LightBckg.png" class="leadership-logo-centered">
+                            <div class="leadership-title-centered">Women in Computer Science</div>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/WiCS_logo_LightBckg.png" alt="WICS Logo"
+                                class="leadership-logo wics-logo">
+                            <div class="leadership-title">Women in Computer Science</div>
+                            <div class="leadership-years">
+                                2022 - 2023, Active Member<br>
+                                2023 - 2024, Outreach Chair<br>
+                                2024 - 2025, Vice President<br>
+                                2025 - Present, Senior Advisor
+                            </div>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/WiCS_logo_LightBckg.png" alt="WICS Logo"
+                                class="leadership-logo wics-logo">
+                            <div class="leadership-title">Women in Computer Science</div>
+                            <ul class="resume-list">
+                                <li>Oversee a team of 7 executive board members, ensuring committee operations align
+                                    with organizational goals
+                                </li>
+                                <li>Coordinated 3 initiatives with other campus organizations, resulting in a 20%
+                                    increase in collaborative events</li>
+                                <li>Manage membership and engagement, fostering a supportive community for women in
+                                    technology
+                                </li>
+                            </ul>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
                         </div>
                     </div>
                 </div>
@@ -127,48 +153,109 @@
             <!-- Second Row - 3 Smaller Boxes -->
             <div class="leadership-row-2">
                 <div class="leadership-box">
-                    <div class="leadership-content-base">
-                        <img src="../src/assets/logos/Chevron_Logo.svg.png" alt="Chevron Logo"
-                            class="leadership-logo-centered">
-                        <div class="leadership-title-centered">Chevron Leadership Academy</div>
-                    </div>
-                    <div class="leadership-content-details">
-                        <img src="../src/assets/logos/Chevron_Logo.svg.png" alt="Chevron Logo"
-                            class="leadership-logoChevron">
-                        <div class="leadership-title">Chevron Leadership Academy</div>
-                        <div class="leadership-years">
-                            2023 - Present, Active Member<br>
-                            2023 - Present, Chevron Energy Leadership Scholarship Recipient
+                    <div class="leadership-carousel-track" style="transform: translateX(0%);">
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/Chevron_Logo.svg.png" class="leadership-logo-centered">
+                            <div class="leadership-title-centered">Chevron Leadership Academy</div>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/Chevron_Logo.svg.png" alt="WICS Logo"
+                                class="leadership-logo chevron-logo">
+                            <div class="leadership-title">Chevron Leadership Academy</div>
+                            <div class="leadership-years">
+                                2023 - Present, Active Member<br>
+                                2023 - Present, Chevron Energy Leadership Scholarship Recipient
+                            </div>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/Chevron_Logo.svg.png" alt="WICS Logo"
+                                class="leadership-logo chevron-logo">
+                            <div class="leadership-title">Chevron Leadership Academy</div>
+                            <ul class="resume-list">
+                                <li>Led 2 group projects focused on energy innovation and sustainability, presenting
+                                    findings to
+                                    industry professionals
+                                </li>
+                                <li>Attended leadership workshops and training sessions to enhance professional
+                                    development</li>
+
+                            </ul>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="leadership-box">
-                    <div class="leadership-content-base">
-                        <img src="../src/assets/logos/swe.png" alt="SWE Logo" class="leadership-logo-centered">
-                        <div class="leadership-title-centered">Society of Women Engineers</div>
-                    </div>
-                    <div class="leadership-content-details">
-                        <img src="../src/assets/logos/swe.png" alt="SWE Logo" class="leadership-logoSWE">
-                        <div class="leadership-title">Society of Women Engineers</div>
-                        <div class="leadership-years">
-                            2022 - 2023, Freshman Ambassador<br>
-                            2023 - Present, Active Member
+                    <div class="leadership-carousel-track" style="transform: translateX(0%);">
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/swe.png" class="leadership-logo-centered">
+                            <div class="leadership-title-centered">Society of Women Engineers</div>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/swe.png" alt="swe Logo" class="leadership-logo chevron-logo">
+                            <div class="leadership-title">Society of Women Engineers</div>
+                            <div class="leadership-years">
+                                2022 - 2023, Freshman Ambassador<br>
+                                2023 - Present, Active Member<br>
+                            </div>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/swe.png" alt="swe Logo" class="leadership-logo swe">
+                            <div class="leadership-title">Society of Women Engineers</div>
+                            <ul class="resume-list">
+                                <li> Table events to increase awareness about SWE and its mission on campus
+                                </li>
+                                <li>Help organize events to increase awareness about SWE and its mission on campus</li>
+
+                            </ul>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="leadership-box">
-                    <div class="leadership-content-base">
-                        <img src="../src/assets/logos/gdsc-logo.png" alt="GDSC Logo" class="leadership-logo-centered">
-                        <div class="leadership-title-centered">Google Developer Student Club</div>
-                    </div>
-                    <div class="leadership-content-details">
-                        <img src="../src/assets/logos/gdsc-logo.png" alt="GDSC Logo" class="leadership-logoGDSC">
-                        <div class="leadership-title">Google Developer Student Club</div>
-                        <div class="leadership-years">
-                            2022 - 2023, Core Team Lead<br>
-                            2023 - Present, Active Member
+                    <div class="leadership-carousel-track" style="transform: translateX(0%);">
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/gdsc-logo.png" class="leadership-logo-centered">
+                            <div class="leadership-title-centered">Google Developer Student Club</div>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/gdsc-logo.png" alt="gdsc Logo"
+                                class="leadership-logo gdsc-logo">
+                            <div class="leadership-title">Google Developer Student Club</div>
+                            <div class="leadership-years">
+                                2022 - 2023, Core Team Lead<br>
+                                2022 - Present, Active Member
+                            </div>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
+                            <button class="nav-arrow next-arrow" onclick="moveSlide(this, 1)">➔</button>
+                        </div>
+
+                        <div class="leadership-step">
+                            <img src="../src/assets/logos/gdsc-logo.png" alt="gdsc Logo"
+                                class="leadership-logo gdsc-logo">
+                            <div class="leadership-title">Google Developer Student Club</div>
+                            <ul class="resume-list">
+                                <li>Managed workshops to teach students about Google technologies, increasing member
+                                    engagement
+                                    by 25%
+                                </li>
+                                <li>Organized events to promote Google technologies and developer tools</li>
+
+                            </ul>
+                            <button class="nav-arrow prev-arrow" onclick="moveSlide(this, -1)">⬅</button>
                         </div>
                     </div>
                 </div>
@@ -218,19 +305,27 @@
             link.addEventListener('click', toggleMobileMenu);
         });
 
-        document.querySelectorAll('.nav-arrow').forEach(arrow => {
-            arrow.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevents conflict if box has other click events
-                const box = arrow.closest('.leadership-box');
-                let currentStep = parseInt(box.getAttribute('data-step'));
 
-                if (arrow.classList.contains('next-arrow')) {
-                    box.setAttribute('data-step', currentStep + 1);
-                } else {
-                    box.setAttribute('data-step', currentStep - 1);
-                }
-            });
-        });
+
+        function moveSlide(button, direction) {
+            const track = button.closest('.leadership-box').querySelector('.leadership-carousel-track');
+
+            // Get current translation percentage
+            const style = window.getComputedStyle(track);
+            const matrix = new WebKitCSSMatrix(style.transform);
+            const currentX = matrix.m41; // Get current pixel position
+            const boxWidth = button.closest('.leadership-box').offsetWidth;
+
+            // Determine current index (0, 1, or 2)
+            let currentIndex = Math.round(Math.abs(currentX / boxWidth));
+            let nextIndex = currentIndex + direction;
+
+            // Ensure index stays within 0-2
+            nextIndex = Math.max(0, Math.min(2, nextIndex));
+
+            // Slide the track
+            track.style.transform = `translateX(-${nextIndex * 33.333}%)`;
+        }
     </script>
 
     <script src="../src/cursor.js"></script>

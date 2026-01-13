@@ -311,56 +311,58 @@ nav a:visited,
 .leadership-row-2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 10px;
 }
 
 /* Leadership box styles - SAME HEIGHT FOR ALL */
 .leadership-box {
-    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-
-    border-radius: 20px;
-    padding: 25px;
     position: relative;
-    min-height: 220px;
-    /* Same height as hover state */
-    width: 90%;
-    /* 90% width */
-    margin: 0 auto;
-    /* Center the 90% width boxes */
-    box-shadow: 0 5px 15px rgba(21, 6, 75, 0.1);
-    transition: all 0.2s ease;
     overflow: hidden;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    /* Hides the steps that aren't active */
+    width: 90%;
+    min-height: 250px;
+    margin: 0 auto;
+    border-radius: 20px;
+    /* Re-applying your original background style */
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    box-shadow: 0 5px 15px rgba(21, 6, 75, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hide steps by default */
-.leadership-step {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.leadership-carousel-track {
+    display: flex;
+    width: 300%;
+    /* Three steps = 300% width */
     height: 100%;
-
-
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Smooth "slide" timing */
 }
 
-/* Show the active step based on a data attribute */
-.leadership-box[data-step="1"] .step-1 {
+.leadership-step {
+    width: 33.333%;
+    /* Each step takes up exactly 1/3 of the track (one box width) */
+    flex-shrink: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
 }
 
-.leadership-box[data-step="2"] .step-2 {
-    display: flex;
+/* Keep arrows anchored to the step corners */
+.nav-arrow {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+    /* ... your existing arrow styles ... */
 }
 
-.leadership-box[data-step="3"] .step-3 {
-    display: flex;
+.prev-arrow {
+    right: auto;
+    left: 15px;
 }
 
 /* Arrow Positioning */
@@ -384,6 +386,7 @@ nav a:visited,
 .prev-arrow {
     right: auto;
     left: 15px;
+
     /* Position back arrow on the bottom left */
 }
 
@@ -393,17 +396,15 @@ nav a:visited,
 
 /* Resume Style List */
 .resume-list {
+    margin-top: -10px;
+    margin-bottom: 30px;
+    padding-top: -20px;
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
     color: #095fa6;
     padding-left: 20px;
 }
 
-.leadership-title-small {
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #095fa6;
-}
 
 /* Base content */
 .leadership-content-base {
@@ -466,8 +467,15 @@ nav a:visited,
 }
 
 .wics-logo {
+
     width: 160px !important;
     height: 50px !important;
+}
+
+.sase-logo {
+    margin-top: -10px;
+    width: 180px !important;
+    height: 60px !important;
 }
 
 .leadership-logoGDSC {
