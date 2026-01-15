@@ -618,6 +618,19 @@ footer,
 
 
 @media (max-width: 768px) {
+    img {
+        width: 100%;
+        height: 300px;
+        /* Or whatever height you have set */
+        object-fit: cover;
+        /* This makes the image fill the area */
+        object-position: top;
+        /* This ensures the top of the photo is visible */
+    }
+
+    .img[alt="hackathon pic"] {
+        object-position: bottom;
+    }
 
     /* 1. Container & Global Alignment */
     .leadership-container {
