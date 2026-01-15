@@ -294,36 +294,43 @@ nav a:visited,
 .leadership-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 60px;
 }
 
 /* First row - 2 bigger boxes */
+/* First row - 2 bigger boxes */
 .leadership-row-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    /* Same gap for both rows */
+    width: 100%;
+    margin-bottom: 30px;
+    /* Same vertical space as the horizontal gap */
 }
 
 /* Second row - 3 smaller boxes */
 .leadership-row-2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 30px;
+    /* Matches the top row exactly */
+    width: 100%;
 }
 
 /* Leadership box styles - SAME HEIGHT FOR ALL */
 .leadership-box {
     position: relative;
     overflow: hidden;
-    /* Hides the steps that aren't active */
-    width: 90%;
+    /* width: 90%;  <-- REMOVE THIS */
+    /* margin: 0 auto; <-- REMOVE THIS */
+
+    width: 100%;
+    /* Take up the full space assigned by the grid */
     min-height: 250px;
-    margin: 0 auto;
     border-radius: 20px;
-    /* Re-applying your original background style */
     background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
     box-shadow: 0 5px 15px rgba(21, 6, 75, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -360,39 +367,49 @@ nav a:visited,
 /* Arrow Positioning */
 .nav-arrow {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: #095fa6;
+    bottom: 20px;
+    /* Forces both to the same distance from bottom */
+    width: 30px;
+    height: 30px;
+    background-color: #b0a092;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
     cursor: pointer;
+    z-index: 20;
+
+    /* Perfect Centering Logic */
     display: flex;
-    font-size: 20px;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    /* Critical: stops text-box height from pushing arrow down */
+    font-size: 22px;
 }
 
 .next-arrow {
     right: 20px;
 }
 
-
 .prev-arrow {
-    right: auto;
-    left: 15px;
     left: 20px;
-    /* Using transform to flip ensures the icon is a perfect mirror */
+    /* Rotate the entire button - since it's a circle, 
+       the button stays put but the icon flips perfectly */
     transform: rotate(180deg);
-
-    /* Position back arrow on the bottom left */
 }
 
-.nav-arrow:hover {
-    background: #8d5307;
+
+
+.next-arrow:hover {
+    transform: scale(1.05);
+
+}
+
+.prev-arrow:hover {
+    transform: rotate(180deg) scale(1.05);
+
 }
 
 /* Resume Style List */
@@ -402,8 +419,10 @@ nav a:visited,
     padding-top: -20px;
     text-align: left;
     font-size: 16px;
-    color: #095fa6;
+    color: black;
     padding-left: 20px;
+    padding-bottom: 5px;
+    /* Keeps the text from overlapping the arrow area */
 }
 
 
@@ -444,18 +463,28 @@ nav a:visited,
     transition: all 0.5s ease;
 }
 
+.leadership-logo,
+.leadership-logoGDSC,
+.leadership-logoSWE,
+.leadership-logoChevron,
+.sase-logo,
+.wics-logo {
+    margin-bottom: 5px !important;
+    /* Reduced from 15px */
+}
+
 /* Logo styling */
 .leadership-logo-centered {
     width: 140px;
     height: 80px;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .leadership-title-centered {
     font-size: 20px;
     font-weight: bold;
-    color: #095fa6;
+    color: #4f331a;
     text-align: center;
 }
 
@@ -498,14 +527,16 @@ nav a:visited,
 .leadership-title {
     font-size: 22px;
     font-weight: bold;
-    color: #095fa6;
+    color: #4f331a;
     margin-bottom: 15px;
     text-align: center;
+    line-height: 1.2;
+    /* Tighter line height helps save vertical space */
 }
 
 .leadership-years {
     font-size: 16px;
-    color: #095fa6;
+    color: #4f331a;
     font-style: italic;
     line-height: 1.6;
     text-align: center;
@@ -520,37 +551,7 @@ nav a:visited,
     font-size: 15px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
 
-    .leadership-row-1,
-    .leadership-row-2 {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .leadership-box {
-        min-height: 200px;
-        /* Same height on mobile */
-        padding: 20px;
-        width: 85%;
-        /* Slightly narrower on mobile */
-    }
-
-    .leadership-box:hover {
-        transform: translateY(-5px);
-        /* NO height change */
-    }
-
-    .leadership-logo-centered {
-        width: 120px;
-        height: 70px;
-    }
-
-    .leadership-title-centered {
-        font-size: 18px;
-    }
-}
 
 /* Leadership Photos Section */
 .leadership-photos {
@@ -609,16 +610,108 @@ nav a:visited,
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+
+    /* 1. Container & Global Alignment */
+    .leadership-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centers the entire stack */
+        padding: 0 15px;
+        margin-top: 40px;
+        gap: 30px;
+        /* Space between rows and photo sections */
+    }
+
+    /* 2. Row Alignment - Forces everything into one straight line */
+    .leadership-row-1,
+    .leadership-row-2,
+    .leadership-photos,
     .photo-row {
-        gap: 20px;
-        /* Same as mobile leadership boxes */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 30px;
+        /* Consistent vertical spacing between boxes/photos */
+        padding: 0;
+    }
+
+    /* 3. Box & Photo Sizing - Ensures matching widths for the vertical line */
+    .leadership-box,
+    .leadership-photo {
+        width: 100%;
+        max-width: 450px;
+        /* Adjust this to control how wide the "line" is */
+        min-height: 250px;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        /* Critical for carousel content */
     }
 
     .leadership-photo {
+        height: 250px;
+        /* Match box height for visual consistency */
+        object-fit: cover;
+    }
+
+    /* 4. Carousel Content Fix - Ensures steps stay visible and horizontal */
+    .leadership-carousel-track {
+        display: flex !important;
+        width: 300%;
+        height: 100%;
+    }
+
+    .leadership-step {
+        width: 33.333%;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 35px;
+        /* Added side padding to prevent text touching edges */
+        box-sizing: border-box;
+    }
+
+    /* 5. Resume List Spacing & Centering */
+    .resume-list {
+        font-size: 17px;
+        text-align: left;
         width: 100%;
-        /* 2 per row on smaller tablets */
-        max-width: none;
-        height: 200px;
+        max-width: 300px;
+        /* Keeps text block centered and readable */
+        margin: 0 auto;
+        padding-bottom: 10px;
+        /* Clear space for the arrows */
+        list-style-position: outside;
+    }
+
+    .resume-list li {
+        margin-bottom: 10px;
+        /* Increased spacing between bullets */
+        line-height: 1.5;
+        padding-left: 5px;
+    }
+
+    .resume-list li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* 6. Typography Scaling */
+    .leadership-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .leadership-logo-centered,
+    .leadership-logo {
+        width: 100px;
+        height: 60px;
+        margin-bottom: 5px;
     }
 }
 
