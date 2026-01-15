@@ -289,6 +289,12 @@ nav a:visited,
     height: fit-content;
 }
 
+section,
+footer,
+.main-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 /* Leadership Section Styles */
 .leadership-container {
@@ -608,7 +614,9 @@ nav a:visited,
     transform: scale(1.05);
 }
 
-/* Mobile Responsive */
+
+
+
 @media (max-width: 768px) {
 
     /* 1. Container & Global Alignment */
