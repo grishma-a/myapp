@@ -443,18 +443,7 @@ nav a:visited,
     position: relative;
 }
 
-.internships-title-centered::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, #b0a092, #b0a092);
-    border-radius: 2px;
-    transition: width 0.4s ease;
-}
+
 
 .internships-box:hover .internships-title-centered::after {
     width: 100px;
@@ -569,9 +558,7 @@ nav a:visited,
     color: rgba(141, 83, 7, 0.3);
 }
 
-.tech-tag:hover {
-    color: #8d5307;
-}
+
 
 /* Enhanced Details List */
 .internships-details {
@@ -678,8 +665,10 @@ nav a:visited,
     }
 
     .details-header {
-        flex-direction: column;
-        text-align: center;
+
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
         gap: 15px;
     }
 
