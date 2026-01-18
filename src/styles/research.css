@@ -527,6 +527,14 @@ footer,
         gap: 40px;
     }
 
+    .publication-card {
+        padding: 25px;
+        max-width: none !important;
+        padding-left: -30px;
+        padding-right: -30px;
+    }
+
+
     .paper-visualization {
         height: 500px;
         margin-bottom: 125px;
@@ -534,10 +542,7 @@ footer,
     }
 
 
-    .paper-page {
-        width: 500px;
-        height: 600px;
-    }
+
 
     .paper-image {
         width: 500px;
@@ -567,48 +572,45 @@ footer,
     }
 }
 
-@media (max-width: 768px) {
-    .paper-visualization {
-        height: 300px;
+
+
+
+@media (max-width: 645px) {
+    .research-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0;
     }
 
-    .paper-page {
-        width: 200px;
-        height: 280px;
+    .paper-visualization,
+    .publication-details {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .paper-visualization {
+        height: auto;
+    }
+
+    .paper-screenshot {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
     }
 
     .paper-image {
-        width: 400px;
-        height: 500px;
+        width: 100%;
+        height: auto;
+        max-width: 380px;
+        margin: 0 auto;
+        display: block;
     }
 
     .publication-card {
-        padding: 25px;
-        max-width: none !important;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .research-metrics {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .author {
-        height: auto;
-        align-items: flex-start;
-    }
-
-    .author-role {
-        /* 1. This ensures the text itself aligns to the right */
-        text-align: right;
-
-        /* 2. This prevents the text from being forced into one long line */
-        white-space: normal;
-
-        /* 3. Give it a max-width so it wraps before hitting the name */
-        max-width: 60%;
-
-        line-height: 1.2;
+        width: 100%;
+        padding: 20px;
+        margin-left: -40px;
     }
 }
