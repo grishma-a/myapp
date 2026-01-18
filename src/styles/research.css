@@ -520,7 +520,7 @@ footer,
 
 
 /* Mobile Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1224px) {
     .research-hero {
 
         grid-template-columns: 1fr;
@@ -547,6 +547,24 @@ footer,
     .btn {
         text-align: center;
     }
+
+    .author {
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .author-role {
+        /* 1. This ensures the text itself aligns to the right */
+        text-align: right;
+
+        /* 2. This prevents the text from being forced into one long line */
+        white-space: normal;
+
+        /* 3. Give it a max-width so it wraps before hitting the name */
+        max-width: 60%;
+
+        line-height: 1.2;
+    }
 }
 
 @media (max-width: 768px) {
@@ -566,10 +584,31 @@ footer,
 
     .publication-card {
         padding: 25px;
+        max-width: none !important;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .research-metrics {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .author {
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .author-role {
+        /* 1. This ensures the text itself aligns to the right */
+        text-align: right;
+
+        /* 2. This prevents the text from being forced into one long line */
+        white-space: normal;
+
+        /* 3. Give it a max-width so it wraps before hitting the name */
+        max-width: 60%;
+
+        line-height: 1.2;
     }
 }
