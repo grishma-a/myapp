@@ -80,7 +80,6 @@
 
   <!-- JavaScript for active tab underline -->
   <script>
-
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     const mobileOverlay = document.getElementById('mobileOverlay');
@@ -101,9 +100,34 @@
       link.addEventListener('click', toggleMobileMenu);
     });
 
+    // ADD THIS FUNCTION TO SET ACTIVE PAGE
+    function setActivePage() {
+      // Get current page path
+      const currentPath = window.location.pathname;
+      console.log('Current path:', currentPath); // For debugging
 
+      // Check ALL nav links (desktop and mobile)
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
 
-    // ensure initial state: internships panel visible by default (your HTML already sets this)
+        // Remove any existing active class first
+        link.classList.remove('active');
+
+        // Check if this link points to the current page
+        // For home page
+        if (href === '/myapp/index.html' || href === '/myapp/') {
+          if (currentPath === '/myapp/index.html' ||
+            currentPath === '/myapp/' ||
+            currentPath.endsWith('/myapp/')) {
+            link.classList.add('active');
+          }
+        }
+        // For other pages (you can add this logic later for other pages)
+      });
+    }
+
+    // Call the function when DOM is loaded
+    document.addEventListener('DOMContentLoaded', setActivePage);
   </script>
 
   <!-- Right before </body> -->

@@ -324,6 +324,18 @@
             // Slide the track
             track.style.transform = `translateX(-${nextIndex * 33.333}%)`;
         }
+        // Set active link for PROJECTS page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Remove active class from all nav links first
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add active class to PROJECTS links
+            document.querySelectorAll('a[href="/myapp/pages/leadership.html"]').forEach(link => {
+                link.classList.add('active');
+            });
+        });
     </script>
 
     <script src="../src/cursor.js"></script>

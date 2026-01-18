@@ -796,22 +796,18 @@
         </div>
     </section>
 
+    <!-- JavaScript for active tab underline -->
     <script>
-
-
-        // Mobile menu code (from your original)
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
         const mobileOverlay = document.getElementById('mobileOverlay');
         const closeMenu = document.getElementById('closeMenu');
 
         function toggleMobileMenu() {
-            if (hamburger && mobileNav && mobileOverlay) {
-                hamburger.classList.toggle('active');
-                mobileNav.classList.toggle('active');
-                mobileOverlay.classList.toggle('active');
-                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-            }
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
         }
 
         if (hamburger) hamburger.addEventListener('click', toggleMobileMenu);
@@ -821,8 +817,36 @@
         document.querySelectorAll('.mobile-nav-list a').forEach(link => {
             link.addEventListener('click', toggleMobileMenu);
         });
-    </script>
 
+        // ADD THIS FUNCTION TO SET ACTIVE PAGE
+        function setActivePage() {
+            // Get current page path
+            const currentPath = window.location.pathname;
+            console.log('Current path:', currentPath); // For debugging
+
+            // Check ALL nav links (desktop and mobile)
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+
+                // Remove any existing active class first
+                link.classList.remove('active');
+
+                // Check if this link points to the current page
+                // For home page
+                if (href === '/myapp/pages/education.html') {
+                    if (currentPath.includes('education.html') ||
+                        currentPath.endsWith('/education.html') ||
+                        currentPath.includes('/pages/education')) {
+                        link.classList.add('active');
+                    }
+                }
+                // For other pages (you can add this logic later for other pages)
+            });
+        }
+
+        // Call the function when DOM is loaded
+        document.addEventListener('DOMContentLoaded', setActivePage);
+    </script>
     <script src="src/cursor.js"></script>
 </body>
 

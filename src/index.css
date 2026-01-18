@@ -34,7 +34,10 @@ html {
   /*background-color: rgb(141, 83, 7); Helvetica*/
 }
 
-
+.nav-list li a.active::after {
+  width: 100%;
+  background-color: #ffffff;
+}
 
 #home {
   background-color: #fffbf5;

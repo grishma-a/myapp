@@ -168,6 +168,18 @@
             link.addEventListener('click', toggleMobileMenu);
         });
 
+
+        // Set active link for CONTACT page - SIMPLE VERSION
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPath = window.location.pathname;
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
         // Resume download for contact section
         document.getElementById('contactResumeDownload').addEventListener('click', function () {
             const link = document.createElement('a');
@@ -177,6 +189,7 @@
             link.click();
             document.body.removeChild(link);
         });
+
     </script>
 
     <script src="../src/cursor.js"></script>

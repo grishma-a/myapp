@@ -6,10 +6,48 @@ function loadNavbar() {
             // Insert navbar at the beginning of the body
             document.body.insertAdjacentHTML('afterbegin', data);
 
+            // Set active page based on current URL
+            setActivePage();
+
             // Re-initialize mobile menu functionality after navbar is loaded
             initializeMobileMenu();
         })
         .catch(error => console.error('Error loading navbar:', error));
+}
+
+// Function to set active page based on current URL
+function setActivePage() {
+    // Get current page path
+    const currentPath = window.location.pathname;
+
+    // Helper function to check if the link matches current page
+    function isActiveLink(href) {
+        // For home page
+        if (href === '/myapp/index.html' || href === '/myapp/') {
+            return currentPath === '/myapp/index.html' ||
+                currentPath === '/myapp/' ||
+                currentPath.endsWith('/myapp/');
+        }
+
+        // For other pages
+        return currentPath.includes(href.replace('/myapp/', ''));
+    }
+
+    // Check desktop nav links
+    document.querySelectorAll('.nav-list a.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (isActiveLink(href)) {
+            link.classList.add('active');
+        }
+    });
+
+    // Check mobile nav links
+    document.querySelectorAll('.mobile-nav-list a.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (isActiveLink(href)) {
+            link.classList.add('active');
+        }
+    });
 }
 
 // Initialize mobile menu functionality
