@@ -291,6 +291,13 @@ nav a:visited,
     min-height: 100vh;
 }
 
+section,
+footer,
+.main-content {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
 .research-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
